@@ -30,51 +30,59 @@
 \newcommand{\@npm}{2012730082}
 \newcommand{\@judultopik}{Konversi Javadoc ke \LaTeX} % Judul/topik anda
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\tanggal}{01/01/1900}
+\newcommand{\tanggal}{30/08/2017}
 \maketitle
 
 \pagenumbering{arabic}
 
 \section{Deskripsi}
-\LaTeX\ merupakan bahasa {\it markup} untuk membuat sebuah dokumen yang umumnya digunakan oleh para ilmuwan pada bidang {\it sains}. Dokumen yang dihasilkan biasanya adalah sebuah karya tulis ilmiah. Karya Tulis Ilmiah adalah sebuah laporan tertulis yang memaparkan hasil penelitian yang dilakukan oleh seseorang atau sebuah tim. %dibuat berisikan hasil penelitian yang dilakukan oleh para ilmuwan tersebut dan dijadikan sebuah karya ilmiah.
+Dalam sebuah penelitian, membuat dokumentasi perlu dilakukan. Dokumentasi yang dibuat bisa dalam bentuk {\it hardcopy} atau {\it softcopy}, tergantung kebutuhannya. Dokumentasi adalah kegiatan untuk mencatat suatu peristiwa atau aktifitas yang dianggap berharga atau penting. Dokumentasi yang sudah dibuat dapat menjadi referensi untuk memandu dalam melakukan sebuah aktifitas.
+%Pembuatan dokumentasi dapat dilakukan dengan sebuah perangkat lunak, salah satunya adalah \LaTeX.
 
-Pada Program Studi Teknik Informatika Universitas Katolik Parahyangan, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumen Skripsi.
+Dalam bidang Teknologi Informasi, dokumentasi kode program java umumnya ditulis dalam format {\it Javadoc}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh Java yang berguna untuk mengekstrak informasi dari sebuah {\it file} java menjadi sebuah dokumentasi. Umumnya digunakan untuk mendokumentasikan sebuah nama {\it class}, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file} java. Informasi tersebut dapat menjelaskan sebuah {\it class} yang dibuat dalam sebuah dokumentasi perangkat lunak. %Javadoc ditulis oleh seorang programmer di dalam sebuah {\it source code} java, yang nantinya akan diproses oleh Javadoc yang umumnya menjadi sebuah file HTML sebagai dokumentasi dari program tersebut. Selain menjadi sebuah file HTML, Javadoc dapat merubah dokumentasi tersebut menjadi sebuah file \LaTeX.
+%Dalam dunia teknologi, khususnya di bidang Teknologi Informasi, dokumentasi akan sangat memudahkan seseorang untuk memecahkan sebuah permasalahan yang terkait dengan
+
+Skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it java}. Seperti yang sudah dijelaskan, bahasa pemrograman {\it java} memiliki {\it Javadoc} sebagai informasi dari {\it class}, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi Skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. \LaTeX\ membuat apa yang ditampilkan sama seperti apa yang yang ditulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF
+
+Pada bab 4 dokumentasi Skripsi, terdapat penjelasan dari setiap {\it class} pada perangkat lunak yang dibuat. Penjelasan tersebut dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it java}, namun saat ini penjelasan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap {\it class} pada perangkat lunak yang dibuat.
+
+Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengekstraksi informasi pada {\it Javadoc} ke format \LaTeX\ secara otomatis. Perangkat lunak ini mengimplementasikan sebuah {\it Application Programming Interface} (API) yang digunakan untuk mengambil informasi berupa nama {\it class}, {\it interface}, {\it method} dan juga {\it custom tag} yang terdapat pada sebuah {\it file java}
+%Pada dokumentasi Skripsi, perangkat lunak yang dibuat harus dijelaskan %Hal ini disebabkan karena \LaTeX\ membuat dokumentasi Skripsi menjadi lebih terstruktur. Dengan \LaTeX, mahasiswa tidak perlu memikirkan tentang format penulisan pada dokumen, karena format penulisan dapat dibuat dan diganti kapanpun mahasiswa ingin menggantinya. \LaTeX\ sangat populer digunakan oleh para peneliti untuk pembuatan dokumentasi pada bidang {\it sains}. Para ilmuwan tersebut menggunakan \LaTeX\ untuk membuat sebuah dokumen yang biasanya adalah sebuah karya tulis ilmiah. Karya Tulis Ilmiah adalah sebuah laporan tertulis yang memaparkan hasil penelitian yang dilakukan oleh seseorang atau sebuah tim.
 
 \section{Rumusan Masalah}
-Tuliskan rumusan dari masalah yang akan anda bahas pada skripsi ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+Bedasarkan latar belakang yang telah disebutkan di atas, maka dihasilkan beberapa poin yang menjadi rumusan masalah dari masalah ini. Rumusan masalah yang akan dibangun antara lain sebagai berikut:
+\begin{enumerate}
+	\item Bagaimana cara menulis {\it Javadoc} yang benar?
+	\item Bagaimana membuat perangkat lunak yang dapat mengonversikan format {\it Javadoc} ke format \LaTeX\ secara otomatis?
+\end{enumerate}
 
 \section{Tujuan}
-Tuliskan tujuan dari topik skripsi yang anda ajukan. Tujuan penelitian biasanya berkaitan erat dengan pertanyaan yang diajukan di bagian rumusan masalah. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+Adapun tujuan yang ingin dicapai dari penelitian ini adalah menjawab rumusan masalah di atas, yaitu:
+\begin{enumerate}
+	\item Menjelaskan cara menulis {\it Javadoc} yang benar
+	\item Membuat perangkat lunak yang dapat mengonversikan format Javadoc ke format \LaTeX\ secara otomatis.
+\end{enumerate}
 
 \section{Deskripsi Perangkat Lunak}
-Tuliskan deksripsi dari perangkat lunak yang akan anda hasilkan. Apa saja fitur yang disediakan oleh PL tersebut dan apa saja kemampuan dari PL tersebut. Perhatikan contoh di bawah ini:
+Untuk mencapai tujuan yang telah disebutkan di atas, maka perlu dibangun sebuah perangkat lunak yang dapat menangani masalah yang telah disebutkan.
 
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-	\item Pengguna dapat melihat denah Musem Geologi Bandung dalam bidang dua dimensi. Sedangkan pengunjung direpresentasikan menggunakan lingkaran-lingkaran kecil (tidak menggunakan gambar manusia yang diambil dari atas)
-	\item Pengguna dapat memunculkan atau menghilangkan gambar {\it flow tiles} pada denah museum. 
-	\item Pengguna dapat mengatur jalannya simulasi: memulai(start) simulasi, menunda(pause) simulasi, melanjutkan(continue) simulasi, maupun menghentikan(stop) simulasi
-	\item Pengguna dapat mengatur banyaknya pengunjung di dalam museum, baik melalui perubahan frekuensi kedatangan pengunjung maupun menambahkan dan menghapus pengunjung satu-persatu secara manual.
-	\item Posisi kamera dapat diubah (pergerakan di bidang tiga dimensi) sehingga pengguna dapat melihat simulasi di museum dari berbagai arah. 
-	\item Posisi kamera dapat diubah untuk emngikuti perjalanan seorang pengunjung di dalam 
-	\item Pengguna dapat memilih apakah akan menggunakan teknik {\it flow tiles} atau tidak pada saat simulasi berlangsung
-	\item Jenis {\it flow tiles} yang digunakan dapat diubah-ubah pada saat simulasi sedang berlangsung
-		
+	%\item Pengguna dapat mengonversi Javadoc yang terdapat pada sebuah {\it file} java menjadi format \LaTeX.
+	\item Dapat menerima masukan data berupa sebuah {\it file java}
+	\item Dapat mengonversi {\it file java} ke {\it file} PDF
+	\item Dapat melihat hasil {\it file} PDF yang sudah di konversi.
 \end{itemize}
 
 \section{Detail Pengerjaan Skripsi}
-Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
+Untuk menyelesaikan perangkat lunak yang akan dibangun, disusun bagian-bagian pekerjaan yang harus dilakukan.
 
 Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\begin{enumerate}
-		\item Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll)
-		\item Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.
-		\item Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}
-		\item Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer
-		\item Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung
-		\item Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)
-		\item Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer 
-		\item Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif
+		\item Melakukan studi literatur mengenai \LaTeX\ dan Javadoc Doclet API.
+		\item Analisis kebutuhan dan perancangan perangkat lunak
+		\item Mengimplementasi Javadoc Doclet API 
+		\item Melakukan pengujian perangkat lunak
 		\item Menulis dokumen skripsi
 	\end{enumerate}
 
@@ -86,16 +94,12 @@ Tuliskan rencana anda untuk menyelesaikan skripsi. Rencana kerja dibagi menjadi 
   \begin{tabular}{ | c | c | c | c | l |}
     \hline
     1*  & 2*(\%) & 3*(\%) & 4*(\%) &5*\\ \hline \hline
-    1   & 5  & 5  &  &  \\ \hline
-    2   & 5 & 5  &   & \\ \hline
-    3   & 10  & 7  & 3 & {\footnotesize sebagian kecil teknik {\it flow tiles} di S2}  \\ \hline
-    4   & 15  & 10  &  5 & {\footnotesize teknik lanjut OOP di C++ di S2} \\ \hline
-    5   & 20  & 5  & 15 & {\footnotesize perancangan awal SFM, pathway dan waypoint di S1} \\ \hline
-    6   & 5 &   & 5  & \\ \hline
-    7   & 20  & 5  & 15 &  {\footnotesize implementasi denah dan rancangan awal SFM di S1}\\ \hline
-    8   & 5  &   &  5  & \\ \hline
-    9   & 15  & 3  & 12  & {\footnotesize sebagian bab 1 dan 2, serta bagian awal analisis di S1}\\ \hline
-    Total  & 100  & 40  & 60 &  \\ \hline
+    1   & 10  & 10  &  &  \\ \hline
+    2   & 10 & 10  &   & \\ \hline
+    3	& 30 & 10  & 20  & \\ \hline
+    4   & 30  & 10  & 20 & \\ \hline
+    5   & 20  &  10 &  10 & {\footnotesize Bab 1, Bab 2, dan Bab 3 dibuat pada skripsi 1, dan sebagian pada skripsi 2} \\ \hline
+    Total  & 100  & 50  & 50 &  \\ \hline
                           \end{tabular}
 \end{center}
 
