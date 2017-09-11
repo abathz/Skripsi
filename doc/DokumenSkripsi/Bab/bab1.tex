@@ -5,40 +5,74 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Bagian ini akan diisi dengan apa yang melatarbelakangi pembuatan template skripsi ini.
-Termasuk juga masalah-masalah yang akan dihadapi untuk membuatnya, termasuk kurangnya kemampuan penguasaan \LaTeX{} sehingga template ini dibuat dengan mengandalkan berbagai contoh yang tersebar di dunia maya, yang digabung-gabung menjadi satu jua.
-Bagian lain juga akan dilengkapi, untuk sementara diisi dengan lorem ipsum versi bahasa inggris.
+Dalam sebuah penelitian, membuat dokumentasi perlu dilakukan. Dokumentasi yang dibuat bisa dalam bentuk {\it hardcopy} atau {\it softcopy}, tergantung kebutuhannya. Dokumentasi adalah kegiatan untuk mencatat suatu peristiwa atau aktifitas yang dianggap berharga atau penting. Dokumentasi yang sudah dibuat dapat menjadi referensi untuk memandu dalam melakukan sebuah aktifitas.
 
-\dtext{5-10}
+Dalam bidang Teknologi Informasi, dokumentasi kode program java umumnya ditulis dalam format {\it Javadoc}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh Java yang berguna untuk mengekstrak informasi dari sebuah {\it file} java menjadi sebuah dokumentasi. Umumnya digunakan untuk mendokumentasikan sebuah nama {\it class}, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file} java. Informasi tersebut dapat menjelaskan sebuah {\it class} yang dibuat dalam sebuah dokumentasi perangkat lunak. 
+
+Skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it java}. Seperti yang sudah dijelaskan, bahasa pemrograman {\it java} memiliki {\it Javadoc} sebagai informasi dari {\it class}, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi Skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. \LaTeX\ membuat apa yang ditampilkan sama seperti apa yang yang ditulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF
+
+Pada salah satu bab dokumentasi Skripsi, terdapat penjelasan dari setiap {\it class} pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap {\it class} pada perangkat lunak yang dibuat.
+
+Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengekstraksi informasi pada {\it Javadoc} ke format \LaTeX\ secara otomatis. Perangkat lunak ini mengimplementasikan sebuah {\it Application Programming Interface} (API) yang digunakan untuk mengambil informasi berupa nama {\it class}, {\it interface}, {\it method} dan juga {\it custom tag} yang terdapat pada sebuah {\it file java}
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
-Bagian ini akan diisi dengan penajaman dari masalah-masalah yang sudah diidentifikasi di bagian sebelumnya. 
-
-\dtext{6}
+Bedasarkan latar belakang yang telah disebutkan di atas, maka dihasilkan beberapa poin yang menjadi rumusan masalah dari masalah ini. Rumusan masalah yang akan dibangun antara lain sebagai berikut:
+\begin{enumerate}
+	\item Bagaimana membuat perangkat lunak yang dapat mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis?
+	\item Bagaimana antarmuka yang baik untuk perangkat lunak yang akan dibuat?
+\end{enumerate}
 
 \section{Tujuan}
 \label{sec:tujuan}
-Akan dipaparkan secara lebih terperinci dan tersturkur apa yang menjadi tujuan pembuatan template skripsi ini
-
-\dtext{7}
+Adapun tujuan yang ingin dicapai dari penelitian ini adalah menjawab rumusan masalah di atas, yaitu:
+\begin{enumerate}
+	\item Membuat perangkat lunak yang dapat mengonversikan format Javadoc ke format \LaTeX\ secara otomatis.
+	\item Mempelajari antarmuka yang baik untuk perangkat lunak yang akan dibuat.
+\end{enumerate}
 
 \section{Batasan Masalah}
 \label{sec:batasan}
-Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi, misalnya saja bahwa template ini bukan berupa style \LaTeX{} pada umumnya (dengan alasannya karena belum mampu jika diminta membuat seperti itu)
-
-\dtext{8}
+Agar pembahasan masalah tidak terlalu luas, masalah yang akan dikaji di dalam penelitian ini memiliki batasan, yaitu:
+\begin{enumerate}
+	\item Perangkat lunak yang dikembangkan menggunakan bahasa pemrograman {\it Java}
+	\item Perangkat lunak hanya dapat menerima masukan data berupa sekumpulan {\it file java}
+	\item Perangkat lunak hanya menghasilkan {\it output } berupa format \LaTeX\ yang selanjutnya akan dimasukkan ke dalam file \LaTeX
+\end{enumerate}
 
 \section{Metodologi}
 \label{sec:metlit}
-Tentunya akan diisi dengan metodologi yang serius sehingga templatenya terkesan lebih serius.
-
-\dtext{9}
+Untuk menyelesaikan penelitian ini disusunlah tahap-tahap tugas yang perlu dilakukan. Tahap-tahap yang dimaksud adalah sebagai berikut:
+\begin{enumerate}
+	\item Melakukan studi literatur untuk mengetahui {\it syntax} yang terdapat pada \LaTeX\ dan mengetahui apa saja isi dari dokumentasi Javadoc Doclet API.
+	\item Melakukan survei terhadap format penulisan pada suatu bab pada skripsi yang berisi tentang dokumentasi perangkat lunak yang dibuat. Membutuhkan minimal 3 dokumen skripsi sebagai panduan format penulisan.
+\end{enumerate}
 
 \section{Sistematika Pembahasan}
 \label{sec:sispem}
-Rencananya Bab 2 akan berisi petunjuk penggunaan template dan dasar-dasar \LaTeX.
-Mungkin bab 3,4,5 dapt diisi oleh ketiga jurusan, misalnya peraturan dasar skripsi atau pedoman penulisan, tentu jika berkenan.
-Bab 6 akan diisi dengan kesimpulan, bahwa membuat template ini ternyata sungguh menghabiskan banyak waktu.
+\begin{enumerate}
+	\item Bab 1 Pendahuluan\\
+	Bab ini membahas mengenai latar belakang, rumusan masalah, tujuan, batas masalah, metologi penelitian dan sistematika penulisan.
+	\item Bab 2 Dasar Teori
+	\item Bab 3 Analisis
+	\item Bab 4 Perancangan
+	\item Bab 5 Implementasi dan Pengujian
+	\item Bab 6 Kesimpulan dan Saran\\
+	Bab ini akan membahas mengenai kesimpulan dari penelitian yang telah dilakukan dan saran-saran untuk pengembangan lebih lanjut dari penelitian ini.
+\end{enumerate}
 
-\dtext{10}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

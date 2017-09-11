@@ -30,37 +30,34 @@
 \newcommand{\@npm}{2012730082}
 \newcommand{\@judultopik}{Konversi Javadoc ke \LaTeX} % Judul/topik anda
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\tanggal}{30/08/2017}
+\newcommand{\tanggal}{12/09/2017}
 \maketitle
 
 \pagenumbering{arabic}
 
 \section{Deskripsi}
 Dalam sebuah penelitian, membuat dokumentasi perlu dilakukan. Dokumentasi yang dibuat bisa dalam bentuk {\it hardcopy} atau {\it softcopy}, tergantung kebutuhannya. Dokumentasi adalah kegiatan untuk mencatat suatu peristiwa atau aktifitas yang dianggap berharga atau penting. Dokumentasi yang sudah dibuat dapat menjadi referensi untuk memandu dalam melakukan sebuah aktifitas.
-%Pembuatan dokumentasi dapat dilakukan dengan sebuah perangkat lunak, salah satunya adalah \LaTeX.
 
-Dalam bidang Teknologi Informasi, dokumentasi kode program java umumnya ditulis dalam format {\it Javadoc}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh Java yang berguna untuk mengekstrak informasi dari sebuah {\it file} java menjadi sebuah dokumentasi. Umumnya digunakan untuk mendokumentasikan sebuah nama {\it class}, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file} java. Informasi tersebut dapat menjelaskan sebuah {\it class} yang dibuat dalam sebuah dokumentasi perangkat lunak. %Javadoc ditulis oleh seorang programmer di dalam sebuah {\it source code} java, yang nantinya akan diproses oleh Javadoc yang umumnya menjadi sebuah file HTML sebagai dokumentasi dari program tersebut. Selain menjadi sebuah file HTML, Javadoc dapat merubah dokumentasi tersebut menjadi sebuah file \LaTeX.
-%Dalam dunia teknologi, khususnya di bidang Teknologi Informasi, dokumentasi akan sangat memudahkan seseorang untuk memecahkan sebuah permasalahan yang terkait dengan
+Dalam bidang Teknologi Informasi, dokumentasi kode program java umumnya ditulis dalam format {\it Javadoc}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh Java yang berguna untuk mengekstrak informasi dari sebuah {\it file} java menjadi sebuah dokumentasi. Umumnya digunakan untuk mendokumentasikan sebuah nama {\it class}, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file} java. Informasi tersebut dapat menjelaskan sebuah {\it class} yang dibuat dalam sebuah dokumentasi perangkat lunak. 
 
 Skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it java}. Seperti yang sudah dijelaskan, bahasa pemrograman {\it java} memiliki {\it Javadoc} sebagai informasi dari {\it class}, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi Skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. \LaTeX\ membuat apa yang ditampilkan sama seperti apa yang yang ditulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF
 
-Pada bab 4 dokumentasi Skripsi, terdapat penjelasan dari setiap {\it class} pada perangkat lunak yang dibuat. Penjelasan tersebut dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it java}, namun saat ini penjelasan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap {\it class} pada perangkat lunak yang dibuat.
+Pada salah satu bab dokumentasi Skripsi, terdapat penjelasan dari setiap {\it class} pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap {\it class} pada perangkat lunak yang dibuat.
 
 Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengekstraksi informasi pada {\it Javadoc} ke format \LaTeX\ secara otomatis. Perangkat lunak ini mengimplementasikan sebuah {\it Application Programming Interface} (API) yang digunakan untuk mengambil informasi berupa nama {\it class}, {\it interface}, {\it method} dan juga {\it custom tag} yang terdapat pada sebuah {\it file java}
-%Pada dokumentasi Skripsi, perangkat lunak yang dibuat harus dijelaskan %Hal ini disebabkan karena \LaTeX\ membuat dokumentasi Skripsi menjadi lebih terstruktur. Dengan \LaTeX, mahasiswa tidak perlu memikirkan tentang format penulisan pada dokumen, karena format penulisan dapat dibuat dan diganti kapanpun mahasiswa ingin menggantinya. \LaTeX\ sangat populer digunakan oleh para peneliti untuk pembuatan dokumentasi pada bidang {\it sains}. Para ilmuwan tersebut menggunakan \LaTeX\ untuk membuat sebuah dokumen yang biasanya adalah sebuah karya tulis ilmiah. Karya Tulis Ilmiah adalah sebuah laporan tertulis yang memaparkan hasil penelitian yang dilakukan oleh seseorang atau sebuah tim.
 
 \section{Rumusan Masalah}
 Bedasarkan latar belakang yang telah disebutkan di atas, maka dihasilkan beberapa poin yang menjadi rumusan masalah dari masalah ini. Rumusan masalah yang akan dibangun antara lain sebagai berikut:
 \begin{enumerate}
-	\item Bagaimana cara menulis {\it Javadoc} yang benar?
-	\item Bagaimana membuat perangkat lunak yang dapat mengonversikan format {\it Javadoc} ke format \LaTeX\ secara otomatis?
+	\item Bagaimana membuat perangkat lunak yang dapat mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis?
+	\item Bagaimana antarmuka yang baik untuk perangkat lunak yang akan dibuat?
 \end{enumerate}
 
 \section{Tujuan}
 Adapun tujuan yang ingin dicapai dari penelitian ini adalah menjawab rumusan masalah di atas, yaitu:
 \begin{enumerate}
-	\item Menjelaskan cara menulis {\it Javadoc} yang benar
 	\item Membuat perangkat lunak yang dapat mengonversikan format Javadoc ke format \LaTeX\ secara otomatis.
+	\item Mempelajari antarmuka yang baik untuk perangkat lunak yang akan dibuat.
 \end{enumerate}
 
 \section{Deskripsi Perangkat Lunak}
@@ -68,10 +65,8 @@ Untuk mencapai tujuan yang telah disebutkan di atas, maka perlu dibangun sebuah 
 
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-	%\item Pengguna dapat mengonversi Javadoc yang terdapat pada sebuah {\it file} java menjadi format \LaTeX.
-	\item Dapat menerima masukan data berupa sebuah {\it file java}
-	\item Dapat mengonversi {\it file java} ke {\it file} PDF
-	\item Dapat melihat hasil {\it file} PDF yang sudah di konversi.
+	\item Dapat menerima masukan data berupa sekumpulan {\it file java}
+	\item Dapat mengonversi {\it Javadoc} pada {\it file java} ke dalam format \LaTeX
 \end{itemize}
 
 \section{Detail Pengerjaan Skripsi}
@@ -79,7 +74,8 @@ Untuk menyelesaikan perangkat lunak yang akan dibangun, disusun bagian-bagian pe
 
 Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\begin{enumerate}
-		\item Melakukan studi literatur mengenai \LaTeX\ dan Javadoc Doclet API.
+		\item Melakukan studi literatur mengenai {\it syntax} \LaTeX\ dan Javadoc Doclet API.
+		\item Melakukan survei mengenai format penulisan pada dokumen \LaTeX
 		\item Menganalisis kebutuhan perangkat lunak
 		\item Merancang perangkat lunak
 		\item Mengimplementasi Javadoc Doclet API 
@@ -88,20 +84,21 @@ Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\end{enumerate}
 
 \section{Rencana Kerja}
-Tuliskan rencana anda untuk menyelesaikan skripsi. Rencana kerja dibagi menjadi dua bagian yaitu yang akan dilakukan pada saat mengambil kuliah AIF401 Skripsi 1 dan pada saat mengambil kuliah AIF402 Skripsi 2. Perhatikan contoh berikut ini :
+Berikut ini adalah rencana untuk menyelesaikan skripsi. Rencana kerja dibagi menjadi dua bagian yaitu yang akan dilakukan pada saat mengambil kuliah AIF401 Skripsi 1 dan pada saat mengambil kuliah AIF402 Skripsi 2.
 
 
 \begin{center}
   \begin{tabular}{ | c | c | c | c | l |}
     \hline
     1*  & 2*(\%) & 3*(\%) & 4*(\%) &5*\\ \hline \hline
-    1   & 5  & 5  &  &  \\ \hline
-    2   & 5 & 5  &   & \\ \hline
-    3	& 10 & 5 & 5 & \\ \hline
-    4	& 30 & 10  & 20  & \\ \hline
-    5   & 30  & 10  & 20 & \\ \hline
-    6   & 20  &  10 &  10 & {\footnotesize Bab 1 hingga Bab 3 dibuat pada S1} \\ \hline
-    Total  & 100  & 45  & 55 &  \\ \hline
+    1   & 10 & 10 &  &  \\ \hline
+    2	& 10 & 10 &  &\\ \hline
+    3   & 10 & 10 &  & \\ \hline
+    4	& 10 &  & 10 & \\ \hline
+    5	& 20 &  & 20 & \\ \hline
+    6   & 20 &  & 20 & \\ \hline
+    7   & 20 & 10 & 10 & {\footnotesize Bab 1 hingga Bab 3 dibuat pada S1} \\ \hline
+    Total  & 100  & 40  & 60 &  \\ \hline
                           \end{tabular}
 \end{center}
 
