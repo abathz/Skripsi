@@ -1,5 +1,9 @@
 Thumbs.db
 .DS_Store
+.texpadtmp/
+referensi/
+doc.pdf
+doc.tex
 doc/*/.texpadtmp/
 doc/*/*/.texpadtmp/
 /JavadocToLatex
