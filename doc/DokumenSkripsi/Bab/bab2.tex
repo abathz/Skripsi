@@ -1,11 +1,19 @@
+\lstdefinestyle{mystyle}{
+    basicstyle=\footnotesize,                
+   	captionpos=b,                     
+   	numbers=left,                    
+   	numbersep=5pt,             
+   	tabsize=2
+}
+\lstset{style=mystyle}
 %versi 2 (8-10-2016)
 \chapter{Landasan Teori}
 \label{chap:teori}
-Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. Teori yang dibahas yaitu mengenai {\it Javadoc} dan {\it Doclet}
+Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. Teori yang dibahas yaitu mengenai {\it Javadoc}, {\it Doclet} dan \LaTeX .
 
 \section{Javadoc}
 \label{sec:javadoc} 
-{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengekstrak informasi dari sekumpulan {\it source file java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah {\it class}, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengekstraksi informasi tersebut dari sebuah {\it package java}, sebuah {\it file java} atau keduanya. \cite{javadoc:01:javadoc}
+{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengekstrak informasi dari sekumpulan {\it source file java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah {\it class}, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengekstraksi informasi tersebut dari sebuah {\it package java}, sebuah {\it file java} atau keduanya. ~\cite{javadoc:01:javadoc}
 
 \subsection{\textit{Processing of source files}}
 \label{sec:javadoc}
@@ -23,24 +31,24 @@ Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. T
 
 Dalam mengekstrak informasi yang terdapat dalam sebuah {\it package java} atau beberapa {\it file java} umumnya menghasilkan sebuah dokumentasi standar yang berbentuk {\it file} HTML dan format penulisan yang mengikuti standar {\it Javadoc}, akan tetapi untuk menghasilkan sebuah format dokumentasi yang diingin, dapat menggunakan sebuah {\it doclet} yang disediakan oleh {\it Javadoc}.
 
-\subsection{\textit{Terminology}}
-\label{sec:terminology}
+\subsection{Terminologi}
+\label{sec:terminologi}
 Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc} sebagai berikut:
 \begin{itemize}
 	\item {\it Generated Document}\\
 	Dokumen yang dihasilkan oleh {\it Javadoc tools} adalah sebuah {\it file} HTML dan dibuat oleh {\it standard doclet}
 	\item {\it Name}\\
-	Nama dari sebuah perangkat lunak dituliskan dalam Bahasa {\it java} yaitu nama {\it package}, {\it class}, {\it interface}, {\it field}, {\it constructor} atau {\it method}. Nama tersebut dapat berupa informasi lengkapnya seperti {\it java.lang.String.equals(java.lang.Object)} atau informasi pendeknya seperti {\it equals(Object)}
+	Nama dari sebuah perangkat lunak dituliskan dalam bahasa {\it Java} yaitu nama {\it package}, {\it class}, {\it interface}, {\it field}, {\it constructor} atau {\it method}. Nama tersebut dapat berupa informasi lengkapnya seperti {\it java.lang.String.equals(java.lang.Object)} atau informasi pendeknya seperti {\it equals(Object)}
 	\item {\it Documented Classes}\\
-	Detail dari sebuah {\it class} dan {\it interface} akan didokumentasikan pada saat {\it javadoc} berjalan. Untuk dapat didokumentasikan, {\it source file} harus tersedia, kemudian nama dari {\it source file} atau nama dari {\it package} tersebut harus diletakkan pada {\it javadoc command-line}
+	Detail dari sebuah {\it class} dan {\it interface} akan didokumentasikan pada saat {\it Javadoc} berjalan. Untuk dapat didokumentasikan, {\it source file} harus tersedia, kemudian nama dari {\it source file} atau nama dari {\it package} tersebut harus diletakkan pada {\it Javadoc command-line}
 	\item {\it Included Classes}\\
-	{\it Class} dan {\it Interface} akan didokumentasikan pada saat {\it javadoc} berjalan, hal ini sama seperti {\it Documented Classes}
+	{\it Class} dan {\it Interface} akan didokumentasikan pada saat {\it Javadoc} berjalan, hal ini sama seperti {\it Documented Classes}
 	\item {\it Excluded Classes}\\
-	{\it Class} dan {\it Interface} tidak akan didokumenasikan pada saat {\it javadoc} berjalan.
+	{\it Class} dan {\it Interface} tidak akan didokumenasikan pada saat {\it Javadoc} berjalan.
 	\item {\it Referenced Classes}\\
 	{\it Class} dan {\it Interface} yang secara eksplisit disebut oleh {\it class} dan {\it interface} lainnya, seperti {\it return type}, {\it parameter type}, {\it cast type}, {\it extended class}, {\it implemented interface}, {\it imported class}, {\it class} yang digunakan pada {\it method body}, {\it @see}, {\it {@link}}, {\it {@linkplain}} dan {\it {@inheritDoc} tag} 
 	\item {\it External Referenced Classes}\\
-	{\it Class} yang tidak dihasilkan saat {\it javadoc} berjalan. Dengan kata lain, {\it class} tersebut tidak diletakkan pada {\it javadoc command-line}. {\it Links} akan dihasilkan jika sebuah {\it class} mengatakan memiliki {\it external references} atau {\it external link}.
+	{\it Class} yang tidak dihasilkan saat {\it Javadoc} berjalan. Dengan kata lain, {\it class} tersebut tidak diletakkan pada {\it Javadoc command-line}. {\it Links} akan dihasilkan jika sebuah {\it class} mengatakan memiliki {\it external references} atau {\it external link}.
 \end{itemize}
 
 \subsection{\textit{Source Files}}
@@ -50,18 +58,30 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 	\item {\it Class Source Code Files}\\
 	Setiap {\it class} atau {\it interface} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it file java}
 	\item {\it Package Comment Files}\\
-	Setiap {\it package} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it root} folder kemudian {\it Javadoc} akan menggabungkan {\it file-file} yang terdapat pada {\it root} menjadi sebuah ringkasan. Untuk membuat dokumentasi tersebut, terdapat 2 pilihan yaitu sebuah {\it file java} atau sebuah {\it file} HTML.
-	\begin{figure}[H]
-		\centering  		\includegraphics[scale=0.7]{package-info}  
-		\caption[Package-info]{Package-info.java} 
-		\label{fig:package-info} 
-	\end{figure}
-	\begin{figure}[H]
-		\centering  
-		\includegraphics[scale=0.7]{package}  
-		\caption[Package]{Package.html} 
-		\label{fig:package} 
-	\end{figure}
+	Setiap {\it package} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it root} folder kemudian {\it Javadoc} akan menggabungkan {\it file-file} yang terdapat pada {\it root} menjadi sebuah ringkasan. Untuk membuat dokumentasi tersebut, terdapat 2 pilihan yaitu sebuah {\it file} package.html \ref{package} atau sebuah {\it file} package-info.java \ref{package-info}.
+	\begin{lstlisting}[language=Html, caption={\it File} package.html, label={package}]
+	<html>
+	<body>
+	Provides the classes necessary to create an applet and the classes
+	an applet uses to communicate with its applet context.
+	
+	@since 1.0
+	@see java.awt
+	</body>
+	</html>
+	\end{lstlisting}
+	
+	\begin{lstlisting}[language=Java, caption={\it File} package-info.java, label={package-info}]
+	/**
+	 * Provides the classes necessary to create an applet
+	 * and the classes an applet uses to communicate
+	 * with its applet context.
+	 *
+	 * @since 1.0
+	 * @see java.awt
+	 */
+	 package java.lang.applet;
+	\end{lstlisting}
 	Ketika {\it Javadoc} memproses {\it package} tersebut, {\it Javadoc} akan melakukan beberapa langkah yaitu sebagai berikut:
 	\begin{enumerate}
 		\item Menyalin informasi untuk diproses. Jika {\it file} berupa HTML maka pada bagian {\it <body>} hingga {\it </body>} akan disalin.
@@ -77,7 +97,7 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 
 \subsection{\textit{Generated Files}}
 \label{sec:generated-files}
-Secara {\it default}, {\it javadoc} akan menggunakan {\it standard doclet} yang akan menghasilkan sebuah dokumentasi berformat HTML. Doclet tersebu akan menghasilkan {\it file} HTML secara terpisah. Terdapat 3 grup yang masing-masing grup memiliki kriterianya sendiri, 3 grup tersebut adalah sebagai berikut:
+Secara {\it default}, {\it Javadoc} akan menggunakan {\it standard doclet} yang akan menghasilkan sebuah dokumentasi berformat HTML. Doclet tersebu akan menghasilkan {\it file} HTML secara terpisah. Terdapat 3 grup yang masing-masing grup memiliki kriterianya sendiri, 3 grup tersebut adalah sebagai berikut:
 \begin{itemize}
 	\item {\it Basic Content Pages}
 	\begin{itemize}
@@ -105,61 +125,148 @@ Secara {\it default}, {\it javadoc} akan menggunakan {\it standard doclet} yang 
 		\item sebuah {\it doc-files} yang berisikan gambar dan beberapa contoh {\it file java}
 	\end{itemize}
 \end{itemize}
-{\it Javadoc} akan menghasilkan 2 atau 3 HTML {\it frame}. {\it Javadoc} akan membuat minimum {\it frame} yang dibutuhkan. Jika hanya terdapat 1 {\it package}, maka {\it javadoc} akan membuat 1 {\it frame} yang berisi dari sekumpulan {\it class} pada {\it package} tersebut. Jika terdapat lebih dari 2 {\it package}, maka {\it javadoc} akan membuat 3 {\it frame} dari sekumpulan {\it package}. Jika {\it class} yang digunakan adalah {\it java.applet.Applet} dan semua dokumentasi yang dihasilkan akan berada pada folder yang bernama {\it apidocs}, struktur {\it file} yang dihasilkan adalah sebagai berikut:
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.4]{struktur}  
-	\caption[Struktur {\it file} yang dihasilkan]{Struktur {\it file} yang dihasilkan} 
-	\label{fig:strukture} 
-\end{figure}
-
+{\it Javadoc} akan menghasilkan 2 atau 3 HTML {\it frame}. {\it Javadoc} akan membuat minimum {\it frame} yang dibutuhkan. Jika hanya terdapat 1 {\it package}, maka {\it Javadoc} akan membuat 1 {\it frame} yang berisi dari sekumpulan {\it class} pada {\it package} tersebut. Jika terdapat lebih dari 2 {\it package}, maka {\it Javadoc} akan membuat 3 {\it frame} dari sekumpulan {\it package}. Jika {\it class} yang digunakan adalah {\it java.applet.Applet} dan semua dokumentasi yang dihasilkan akan berada pada folder yang bernama {\it apidocs}, struktur {\it file} yang dihasilkan adalah sebagai berikut:
+\begin{lstlisting}[caption=Struktur {\it file} yang dihasilkan]
+	apidocs						  			  		    Top directory
+		index.html											  Initial page that sets up HTML frames
+	* overview-summary.html 					  Lists all packages with first sentences summaries
+		overview-tree.html							  Lists class hierarchy for all packages
+		deprecated-list.html              Lists deprecated API for all packages
+   		constant-values.html            Lists values of static fields for all packages
+   		serialized-form.html            Lists serialized form for all packages
+   * overview-frame.html              Lists all packages, used in upper-left frame
+   		allclasses-frame.html           Lists all classes for all packages, used in
+   																		lower-left frame
+   		help-doc.html                   Lists user help for how these pages are organized
+   		index-all.html                  Default index created without -splitindex option
+   		index-files                     Directory created with -splitindex option
+       		index-<number>.html         Index files created with -splitindex option
+   		package-list                    Lists package names, used only for 
+   																		resolving external refs
+   		stylesheet.css                  HTML style sheet for defining fonts, colors and
+   																		positions
+   		java                            Package directory
+       		applet                      Subpackage directory
+            	Applet.html             Page for Applet class
+            	AppletContext.html      Page for AppletContext interface
+            	AppletStub.html         Page for AppletStub interface
+            	AudioClip.html          Page for AudioClip interface
+          * package-summary.html    	Lists classes with first sentence summaries
+          														for this package
+          * package-frame.html      	Lists classes in this package, used in
+          														lower left-hand frame
+          * package-tree.html       	Lists class hierarchy for this package
+            package-use             	Lists where this package is used
+            	doc-files               Directory holding image and example files
+            	class-use               Directory holding pages API is used
+                	Applet.html         Page for uses of Applet class
+                	AppletContext.html  Page for uses of AppletContext interface
+                	AppletStub.html     Page for uses of AppletStub interface
+                	AudioClip.html      Page for uses of AudioClip interface
+   		src-html                        Source code directory
+       		java                        Package directory
+           		applet                  Subpackage directory
+                	Applet.html         Page for Applet source code
+                	AppletContext.html  Page for AppletContext source code
+                	AppletStub.html     Page for AppletStub source code
+                	AudioClip.html      Page for AudioClip source code
+\end{lstlisting}
 \section{Doclet}
 \label{sec:doclet}
 {\it Doclet} yang terdapat pada {\it Javadoc} dapat digunakan untuk menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Standar {\it doclet} yang dihasilkan oleh {\it Javadoc} adalah dokumentasi dengan format HTML. Selain menghasilkan {\it output} yang dapat disesuaikan, Doclet juga dapat mengekstrak informasi secara spesifik.~\cite{doclet:02:doclet}
 
-\subsection{\textit{Method-Method} pada Doclet}
-\label{sec:method-doclet}
+\subsection{\textit{Interface-interface} pada Doclet}
+\label{sec:interface-doclet}
 Berikut adalah beberapa {\it interface} yang terdapat pada {\it Doclet}:
 \begin{itemize}
-	\item {\it RootDoc}
+	\item {\verb RootDoc }
 	sebuah {\it interface} yang menyatakan sebuah {\it root} dari perangkat lunak yang dibuat. Dari {\it root} tersebut semua informasi dapat diekstrak. {\it Method-method} yang digunakan adalah sebagai berikut
 	\begin{itemize}
-		\item {\it classes()}
+		\item {\verb classes() }\\
 		{\it Method} ini akan mengembalikan sejumlah {\it class} dan {\it interface} pada {\it package}
 	\end{itemize}
-	\item {\it ClassDoc}
+	\item {\verb ClassDoc }
 	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it class}. Informasi tersebut dapat berupa nama {\it class}, nama {\it method} dan {\it tag}. {\it Method-method} yang digunakan adalah sebagai berikut
 	\begin{itemize}
-		\item {\it name()}
+		\item {\verb name() }\\
 		{\it Method} ini akan mengembalikan sebuah nama {\it class} atau {\it interface} pada {\it package}
-		\item {\it commentText()}
+		\item {\verb commentText() }\\
 		{\it Method} ini akan mengembalikan sebuah informasi dari deskripsi {\it class}
-		\item {\it methods()}
+		\item {\verb methods() }\\
 		{\it Method} ini akan mengembalikan sebuah {\it array of methods} 
 	\end{itemize}
-	\item {\it MethodDoc}
+	\item {\verb MethodDoc }
 	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it method}. {\it Method-method} yang digunakan adalah sebagai berikut
 	\begin{itemize}
-		\item {\it name()}
+		\item {\verb name() }\\
 		{\it Method} ini akan mengembalikan sebuah nama {\it method}
-		\item {\it modifiers()}
+		\item {\verb modifiers() }\\
 		{\it Method} ini akan mengembalikan sebuah {\it access modifier} dari sebuah {\it method}
-		\item {\it returnType()}
+		\item {\verb returnType() }\\
 		{\it Method} ini akan mengembalikan sebuah {\it return type} dari sebuah {\it method}
-		\item {\it flatSignature()}
+		\item {\verb flatSignature() }\\
 		{\it Method} ini akan mengembalikan {\it signature} dari sebuah {\it method}. Jika terdapat {\it Method} dengan parameter (String x, int y), maka akan mengembalikan (String, int)
 	\end{itemize}
-	\item {\it ParamTag}
+	\item {\verb ParamTag }
 	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it Tag} parameter. {\it Method-method} yang digunakan adalah sebagai berikut
 	\begin{itemize}
-		\item {\it name()}
+		\item {\verb name() }\\
 		{\it Method} ini akan mengembalikan sebuah {\it tag @param} 
-		\item {\it parameterName()}
+		\item {\verb parameterName() }\\
 		{\it Method} ini akan mengembalikan sebuah nama parameter dari sebuah {\it method}
-		\item {\it parameterComment()}
+		\item {\verb parameterComment() }\\
 		{\it Method} ini akan mengembalikan sebuah deskripsi dari parameter yang terdapat pada {\it method}
 	\end{itemize}
 \end{itemize}
+
+\subsection{Penggunaan Doclet}
+\label{sec:penggunaan-doclet}
+Doclet dapat menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Penggunaan {\it Doclet} API dapat mengekstrak bermacam-macam informasi seperti nama {\it class}, nama {\it method}, deskripsi singkat untuk sebuah parameter dari sebuah {\it method} hingga {\it return type} dari {\it method}.
+
+Berikut adalah langkah-langkah untuk menggunakan {\it doclet}:
+\begin{enumerate}
+	\item Membuat sebuah {\it class} pada {\it java} sebagai {\it doclet}. {\it class java} tersebut harus meng-{\it import}  \verb com.sun.javadoc.*  untuk menggunakan {\it doclet} API.
+	\item {\it Doclet} tersebut diawali dengan sebuah {\it method} \verb public  \verb static  \verb boolean  \verb start  yang memiliki parameter \verb RootDoc .
+	\item {\it Compile doclet} tersebut dengan menggunakan {\it compiler} Java 2 SDK yaitu {\it javac} pada {\it command prompt(Windows)}/{\it terminal(Linux)}.
+	\item Jalankan {\it Javadoc} menggunakan \verb -doclet  {\it \textbf{startingclass}} {\it option} untuk menghasilkan {\it output} yang telah disesuaikan, dimana {\it \textbf{startingclass}} adalah sebuah {\it class} yang sudah dibuat pada langkah 1.
+\end{enumerate}
+
+{\it File doclet} API terdapat pada direktori {\it folder jdk} yang ter-{\it install} pada komputer pada {\it subfolder}  \verb lib\tools.jar .{\it doclet} yang sudah dibuat harus di-{\it compile} menggunakan {\it file}  \verb tools.jar  dan menambahkan {\it option}  \verb -classpath  setelah {\it command}  \verb javac . Jika tidak menggunakan {\it option}  \verb -doclet  , {\it Javadoc} akan menghasilkan {\it output} standar yaitu berupa {\it file} HTML.
+
+{\it Package}  \verb com.sun.javadoc  terdiri {\it interface} yang mendefinisikan {\it doclet} API dan sedangkan {\it file}  \verb tools.jar  berisikan {\it interface-interface} tersebut dan juga berisikan {\it private package} dengan {\it class-class} yang mengimplementasi {\it interface} tersebut serta {\it file} tools.jar berisikan pula {\it class-class} yang mengimplementasi sebuah standar {\it doclet}.
+
+\begin{lstlisting}[language=Java, caption={\it class} ListClass.java]
+	import com.sun.javadoc.*;
+
+	public class ListClass {
+		public static boolean start(RootDoc doc) {
+			ClassDoc[] classes = doc.classes();
+			for(int i=0, i < classes.length; i++) {
+				System.out.println(classes[i]);
+			}
+			return true;
+		}
+	}
+\end{lstlisting}
+Potongan {\it program} diatas adalah sebuah {\it doclet} sederhana untuk menampilkan nama-nama {\it class} pada {\it file java}. Hal pertama yang harus dilakukan adalah meng-{\it import package}  \verb com.sun.javadoc.* , kemudian membuat sebuah {\it method} \verb public  \verb static  \verb boolean  \verb start  dengan parameter sebuah  \verb RootDoc  doc  yang akan menampung sekumpulan {\it file java} yang akan diproses.  \verb ClassDoc  pada {\it method} tersebut akan menampung nama-nama {\it class} yang terdapat pada variabel  \verb doc  dengan menggunakan {\it method}  \verb classes() .
+
+\section{\LaTeX}
+\label{sec:latex}
+\LaTeX\ adalah sebuah bahasa {\it markup} untuk sistem penulisan dokumen yang dikembangkan oleh Leslie B. Lamport dan dirilis pada tahun 1985~\cite{latex:03:latex}.  \LaTeX\ Memiliki filosofi WYMIWYG ({\it What you Mean Is What You Get}) yang berarti sesuatu yang ditulis akan berdasarkan arti dari hal tersebut. Oleh karena itu, untuk menambahkan suatu perintah pada dokumen yang sedang ditulis perlu menambahkan suatu {\it command}. {\it Command} adalah kata spesial yang menentukan suatu sifat pada \LaTeX . Hampir semua {\it command} pada \LaTeX\ selalu diawali dengan tanda '$\backslash$' dan beberapa {\it command} memiliki {\it parameter}. {\it Parameter} diawali dengan tanda kurung kurawal buka dan diakhiri dengan kurung kurawal tutup (\{...\}). File \LaTeX\ memiliki ekstensi .tex.
+
+Untuk menulis dokumen pada \LaTeX\ dibutuhkan beberapa {\it command} yang wajib ada dalam sebuah dokumen, yaitu:
+\begin{enumerate}
+	\item \texttt{\string\documentclass[option]\{class\}}\\
+	Digunakan untuk menentukan jenis dokumen yang {\it layout} dokumen. Bagian {\it option} dapat dikosongkan atau dapat digunakan untuk menyimpan pilihan pengaturan {\it layouting}. Pada Bagian {\it class} digunakan untuk menentukan tipe dokumen yang akan dibuat.
+	\item \texttt{\string\maketitle}\\
+	Digunakan untuk menampilkan halaman judul. Biasanya halaman judul akan memuat judul dokumen, nama pengarang dan tanggal pembuatan dokumen. Judul dokumen, nama pengarang dan tanggal pembuatan dapat ditampilkan dengan menambahkan perintah \texttt{\string\title\{judul\}}, \texttt{\string\author\{nama\}} dan \texttt{\string\date\{tanggal\}}.
+	\item \texttt{\string\begin\{document\}}\dots\texttt{\string\end\{document\}}\\
+	Digunakan untuk mengawali dan mengakhiri sebuah dokumen.
+	\item \texttt{\string\section\{section\}}\\
+	Digunakan untuk menampilkan subbab sebuah dokumen.
+	\item \texttt{\string\begin\{enumerate\}}\dots\texttt{\string\end\{enumerate\}}\\
+	Digunakan untuk menampilkan {\it ordered list}. {\it List} ini akan menampilkan angka yang terurut. Di dalam {\it list} ini terdapat {\it command} \texttt{\string\item} untuk menambahkan isi dari {\it list} tersebut.
+\end{enumerate}
 
 %\section{Template Skripsi FTIS UNPAR}
 %\label{sec:template}
