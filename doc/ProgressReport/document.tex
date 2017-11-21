@@ -3,6 +3,7 @@
 \usepackage[bahasa]{babel}
 \usepackage{graphicx}
 \usepackage{graphics}
+\usepackage{listings}
 \usepackage{float}
 \usepackage[cm]{fullpage}
 \pagestyle{myheadings}
@@ -12,6 +13,14 @@
 \setlength{\headsep}{30pt}
 \usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
 % \pagestyle{empty}
+\lstdefinestyle{mystyle}{
+    basicstyle=\footnotesize,                
+   	captionpos=b,                     
+   	numbers=left,                    
+   	numbersep=5pt,             
+   	tabsize=2
+}
+\lstset{style=mystyle}
 
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
@@ -26,15 +35,15 @@
 \author{\nama \textendash \@npm} 
 
 %ISILAH DATA DATA BERIKUT INI:
-\newcommand{\nama}{Lionov}
-\newcommand{\@npm}{1997730020}
-\newcommand{\tanggal}{01/01/1900} %Tanggal pembuatan dokumen
-\newcommand{\@judultopik}{Simulasi Kerumunan di Museum} % Judul/topik anda
-\newcommand{\kodetopik}{TAB0901}
+\newcommand{\nama}{Adli Fariz Bonaputra}
+\newcommand{\@npm}{2012730082}
+\newcommand{\tanggal}{19/11/2017} %Tanggal pembuatan dokumen
+\newcommand{\@judultopik}{Konversi Javadoc ke \LaTeX} % Judul/topik anda
+\newcommand{\kodetopik}{PAN4302}
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\pembA}{Thomas Anung Basuki}
+\newcommand{\pembA}{Pascal Alfadian}
 \newcommand{\pembB}{-}
-\newcommand{\semesterPertama}{39 - Ganjil 15/16} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\semesterPertama}{43 - Ganjil 17/18} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
 \newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan skripsi s.d. dokumen ini dibuat
 \newcommand{\kulPertama}{Skripsi 1} % Kuliah dimana topik ini diambil pertama kali
 \newcommand{\tipePR}{B} % tipe progress report :
@@ -64,46 +73,409 @@ Tipe Laporan : {\bf \tipePR} -
 \section{Detail Perkembangan Pengerjaan Skripsi}
 Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan terkahir :
 	\begin{enumerate}
-		\item Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll).\\
+		\item Melakukan studi literatur mengenai {\it syntax} \LaTeX\ dan Javadoc Doclet API.\\
 		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :} Survei sudah dilakukan sebanyak 3x pada tanggal X, Y dan Z. Pada kunjungan pertama, diperhaitkan denah museum dan dibuat sketsa berdasarkan pengamatan. Pada kunjunga kedua, bertemu dengan bagian humas museum dan berhasil mendapatkan denah serta melakukan wawancara. Hasil wawancara sudah dibuat dan ada softcopy-nya. Pada kunjungan ketiga, secara khusus dilihat perilaku pengunjung. Masih direncakanan 2x kunjungan lagi. Bukti-bukti kunjungan dapat dilihat di lampiran
+		{\bf hasil :} 
+		\begin{enumerate}
+			\item \textbf{Javadoc}\\
+			{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengekstrak informasi dari sekumpulan {\it source file java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengekstraksi informasi tersebut dari sebuah {\it package java}, sebuah {\it file java} atau keduanya.\\
+
+\textbf{\textit{Processing of source files}}\\
+{\it Javadoc} akan memproses {\it file} yang memiliki akhiran {\it ".java"} dan keseluruhan {\it file} yang terdapat di dalam folder yang sama. {\it Javadoc} dapat mengambil informasi dari 1 atau lebih {\it file java} dan sebuah {\it package}.
+
+{\it Javadoc} dapat memproses sebuah {\it link} secara otomatis yang mengarah kepada sebuah {\it package}, kelas dan sebuah nama yang akan didokumentasikan pada saat {\it Javadoc} memprosesnya. {\it Link-link} tersebut berada pada beberapa posisi seperti:
+\begin{enumerate}
+	\item {\it Declaration} ({\it return types}, {\it argument types}, {\it field types})
+	\item Bagian {\it "See Also"} yang dihasilkan oleh {\it tag @see}
+	\item {\it In-line text} yang dihasilkan oleh {\it tag {@link}}
+	\item {\it Exeption} yang dihasilkan oleh {\it tag @throws}
+	\item {\it Link "Specified by"} untuk {\it member} dari sebuah {\it interface}
+	\item {\it Link "Override"} untuk {\it member} dari sebuah kelas
+\end{enumerate}
+
+Dalam mengekstrak informasi yang terdapat dalam sebuah {\it package java} atau beberapa {\it file java} umumnya menghasilkan sebuah dokumentasi standar yang berbentuk {\it file} HTML dan format penulisan yang mengikuti standar {\it Javadoc}, akan tetapi untuk menghasilkan sebuah format dokumentasi yang diingin, dapat menggunakan sebuah {\it doclet} yang disediakan oleh {\it Javadoc}.\\
+
+\textbf{Terminologi}\\
+Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc} sebagai berikut:
+\begin{itemize}
+	\item {\it Generated Document}\\
+	Dokumen yang dihasilkan oleh {\it Javadoc tools} adalah sebuah {\it file} HTML dan dibuat oleh {\it standard doclet}
+	\item {\it Name}\\
+	Nama dari sebuah perangkat lunak dituliskan dalam bahasa {\it Java}. Nama-nama tersebut yaitu nama {\it package}, kelas, {\it interface}, {\it field}, {\it constructor} atau {\it method}. Nama tersebut dapat berupa informasi lengkapnya seperti {\it java.lang.String.equals(java.lang.Object)} atau informasi pendeknya seperti {\it equals(Object)}
+	\item {\it Documented Classes}\\
+	Detail dari sebuah kelas dan {\it interface} akan didokumentasikan pada saat {\it Javadoc} berjalan. Untuk dapat didokumentasikan, {\it source file} harus tersedia, kemudian nama dari {\it source file} atau nama dari {\it package} tersebut harus diletakkan pada {\it Javadoc command-line}
+	\item {\it Included Classes}\\
+	kelas dan {\it Interface} akan didokumentasikan pada saat {\it Javadoc} berjalan, hal ini sama seperti {\it Documented Classes}
+	\item {\it Excluded Classes}\\
+	kelas dan {\it Interface} tidak akan didokumenasikan pada saat {\it Javadoc} berjalan.
+	\item {\it Referenced Classes}\\
+	kelas dan {\it Interface} yang secara eksplisit disebut oleh kelas dan {\it interface} lainnya, seperti {\it return type}, {\it parameter type}, {\it cast type}, {\it extended class}, {\it implemented interface}, {\it imported class}, kelas yang digunakan pada {\it method body}, {\it @see}, {\it {@link}}, {\it {@linkplain}} dan {\it {@inheritDoc} tag} 
+	\item {\it External Referenced Classes}\\
+	kelas yang tidak dihasilkan saat {\it Javadoc} berjalan. Dengan kata lain, kelas tersebut tidak diletakkan pada {\it Javadoc command-line}. {\it Links} akan dihasilkan jika sebuah kelas mengatakan memiliki {\it external references} atau {\it external link}.
+\end{itemize}
+
+\textbf{\textit{Source Files}}\\
+{\it Javadoc} akan menghasilkan {\it output} yang berasal dari beberapa tipe {\it file}, yaitu sebagai berikut:
+\begin{itemize}
+	\item {\it Class Source Code Files}\\
+	Setiap kelas atau {\it interface} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it file java}
+	\item {\it Package Comment Files}\\
+	Setiap {\it package} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it root} folder kemudian {\it Javadoc} akan menggabungkan {\it file-file} yang terdapat pada {\it root} menjadi sebuah ringkasan. Untuk membuat dokumentasi tersebut, terdapat 2 pilihan yaitu sebuah {\it file} package.html \ref{package} atau sebuah {\it file} package-info.java \ref{package-info}.
+	\begin{lstlisting}[language=Html, caption={\it File} package.html, label={package}]
+	<html>
+	<body>
+	Provides the classes necessary to create an applet and the classes
+	an applet uses to communicate with its applet context.
+	
+	@since 1.0
+	@see java.awt
+	</body>
+	</html>
+	\end{lstlisting}
+	
+	\begin{lstlisting}[language=Java, caption={\it File} package-info.java, label={package-info}]
+	/**
+	 * Provides the classes necessary to create an applet
+	 * and the classes an applet uses to communicate
+	 * with its applet context.
+	 *
+	 * @since 1.0
+	 * @see java.awt
+	 */
+	 package java.lang.applet;
+	\end{lstlisting}
+	Ketika {\it Javadoc} memproses {\it package} tersebut, {\it Javadoc} akan melakukan beberapa langkah yaitu sebagai berikut:
+	\begin{enumerate}
+		\item Menyalin informasi untuk diproses. Jika {\it file} berupa HTML maka pada bagian {\it <body>} hingga {\it </body>} akan disalin.
+		\item Memproses semua {\it tag} pada {\it package} yang ada.
+		\item Memasukan teks yang sudah diproses tersebut pada bagian bawah halaman dokumentasi yang dihasilkan.
+		\item Salin kalimat pertama pada {\it package} tersebut pada bagian atas halaman dokumentasi
+	\end{enumerate}
+	\item {\it Overview Comment Files}\\
+	Setiap aplikasi atau sekumpulan {\it package} yang akan didokumentasikan akan memiliki dokumentasi {\it overview}. Dokumentasi tersebut dapat dibuat lebih dari 1, jika pada saat pembuatan perangkat lunak menggunakan sekumpulan {\it package} yang berbeda. Untuk membuat sebuah dokumentasi ini, perlu membuat sebuah {\it file} HTML yang umumnya bernama {\it overview.html}. Kemudian {\it Javadoc} akan memproses seperti pada {\it Package Comment Files}
+	\item {\it Miscellaneous Unprocessed Files}\\
+	{\it File} tersebut dapat berubah sebuah {\it graphic files}, {\it file java} dan sebuah {\it file} HTML.
+\end{itemize}
+
+\textbf{\textit{Generated Files}}\\
+Secara {\it default}, {\it Javadoc} akan menggunakan {\it standard doclet} yang akan menghasilkan sebuah dokumentasi berformat HTML. Doclet tersebu akan menghasilkan {\it file} HTML secara terpisah. Terdapat 3 grup yang masing-masing grup memiliki kriterianya sendiri, 3 grup tersebut adalah sebagai berikut:
+\begin{itemize}
+	\item {\it Basic Content Pages}
+	\begin{itemize}
+		\item sebuah halaman kelas atau {\it interface} ({\it classname}.html) untuk masing-masing kelas atau {\it interface} yang akan didokumentasikan
+		\item sebuah halaman {\it package} ({\it package-summary.html}) untuk masing-masing {\it package} yang akan didokumentasikan
+		\item sebuah halaman {\it overview} ({\it overview-summary.html}) untuk keseluruhan sekumpulan {\it package}. Halaman ini adalah halaman utama yang dihasilkan.
+	\end{itemize}
+	\item {\it Cross-Reference Pages}
+	\begin{itemize}
+		\item sebuah halaman hirarki dari kelas untuk sekumpulan dari semua {\it package} ({\it overview-tree.html})
+		\item sehalaman hirarki dari kelas untuk setiap {\it package} ({\it package-tree.html})
+		\item sehalaman {\it "use"} ({\it package-use.html}) yang berisikan {\it package}, {\it classes}, {\it methods}, {\it constructors} atau {\it interface}. Jika diberikan sebuah kelas bernama A, makan halaman tersebut akan berisikan {\it subclasses} dari A, {\it methods} yang memiliki {\it return} A dan {\it methods} atau {\it constructors} dengan parameter bertipe A.
+		\item sebuah halaman {\it deprecated API} ({\it deprecated-list.html}). Halaman ini adalah halaman dari sekumpulan nama yang tidak direkomendasikan untuk digunakan.
+		\item sebuah halaman sekumpulan nilai {\it constant} ({\it constant-values.html}) untuk sekumpulan nilai {\it static}.
+		\item sebuah halaman {\it serialized form} ({\it serialized-form.html})
+		\item sebuah halaman {\it index} ({\it index-*.html}).
+	\end{itemize}
+	\item {\it Support Files}
+	\begin{itemize}
+		\item sebuah halaman bantuan ({\it help-doc.html}).
+		\item sebuah halaman {\it index} ({\it index.html}) yang membuat sebuah HTML {\it frames}.
+		\item beberapa {\it frame file} ({\it *-frame.html}) yang berisi sekumpulan {\it packages}, kelas dan {\it interface} dan digunakan pada saat HTML {\it frames} ditampilkan
+		\item sebuah {\it file} teks {\it package list} ({\it package-list}).
+		\item sebuah {\it style sheet file} ({\it stylesheet.css}) untuk mengontrol warna, jenis {\it font}, ukuran {\it font} dan posisi dari halamanan yang dihasilkan
+		\item sebuah {\it doc-files} yang berisikan gambar dan beberapa contoh {\it file java}
+	\end{itemize}
+\end{itemize}
+{\it Javadoc} akan menghasilkan 2 atau 3 HTML {\it frame}. {\it Javadoc} akan membuat minimum {\it frame} yang dibutuhkan. Jika hanya terdapat 1 {\it package}, maka {\it Javadoc} akan membuat 1 {\it frame} yang berisi dari sekumpulan kelas pada {\it package} tersebut. Jika terdapat lebih dari 2 {\it package}, maka {\it Javadoc} akan membuat 3 {\it frame} dari sekumpulan {\it package}. Jika kelas yang digunakan adalah {\it java.applet.Applet} dan semua dokumentasi yang dihasilkan akan berada pada folder yang bernama {\it apidocs}, struktur {\it file} yang dihasilkan adalah sebagai berikut:
+\begin{lstlisting}[caption=Struktur {\it file} yang dihasilkan]
+	apidocs						  			  		    Top directory
+		index.html											  Initial page that sets up HTML frames
+	* overview-summary.html 					  Lists all packages with first sentences summaries
+		overview-tree.html							  Lists class hierarchy for all packages
+		deprecated-list.html              Lists deprecated API for all packages
+   		constant-values.html            Lists values of static fields for all packages
+   		serialized-form.html            Lists serialized form for all packages
+   * overview-frame.html              Lists all packages, used in upper-left frame
+   		allclasses-frame.html           Lists all classes for all packages, used in
+   																		lower-left frame
+   		help-doc.html                   Lists user help for how these pages are organized
+   		index-all.html                  Default index created without -splitindex option
+   		index-files                     Directory created with -splitindex option
+       		index-<number>.html         Index files created with -splitindex option
+   		package-list                    Lists package names, used only for 
+   																		resolving external refs
+   		stylesheet.css                  HTML style sheet for defining fonts, colors and
+   																		positions
+   		java                            Package directory
+       		applet                      Subpackage directory
+            	Applet.html             Page for Applet class
+            	AppletContext.html      Page for AppletContext interface
+            	AppletStub.html         Page for AppletStub interface
+            	AudioClip.html          Page for AudioClip interface
+          * package-summary.html    	Lists classes with first sentence summaries
+          														for this package
+          * package-frame.html      	Lists classes in this package, used in
+          														lower left-hand frame
+          * package-tree.html       	Lists class hierarchy for this package
+            package-use             	Lists where this package is used
+            	doc-files               Directory holding image and example files
+            	class-use               Directory holding pages API is used
+                	Applet.html         Page for uses of Applet class
+                	AppletContext.html  Page for uses of AppletContext interface
+                	AppletStub.html     Page for uses of AppletStub interface
+                	AudioClip.html      Page for uses of AudioClip interface
+   		src-html                        Source code directory
+       		java                        Package directory
+           		applet                  Subpackage directory
+                	Applet.html         Page for Applet source code
+                	AppletContext.html  Page for AppletContext source code
+                	AppletStub.html     Page for AppletStub source code
+                	AudioClip.html      Page for AudioClip source code
+\end{lstlisting}
+		\item \textbf{Doclet}\\
+		{\it Doclet} yang terdapat pada {\it Javadoc} dapat digunakan untuk menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Standar {\it doclet} yang dihasilkan oleh {\it Javadoc} adalah dokumentasi dengan format HTML. Selain menghasilkan {\it output} yang dapat disesuaikan, Doclet juga dapat mengekstrak informasi secara spesifik~\cite{doclet:02:doclet}.\\
+
+\textbf{\textit{Interface-interface} pada Doclet}\\
+Berikut adalah beberapa {\it interface} yang terdapat pada {\it Doclet}:
+\begin{itemize}
+	\item {\verb RootDoc }
+	sebuah {\it interface} yang menyatakan sebuah {\it root} dari perangkat lunak yang dibuat. Dari {\it root} tersebut semua informasi dapat diekstrak. {\it Method-method} yang digunakan adalah sebagai berikut
+	\begin{itemize}
+		\item {\verb classes() }\\
+		{\it Method} ini akan mengembalikan sejumlah kelas dan {\it interface} pada {\it package}
+	\end{itemize}
+	\item {\verb ClassDoc }
+	sebuah {\it interface} yang menyatakan informasi dari sebuah kelas. Informasi tersebut dapat berupa nama kelas, nama {\it method} dan {\it tag}. {\it Method-method} yang digunakan adalah sebagai berikut
+	\begin{itemize}
+		\item {\verb name() }\\
+		{\it Method} ini akan mengembalikan sebuah nama kelas atau {\it interface} pada {\it package}
+		\item {\verb commentText() }\\
+		{\it Method} ini akan mengembalikan sebuah informasi dari deskripsi kelas
+		\item {\verb methods() }\\
+		{\it Method} ini akan mengembalikan sebuah {\it array of methods}
+	\end{itemize}
+	\item {\verb MethodDoc }
+	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it method}. {\it Method-method} yang digunakan adalah sebagai berikut
+	\begin{itemize}
+		\item {\verb name() }\\
+		{\it Method} ini akan mengembalikan sebuah nama {\it method}
+		\item {\verb modifiers() }\\
+		{\it Method} ini akan mengembalikan sebuah {\it access modifier} dari sebuah {\it method}
+		\item {\verb returnType() }\\
+		{\it Method} ini akan mengembalikan sebuah {\it return type} dari sebuah {\it method}
+		\item {\verb flatSignature() }\\
+		{\it Method} ini akan mengembalikan {\it signature} dari sebuah {\it method}. Jika terdapat {\it Method} dengan parameter (String x, int y), maka akan mengembalikan (String, int)
+	\end{itemize}
+	\item {\verb ParamTag }
+	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it Tag} parameter. {\it Method-method} yang digunakan adalah sebagai berikut
+	\begin{itemize}
+		\item {\verb name() }\\
+		{\it Method} ini akan mengembalikan sebuah {\it tag @param} 
+		\item {\verb parameterName() }\\
+		{\it Method} ini akan mengembalikan sebuah nama parameter dari sebuah {\it method}
+		\item {\verb parameterComment() }\\
+		{\it Method} ini akan mengembalikan sebuah deskripsi dari parameter yang terdapat pada {\it method}
+	\end{itemize}
+\end{itemize}
+
+\textbf{Penggunaan Doclet}\\
+Doclet dapat menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Penggunaan {\it Doclet} API dapat mengekstrak bermacam-macam informasi seperti nama kelas, nama {\it method}, deskripsi singkat untuk sebuah parameter dari sebuah {\it method} hingga {\it return type} dari {\it method}.
+
+Berikut adalah langkah-langkah untuk menggunakan {\it doclet}:
+\begin{enumerate}
+	\item Membuat sebuah kelas pada {\it java} sebagai {\it doclet}. {\it class java} tersebut harus meng-{\it import}  \verb com.sun.javadoc.*  untuk menggunakan {\it doclet} API.
+	\item {\it Doclet} tersebut diawali dengan sebuah {\it method} \verb public  \verb static  \verb boolean  \verb start  yang memiliki parameter \verb RootDoc .
+	\item {\it Compile doclet} tersebut dengan menggunakan {\it compiler} Java 2 SDK yaitu {\it javac} pada {\it command prompt(Windows)}/{\it terminal(Linux)}.
+	\item Jalankan {\it Javadoc} menggunakan \verb -doclet  {\it \textbf{startingclass}} {\it option} untuk menghasilkan {\it output} yang telah disesuaikan, dimana {\it \textbf{startingclass}} adalah sebuah kelas yang sudah dibuat pada langkah 1.
+\end{enumerate}
+
+{\it File doclet} API terdapat pada direktori {\it folder jdk} yang ter-{\it install} pada komputer pada {\it subfolder}  \verb lib\tools.jar .{\it doclet} yang sudah dibuat harus di-{\it compile} menggunakan {\it file}  \verb tools.jar  dan menambahkan {\it option}  \verb -classpath  setelah {\it command}  \verb javac . Jika tidak menggunakan {\it option}  \verb -doclet  , {\it Javadoc} akan menghasilkan {\it output} standar yaitu berupa {\it file} HTML.
+
+{\it Package}  \verb com.sun.javadoc  terdiri {\it interface} yang mendefinisikan {\it doclet} API dan sedangkan {\it file}  \verb tools.jar  berisikan {\it interface-interface} tersebut dan juga berisikan {\it private package} dengan {\it class-class} yang mengimplementasi {\it interface} tersebut serta {\it file} tools.jar berisikan pula {\it class-class} yang mengimplementasi sebuah standar {\it doclet}.
+
+\begin{lstlisting}[language=Java, caption=kelas ListClass.java, label={program-doclet}]
+	import com.sun.javadoc.*;
+
+	public class ListClass {
+		public static boolean start(RootDoc doc) {
+			ClassDoc[] classes = doc.classes();
+			for(int i=0, i < classes.length; i++) {
+				System.out.println(classes[i]);
+			}
+			return true;
+		}
+	}
+\end{lstlisting}
+Potongan {\it program} ini \ref{program-doclet} adalah sebuah {\it doclet} sederhana untuk menampilkan nama-nama kelas pada {\it file java}. Hal pertama yang harus dilakukan adalah meng-{\it import package}  \verb com.sun.javadoc.* , kemudian membuat sebuah {\it method} \verb public  \verb static  \verb boolean  \verb start  dengan parameter sebuah  \verb RootDoc  doc  yang akan menampung sekumpulan {\it file java} yang akan diproses.  \verb ClassDoc  pada {\it method} tersebut akan menampung nama-nama kelas yang terdapat pada variabel  \verb doc  dengan menggunakan {\it method}  \verb classes() .
+		\end{enumerate}
 		
-		\item Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.\\
+		\item Melakukan survei mengenai format penulisan pada dokumen \LaTeX\\\
+		{\bf status :} Ada sejak rencana kerja skripsi.\\
+		{\bf hasil :} Survei yang dilakukan adalah mengamati bab 4 dari Skripsi mahasiswa Teknik Informatika angkatan 2012 bernama Herfan Heryandi. Penulisan pada bab 4 tersebut menjadikan fondasi untuk membuat struktur \LaTeX yang dibuat.
+		
+		\item Menganalisis kebutuhan perangkat lunak\\
+		{\bf status :} Ada sejak rencana kerja skripsi.\\
+		{\bf hasil :} 
+		\begin{enumerate}
+			\item \textbf{Analisis Kebutuhan Perangkat Lunak}\\
+Struktur \LaTeX\ yang digunakan memiliki format sebagai berikut.
+\begin{lstlisting}[caption=Potongan kode \LaTeX, label={kode-latex}]
+	\begin{enumerate}
+	\item \texttt{namaKelas}\\
+	{penjelasan kelas}
+	
+	Atribut yang dimiliki kelas ini adalah sebagai berikut.
+	\begin{itemize}
+		\item \texttt{atribut} -
+		{penjelasan tentang atribut}.
+	\end{itemize}
+	
+	{\it Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
+	\begin{itemize}
+		\item \texttt{method}\\
+		{penjelasan method}
+		
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \texttt{parameter} - 
+			{penjelasan dari parameter}.
+		\end{itemize}
+		
+		\textbf{Return Value:} {penjelasan return-type method}\\
+		\textbf{Exception:} {penjelasan exception jika terdapat exception}
+	\end{itemize}
+
+\end{lstlisting}
+
+Potongan kode yang terdapat pada listing \ref{kode-latex} adalah struktur lengkap \LaTeX\ yang digunakan, akan dijelaskan sebagai berikut.
+
+\begin{enumerate}
+	\item {\it List level} pertama\\
+	Pada {\it list level} pertama ini menampilkan sebuah nama kelas dan penjelasan terkait dengan kelas tersebut. {\it List} yang dibuat menggunakan {\it ordered list} dengan {\it command} \texttt{\string\begin\{enumerate\}}\dots\\\texttt{\string\end\{enumerate\}} dan {\it command} \texttt{\string\texttt\{namaKelas\}} akan digunakan untuk menampilkan nama kelas.
+	\item {\it List level} kedua\\
+	Pada {\it list level} kedua ini terdapat dua {\it list} yang masing-masing menampilkan atribut dan {\it method} yang dimiliki oleh kelas tersebut. {\it List} pertama yang dibuat menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} untuk mengisi atribut-atribut yang terdapat pada kelas ini jika kelas ini tidak memiliki atribut maka menampilkan tulisan tidak memiliki atribut. {\it Command} \texttt{\string\texttt\{atribut\}} digunakan untuk menampilkan atribut. Atribut ini menampilkan tipe atribut dan nama atribut.
+	
+	{\it List} kedua menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} untuk mengisi {\it method-method} yang terdapat pada kelas ini dan penjelasan terkait dengan {\it method} tersebut. {\it Command} \texttt{\string\texttt\{method\}} digunakan untuk menampilkan {\it method}. {\it Method} ini menampilkan {\it access modifier} dari {\it method}, tipe kembalian {\it method}, nama {\it method} dan daftar nama parameter.
+	\item {\it List level} ketiga\\
+	Pada {\it list level} ketiga ini menampilkan parameter yang digunakan pada {\it method} dan penjelasan terkait dengan parameter tersebut. {\it List} yang dibuat menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} jika {\it method} tidak memiliki parameter maka menampilkan tulisan tidak memiliki parameter dan {\it command} \texttt{\string\texttt\{parameter\}} akan digunakan untuk menampilkan parameter. Parameter ini menampilkan tipe parameter dan nama parameter.
+	\item {\it Return Value} \& {\it Exception}\\
+	{\it Return value} yang terdapat dalam {\it method} tersebut akan ditampilkan setelah {\it list level} ketiga jika tipe {\it return value} adalah {\verb void } maka akan menampilkan tulisan tidak memiliki {\it return value}. {\it Exception} maka ditampilkan setelah {\it Return value} jika {\it method} tidak terdapat {\it exception} maka akan menampilkan tulisan tidak memiliki {\it exception}.
+\end{enumerate}
+
+Struktur kode {\it java} yang digunakan memiliki format sebagai berikut.
+
+\begin{lstlisting}[language=Java, caption=Potongan kode {\it java}, label={kode-java}]
+package javadoc;
+
+/**
+ * Kelas ini merupakan Kelas Pertambahan
+ *
+ */
+public class Pertambahan {
+
+    /**
+     * Atribut A
+     */
+    private int a;
+    /**
+     * Atribut B
+     */
+    private int b;
+    
+    /**
+     * Method Pertambahan
+     *
+     * @param a Bilangan Pertama
+     * @param b Bilangan Kedua
+     * 
+     * @return hasil penjumlahan 2 buah bilangan
+     */
+    public int pertambahan(int a, int b) {
+        int hasil = 0;
+        hasil = a + b;
+        return hasil;
+    }
+}
+\end{lstlisting}
+
+Potongan kode yang terdapat pada listing \ref{kode-java} adalah struktur {\it file java} yang digunakan, akan dijelaskan sebagai berikut.
+
+\begin{enumerate}
+	\item Setiap {\it file java} harus terletak di dalam sebuah {\it package} yang sama.
+	\item Setiap deklarasi kelas harus diawali dengan huruf kapital serta memiliki javadoc untuk penjelasan tentang kelas tersebut.
+	\item Setiap deklarasi atribut harus memiliki {\it access modifier}, tipe atribut dan nama atribut serta memiliki javadoc untuk penjelasan tentang atribut tersebut.
+	\item Seiap deklarasi {\it method} harus memiliki {\it access modifier}, tipe kembalian, nama {\it method}, tipe dan variabel parameter serta memiliki javadoc untuk penjelasan {\it method}, parameter yang digunakan dan hasil kembalian sebuah {\it method}.
+\end{enumerate}
+
+{\it Package} yang berisikan sekumpulan {\it file java} tersebut akan menjadi sebuah masukan perangkat lunak dan akan menghasilkan sebuah dokumen dalam format \LaTeX.
+
+\begin{lstlisting}[caption=Hasil konversi {\it Javadoc} ke \LaTeX, label={hasil}]
+\begin{enumerate}
+	\item \texttt{Pertambahan}\\
+	Kelas ini merupakan Kelas Pertambahan.
+	
+	Atribut yang dimiliki kelas ini adalah sebagai berikut.
+	\begin{itemize}
+		\item \texttt{int a} -
+		Atribut A.
+		\item \texttt{int b} -
+		Atribut B.
+	\end{itemize}
+	
+	{\it Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
+	\begin{itemize}
+		\item \texttt{public int pertambahan(int a, int b)}\\
+		Method Pertambahan.
+		
+		\textbf{Parameter:}
+		\begin{itemize}
+			\item \texttt{int a} - 
+			Bilangan Pertama.
+			\item \texttt{int b} - 
+			Bilangan Kedua.
+		\end{itemize}
+		
+		\textbf{Return Value:} hasil penjumlahan 2 buah bilangan.\\
+		\textbf{Exception:} tidak memiliki \textit{exception}.
+	\end{itemize}
+\end{enumerate}
+\end{lstlisting}
+
+Hasil konversi \ref{hasil} akan menampilkan nama kelas serta penjelasan kelas tersebut, atribut yang digunakan serta penjelasan untuk setiap atributnya, {\it method} yang digunakan serta penjelasan {\it method}, parameter yang digunakan serta penjelasan setiap parameternya, {\it return value} dan {\it exception}.\\
+
+\textbf{Analisis Program Sejenis TeXDoclet}\\
+TeXDoclet merupakan sebuah program yang mengimplementasi {\it Doclet} yang dimiliki oleh {\it Java}. Program ini akan mengkonversi sekumpulan {\it file java} yang terletak di dalam satu {\it package} yang sama. TeXDoclet dapat menghasilkan dokumen berupa {\it file} \LaTeX\ atau {\it file} PDF. Untuk dapat menghasilkan {\it file} PDF, TeXDoclet mengintegrasikan Lua\LaTeX\ untuk menghasilkan dokumen PDF dari sebuah {\it file} \LaTeX.
+
+TeXDoclet memiliki beberapa {\it option} yang dapat digunakan, akan dijelaskan sebagai berikut.
+\begin{enumerate}
+	\item \texttt{-sectionlevel <level>}\\
+	Untuk menentukan {\it level} teratas dari {\it section} sebuah dokumen. {\it Section} tersebut bisa berupa {\it chapter}, {\it section} atau {\it subsection}
+	\item \texttt{-createPdf}\\
+	Untuk menghasilkan {\it file} PDF dari sebuah hasil {\it file} \LaTeX\ dengan menggunakan Lua\LaTeX.
+	\item \texttt{-twosided}\\
+	Untuk menghasilkan dokumen 2 sisi. Jika dokumen tersebut menggunakan {\it option} ini maka dokumen tersebut pada saat dicetak akan memiliki 2 sisi yaitu depan dan belakang.
+	\item \texttt{-texinit <file>}\\
+	Untuk menambahkan {\it command-command} yang lain sebelum {\it command} \texttt{\string\begin\{document\}}.
+	\item \texttt{-docclass <class>}\\
+	Untuk menentukan tipe dokumen yang akan dibuat. {\it Default} untuk {\it option} adalah tipe dokumen {\it report}.
+\end{enumerate}
+		\end{enumerate}
+
+		\item Merancang perangkat lunak\\
 		{\bf status :} Ada sejak rencana kerja skripsi.\\
 		{\bf hasil :}
 
-		\item Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}\\
+		\item Mengimplementasi Javadoc Doclet API\\
 		{\bf status :} Ada sejak rencana kerja skripsi.\\
 		{\bf hasil :}
 
-		\item Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)\\
+		\item Melakukan pengujian perangkat lunak\\
 		{\bf status :} dihapuskan/tidak dikerjakan \\
-		{\bf hasil :} berdasarkan analisis singkat, tidak dilakukan analisis lebih jauh karena tidak diperlukan struktur data baru, karena sudah disediakan oleh OpenSteer versi terbaru
+		{\bf hasil :} 
 
-		\item Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer \\
+		\item Menulis dokumen skripsi \\
 		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Menulis dokumen skripsi\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :} \lipsum[1]
-		
-		\item Mempelajari cara menggunakan fitur manipulasi obstacle yang disediakan oleh framework Opensteer versi terbaru\\
-		{\bf status :} baru ditambahkan pada semester ini\\
-		{\bf hasil :} baru direncanakan karena framework Opensteer versi paling akhir baru selesai diinstall dan dilihat-lihat bagian contoh-contoh simulasinya
-		
+		{\bf hasil :} Dokumen skripsi telah ditulis sampai bab 3. Bab 1 membahas mengenai latar belakang, rumusan masalah, tujuan, batas masalah, metodologi penelitian dan sistematika penulisan. Bab 2 membahas mengenai pengertian {\it Javadoc}, Doclet dan \LaTeX. Bab 3 membahas mengenai analisis struktur \LaTeX\ dan analisis program sejenis TeXDoclet.
 
 	\end{enumerate}
 
@@ -114,17 +486,14 @@ Persentase penyelesaian skripsi sampai dengan dokumen ini dibuat dapat dilihat p
   \begin{tabular}{ | c | c | c | c | l | c |}
     \hline
     1*  & 2*(\%) & 3*(\%) & 4*(\%) &5* &6*(\%)\\ \hline \hline
-    1   & 5  & 5  &  &  & 3 \\ \hline
-    2   & 5 & 5  &   &  & 3 \\ \hline
-    3   & 10  & 7  & 3 & {\footnotesize sebagian kecil teknik {\it flow tiles} di S2} & 5 \\ \hline
-    4   & 15  & 10  &  5 & {\footnotesize teknik lanjut OOP di C++ di S2} & 12 \\ \hline
-    5   & 20  & 5  & 15 & {\footnotesize perancangan awal SFM, pathway dan waypoint di S1} & 5 \\ \hline
-    6   & 0 &   & 0  &  {\footnotesize dihapus karena tidak diperlukan} & \\\hline
-    7   & 20  & 5  & 15 &  {\footnotesize implementasi denah dan rancangan awal SFM di S1} & 3 \\ \hline
-    8   & 5  &   &  5  &  &\\ \hline
-    9   & 15  & 3  & 12  & {\footnotesize sebagian bab 1 dan 2, serta bagian awal analisis di S1} & 5\\ \hline
-    10   & 5  &   & 5  & {\footnotesize tambahan baru} &\\ \hline
-    Total  & 100  & 40  & 60 &  & 36\\ \hline
+    1   & 10 & 10 &  &  & 10 \\ \hline
+    2   & 10 & 10 &  &  & 10 \\ \hline
+    3   & 10 & 10 &  &  & 10 \\ \hline
+    4   & 10 &  & 10 &  & 0 \\ \hline
+    5   & 20 &  & 20 &  & 0 \\ \hline
+    6   & 20 &  & 20 &  & 0\\\hline
+    7   & 20 & 10 & 10 & {\footnotesize Bab 1 hingga Bab3 di S1} & 10 \\ \hline
+    Total  & 100  & 40  & 60 &  & 40\\ \hline
                           \end{tabular}
 \end{center}
 
@@ -140,10 +509,7 @@ Keterangan (*)\\
 %TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
 Kendala - kendala yang dihadapi selama mengerjakan skripsi :
 \begin{itemize}
-	\item Terlalu banyak melakukan prokratinasi
-	\item Terlalu banyak godaan berupa hiburan (game, film, dll)
-	\item Skripsi diambil bersamaan dengan kuliah ASD karena selama 5 semester pertama kuliah tersebut sangat dihindari dan tidak diambil, dan selama 4 semester terakhir kuliah tersebut selalu mendapat nilai E
-	\item Mengalami kesulitan pada saat sudah mulai membuat program komputer karena selama ini selalu dibantu teman
+	\item Tidak ada.
 \end{itemize}
 
 \vspace{1cm}
