@@ -26,7 +26,7 @@ Struktur \LaTeX\ yang digunakan memiliki format sebagai berikut.
 		{penjelasan tentang atribut}.
 	\end{itemize}
 	
-	{\it Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
+	\textit{Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
 	\begin{itemize}
 		\item \texttt{method}\\
 		{penjelasan method}
@@ -39,6 +39,7 @@ Struktur \LaTeX\ yang digunakan memiliki format sebagai berikut.
 		
 		\textbf{Return Value:} {penjelasan return-type method}\\
 		\textbf{Exception:} {penjelasan exception jika terdapat exception}
+		\textbf{See Also:} {penjelasan tag @see jika terdapat tag tersebut}
 	\end{itemize}
 
 \end{lstlisting}
@@ -56,16 +57,22 @@ Potongan kode yang terdapat pada listing \ref{kode-latex} adalah struktur lengka
 	Pada {\it list level} ketiga ini menampilkan parameter yang digunakan pada {\it method} dan penjelasan terkait dengan parameter tersebut. {\it List} yang dibuat menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} jika {\it method} tidak memiliki parameter maka menampilkan tulisan tidak memiliki parameter dan {\it command} \texttt{\string\texttt\{parameter\}} akan digunakan untuk menampilkan parameter. Parameter ini menampilkan tipe parameter dan nama parameter.
 	\item {\it Return Value} \& {\it Exception}\\
 	{\it Return value} yang terdapat dalam {\it method} tersebut akan ditampilkan setelah {\it list level} ketiga jika tipe {\it return value} adalah {\verb void } maka akan menampilkan tulisan tidak memiliki {\it return value}. {\it Exception} maka ditampilkan setelah {\it Return value} jika {\it method} tidak terdapat {\it exception} maka akan menampilkan tulisan tidak memiliki {\it exception}.
+	\item {\it Optional Tags}\\
+	{\it Optional tags} akan menampilkan informasi dari sebuah {\it tag} \texttt{@see} atapun {\it tag} \texttt{\{@link\}}. Jika tidak informasi dari {\it tag - tag} tersebut akan menampilkan tulisan tidak ada.
 \end{enumerate}
 
-Struktur kode {\it java} yang digunakan memiliki format sebagai berikut.
+Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it file java} yang berada di dalam sebuah {\it package}. Struktur kode {\it java} yang digunakan memiliki format sebagai berikut.
 
-\begin{lstlisting}[language=Java, caption=Potongan kode {\it java}, label={kode-java}]
+\begin{lstlisting}[language=Java, caption=Contoh kode {\it java} yang diuji, label={kode-java}]
 package javadoc;
 
 /**
  * Kelas ini merupakan Kelas Pertambahan
+ * kelas ini memiliki beberapa fungsi yaitu {@link #pertambahan(int,int) pertambahan}
  *
+ * @author Adli Fariz Bonaputra
+ * @see "Pertambahan"
+ * 
  */
 public class Pertambahan {
 
@@ -77,7 +84,7 @@ public class Pertambahan {
      * Atribut B
      */
     private int b;
-    
+
     /**
      * Method Pertambahan
      *
@@ -98,14 +105,15 @@ Potongan kode yang terdapat pada listing \ref{kode-java} adalah struktur {\it fi
 
 \begin{enumerate}
 	\item Setiap {\it file java} harus terletak di dalam sebuah {\it package} yang sama.
-	\item Setiap deklarasi kelas harus diawali dengan huruf kapital serta memiliki javadoc untuk penjelasan tentang kelas tersebut.
+	\item Setiap deklarasi kelas harus diawali dengan huruf kapital serta memiliki javadoc untuk penjelasan tentang kelas tersebut dan secara opsional dapat menambahkan {\it tag - tag} javadoc seperti {\it tag} \texttt{@see} sebagai penunjuk ke sebuah referensi dan {\it tag} \texttt{\{@link\}} sebagai penunjuk ke dokumentasi sebuah {\it package}, {\it class} ataupun {\it method} yang dimiliki oleh kelas lain.
 	\item Setiap deklarasi atribut harus memiliki {\it access modifier}, tipe atribut dan nama atribut serta memiliki javadoc untuk penjelasan tentang atribut tersebut.
 	\item Seiap deklarasi {\it method} harus memiliki {\it access modifier}, tipe kembalian, nama {\it method}, tipe dan variabel parameter serta memiliki javadoc untuk penjelasan {\it method}, parameter yang digunakan dan hasil kembalian sebuah {\it method}.
 \end{enumerate}
 
-{\it Package} yang berisikan sekumpulan {\it file java} tersebut akan menjadi sebuah masukan perangkat lunak dan akan menghasilkan sebuah dokumen dalam format \LaTeX.
+%{\it Package} yang berisikan sekumpulan {\it file java} tersebut akan menjadi sebuah masukan perangkat lunak dan akan menghasilkan sebuah dokumen dalam format \LaTeX.
+Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat \LaTeX. Perangkat lunak akan membaca satu persatu {\it file java} dan informasi yang terdapat pada setiap {\it file java} tersebut dimasukan ke dalam {\it file} \LaTeX.
 
-\begin{lstlisting}[caption=Hasil konversi {\it Javadoc} ke \LaTeX, label={hasil}]
+\begin{lstlisting}[caption=Contoh hasil konversi {\it Javadoc} ke \LaTeX, label={hasil}]
 \begin{enumerate}
 	\item \texttt{Pertambahan}\\
 	Kelas ini merupakan Kelas Pertambahan.
@@ -118,7 +126,7 @@ Potongan kode yang terdapat pada listing \ref{kode-java} adalah struktur {\it fi
 		Atribut B.
 	\end{itemize}
 	
-	{\it Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
+	\textit{Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
 	\begin{itemize}
 		\item \texttt{public int pertambahan(int a, int b)}\\
 		Method Pertambahan.

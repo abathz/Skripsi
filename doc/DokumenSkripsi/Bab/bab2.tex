@@ -13,7 +13,7 @@ Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. T
 
 \section{Javadoc}
 \label{sec:javadoc} 
-{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengekstrak informasi dari sekumpulan {\it source file java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengekstraksi informasi tersebut dari sebuah {\it package java}, sebuah {\it file java} atau keduanya~\cite{javadoc:01:javadoc}.
+{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi dari sekumpulan {\it source file Java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengekstraksi informasi tersebut dari sebuah {\it package java}, sebuah {\it file java} atau keduanya~\cite{javadoc:01:javadoc}.
 
 \subsection{\textit{Processing of source files}}
 \label{sec:javadoc}
@@ -21,12 +21,15 @@ Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. T
 
 {\it Javadoc} dapat memproses sebuah {\it link} secara otomatis yang mengarah kepada sebuah {\it package}, kelas dan sebuah nama yang akan didokumentasikan pada saat {\it Javadoc} memprosesnya. {\it Link-link} tersebut berada pada beberapa posisi seperti:
 \begin{enumerate}
-	\item {\it Declaration} ({\it return types}, {\it argument types}, {\it field types})
-	\item Bagian {\it "See Also"} yang dihasilkan oleh {\it tag @see}
-	\item {\it In-line text} yang dihasilkan oleh {\it tag {@link}}
-	\item {\it Exeption} yang dihasilkan oleh {\it tag @throws}
-	\item {\it Link "Specified by"} untuk {\it member} dari sebuah {\it interface}
-	\item {\it Link "Override"} untuk {\it member} dari sebuah kelas
+	\item {\it Declaration} ({\it return types}, {\it argument types}, {\it field types}).
+	\item Bagian {\it "See Also"} yang dihasilkan oleh {\it tag @see}.
+	\item {\it In-line text} yang dihasilkan oleh {\it tag {@link}}.
+	\item {\it Exeption} yang dihasilkan oleh {\it tag @throws}.
+	\item {\it Link "Specified by"} untuk {\it member} dari sebuah {\it interface}.
+	\item {\it Link "Override"} untuk {\it member} dari sebuah kelas.
+	\item Ringkasan daftar tabel {\it package}, kelas dan seluruh anggota dari kelas.
+	\item Turunan dari setiap {\it package} dan kelas.
+	\item 
 \end{enumerate}
 
 Dalam mengekstrak informasi yang terdapat dalam sebuah {\it package java} atau beberapa {\it file java} umumnya menghasilkan sebuah dokumentasi standar yang berbentuk {\it file} HTML dan format penulisan yang mengikuti standar {\it Javadoc}, akan tetapi untuk menghasilkan sebuah format dokumentasi yang diingin, dapat menggunakan sebuah {\it doclet} yang disediakan oleh {\it Javadoc}.
