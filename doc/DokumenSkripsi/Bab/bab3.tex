@@ -40,6 +40,7 @@ Struktur \LaTeX\ yang digunakan memiliki format sebagai berikut.
 		\textbf{Return Value:} {penjelasan return-type method}\\
 		\textbf{Exception:} {penjelasan exception jika terdapat exception}
 		\textbf{See Also:} {penjelasan tag @see jika terdapat tag tersebut}
+		\textbf{Override:} {penjelasan apabila jika terdapat {\it override method} }
 	\end{itemize}
 
 \end{lstlisting}
@@ -58,50 +59,72 @@ Potongan kode yang terdapat pada listing \ref{kode-latex} adalah struktur lengka
 	\item {\it Return Value} \& {\it Exception}\\
 	{\it Return value} yang terdapat dalam {\it method} tersebut akan ditampilkan setelah {\it list level} ketiga jika tipe {\it return value} adalah {\verb void } maka akan menampilkan tulisan tidak memiliki {\it return value}. {\it Exception} maka ditampilkan setelah {\it Return value} jika {\it method} tidak terdapat {\it exception} maka akan menampilkan tulisan tidak memiliki {\it exception}.
 	\item {\it Optional Tags}\\
-	{\it Optional tags} akan menampilkan informasi dari sebuah {\it tag} \texttt{@see} atapun {\it tag} \texttt{\{@link\}}. Jika tidak informasi dari {\it tag - tag} tersebut akan menampilkan tulisan tidak ada.
+	{\it Optional tags} akan menampilkan informasi dari sebuah {\it tag} \texttt{@see} atapun {\it tag} \texttt{\{@link\}}. Jika tidak ada informasi dari {\it tag - tag} tersebut akan menampilkan tulisan tidak ada.
+	\item {\it Override}\\
+	{\it Override} akan menampilkan informasi apakah {\it method} dari sebuah {\it superclass} ditulis kembali di sebuah {\it subclass}. jika tidak ada informasi tersebut maka bagian penjelasan akan dihilangkan.
 \end{enumerate}
 
 Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it file java} yang berada di dalam sebuah {\it package}. Struktur kode {\it java} yang digunakan memiliki format sebagai berikut.
 
-\begin{lstlisting}[language=Java, caption=Contoh kode {\it java} yang diuji, label={kode-java}]
+\begin{lstlisting}[language=Java, caption=Contoh kode {\it java} dari {\it superclass} yang diuji, label={kode-java-superclass}]
 package javadoc;
 
 /**
- * Kelas ini merupakan Kelas Pertambahan
- * kelas ini memiliki beberapa fungsi yaitu {@link #pertambahan(int,int) pertambahan}
- *
+ * Kelas ini merupakan kelas abstract dari operasi matematika
  * @author Adli Fariz Bonaputra
- * @see "Pertambahan"
- * 
  */
-public class Pertambahan {
+public abstract class operasiMatematikaInterface {
 
-    /**
-     * Atribut A
-     */
-    private int a;
-    /**
-     * Atribut B
-     */
-    private int b;
+  public int pertambahan(int a, int b){return 0;}
 
-    /**
-     * Method Pertambahan
-     *
-     * @param a Bilangan Pertama
-     * @param b Bilangan Kedua
-     * 
-     * @return hasil penjumlahan 2 buah bilangan
-     */
-    public int pertambahan(int a, int b) {
-        int hasil = 0;
-        hasil = a + b;
-        return hasil;
-    }
+  public int pengurangan(int a, int b){return 0;}
+
+  public int pembagian(int a, int b){return 0;}
+
+  public int perkalian(int a, int b){return 0;}
 }
 \end{lstlisting}
 
-Potongan kode yang terdapat pada listing \ref{kode-java} adalah struktur {\it file java} yang digunakan, akan dijelaskan sebagai berikut.
+\begin{lstlisting}[language=Java, caption=Contoh kode {\it java} dari {\it subclass} yang diuji, label={kode-java-subclass}]
+package javadoc;
+
+/**
+ * Kelas ini merupakan kelas Pertambahan kelas ini memiliki beberapa fungsi
+ * yaitu {@link #pertambahan(int,int) pertambahan}
+ *
+ * @author Adli Fariz Bonaputra
+ * @see "Pertambahan"
+ *
+ */
+public class Pertambahan extends operasiMatematikaInterface {
+
+  /**
+   * Atribut A
+   */
+  private int a;
+  /**
+   * Atribut B
+   */
+  private int b;
+
+  /**
+   * Method Pertambahan
+   *
+   * @param a Bilangan Pertama
+   * @param b Bilangan Kedua
+   *
+   * @return hasil penjumlahan 2 buah bilangan
+   */
+  @Override
+  public int pertambahan(int a, int b) {
+    int hasil = 0;
+    hasil = a + b + 10;
+    return hasil;
+  }
+}
+\end{lstlisting}
+
+Potongan kode yang terdapat pada listing \ref{kode-java-superclass} dan \ref{kode-java-subclass} adalah struktur {\it file java} yang digunakan, akan dijelaskan sebagai berikut.
 
 \begin{enumerate}
 	\item Setiap {\it file java} harus terletak di dalam sebuah {\it package} yang sama.
@@ -141,6 +164,7 @@ Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat
 		
 		\textbf{Return Value:} hasil penjumlahan 2 buah bilangan.\\
 		\textbf{Exception:} tidak memiliki \textit{exception}.
+		\textbf{Override:} \textt{pertambahan} dari kelas \textt{operasiMatematikaInterface}
 	\end{itemize}
 \end{enumerate}
 \end{lstlisting}

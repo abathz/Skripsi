@@ -6,8 +6,5 @@ doc.pdf
 doc.tex
 doc/*/.texpadtmp/
 doc/*/*/.texpadtmp/
-/JavadocToLatex
-/javadoc-to-latex/nbproject/private/
-/javadoc-to-latex/build/
-/javadoc-to-latex/dist/
-javadoc-to-latex/
+javadoc-to-latex/*
+javadoc/*
