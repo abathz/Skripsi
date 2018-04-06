@@ -9,72 +9,120 @@ Rancangan kelas dibawah ini akan menampilkan keseluruhan kelas yang akan digunak
 
 \begin{figure}[H]
 	\centering  
-	\includegraphics[scale=0.38]{kelas-diagram}  
+	\includegraphics[scale=0.4]{kelas-diagram}  
 	\caption[Kelas Diagram]{Kelas Diagram} 
 	\label{fig:kelas-diagram} 
 \end{figure} 
 
 \begin{enumerate}
-	\item {\texttt{Extractor}}\\
-	Kelas ini merupakan kelas untuk menjalan {\it custom doclet}. Kelas ini memiliki 2 atribut yaitu sebagai berikut:
-	\begin{itemize}
-		\item \texttt{FileWriter file} - turuan dari kelas \texttt{OutputStreamWriter} yang digunakan untuk menulis kedalam sebuah {\it file}.
-		\item \texttt{BufferedWriter out} - turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text.
-	\end{itemize}
-	Kelas ini memiliki {\it method} sebagai berikut:
-	\begin{itemize}
-		\item \texttt{start}\\
-		{\it Method} ini berperan sebagai {\it method} untuk menjalankan {\it custom doclet}\\
-		\textbf{Parameter:}
-		\begin{itemize}
-			\item \texttt{RootDoc root} - objek RootDoc yang berperan sebagai mengambil seluruh informasi spesifik dari {\it option} yang terdapat pada {\it command-line} sebuah {\it terminal}. Selain itu berperan juga untuk mengambil informasi dari sekumpulan file {\it java} yang akan di proses.
-		\end{itemize}
-		\item \texttt{init}\\
-		{\it Method} ini berperan untuk menulis kedalam sebuah {\it file} saat javadoc berjalan.\\
-		\textbf{Parameter:}
-		\begin{itemize}
-			\item \texttt{ClassDoc[] classes} - sebuah array yang berisikan sekumpulan {\it file java} yang akan di proses.
-		\end{itemize}
-	\end{itemize}
+\item \texttt{AttributeClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang terdapat pada kelas
 
-	\item {\texttt{ClassExtractor}}\\
-	Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas. Kelas ini memiliki {\it method} sebagai berikut:
-	\begin{itemize}
-		\item \texttt{extractClassContent}\\
-		{\it Method} ini akan menampilkan nama kelas berserta penjelasan dari kelas tersebut. Didalam {\it method} ini akan memanggil {\it method} \texttt{extractAttributeClassContent} dan \texttt{extractMethodContent}\\
-		\textbf{Parameter:}
-		\begin{itemize}
-			\item \texttt{ClassDoc[] classes} - sebuah array berisikan sejumlah kelas
-			\item \texttt{BufferedWriter out} - turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text.
-		\end{itemize}
-	\end{itemize}
-		 
-	\item {\texttt{AttributeClassExtractor}}\\
-	Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang terdapat pada kelas. Kelas ini memiliki {\it method} sebagai berikut:
-	\begin{itemize}
-		\item \texttt{extractAttributeClassContent}\\
-		{\it Method} ini akan menampilkan atribut-atribut yang dimiliki oleh sebuah kelas.\\
-		\textbf{Parameter:}\\
-		\begin{itemize}
-			\item \texttt{FieldDoc[] fields} - sebuah array berisikan sejumlah atribut dari kelas
-			\item \texttt{BufferedWriter out} - turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text.
-		\end{itemize}
-	\end{itemize}
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item Tidak memiliki Atribut
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractAttributeClassContent(FieldDoc[] fields, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan atribut-atribut yang dimiliki oleh sebuah kelas
 
-	
-	\item {\texttt{MethodExtractor}}\\
-	Kelas ini merupakan kelas untuk mengambil informasi sebuah {\it method} terdapat pada kelas. Kelas ini memiliki {\it method} sebagai berikut:
-	\begin{itemize}
-		\item \texttt{extractMethodContent}\\
-		{\it Method} ini akan menampilkan {\it method-method} yang dimiliki oleh sebuah kelas.\\
-		\textbf{Parameter:}
-		\begin{itemize}
-			\item \texttt{ClassDoc superclass} - sebuah objek ClassDoc
-			\item \texttt{MethodDoc[] methods} - sebuah array berisikan sejumlah {\it method} dari kelas
-			\item \texttt{BufferedWriter out} - turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text.
-		\end{itemize}
-	\end{itemize}
-	
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{FieldDoc[] fields} - 
+sebuah array berisikan sejumlah atribut dari kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: IOException
+
+\end{itemize}
+\item \texttt{ClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item Tidak memiliki Atribut
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractClassContent(ClassDoc[] classes, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{ClassDoc[] classes} - 
+sebuah array berisikan sejumlah kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: IOException
+
+\end{itemize}
+\item \texttt{Extractor}\\ 
+Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item Tidak memiliki Atribut
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static boolean start(RootDoc root)}\\ 
+\textit{Method} ini berperan sebagai \textit{method} untuk menjalankan \textit{custom doclet}
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{RootDoc root} - 
+berperan sebagai mengambil seluruh informasi spesifik dari \textit{option} yang terdapat pada \textit{command-line} sebuah \textit{terminal}. Selain itu berperan juga untuk mengambil informasi dari sekumpulan \textit{file java} yang akan di proses.
+\end{itemize}
+\textbf{Kembalian}: kondisi true
+
+\textbf{Exception}: IOException
+
+\item \texttt{public static void init(ClassDoc[] classes)}\\ 
+\textit{Method} ini berperan untuk menulis kedalam sebuah \textit{file} saat \textit{javadoc} berjalan.
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{ClassDoc[] classes} - 
+sebuah array yang berisikan sekumpulan \textit{file java} yang akan di proses.
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: IOException
+
+\end{itemize}
+\item \texttt{MethodExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method} terdapat pada kelas
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item Tidak memiliki Atribut
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractMethodContent(ClassDoc superclass, MethodDoc[] methods, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan {\it method-method} yang dimiliki oleh sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{ClassDoc superclass} - 
+sebuah objek ClassDoc
+\item \texttt{MethodDoc[] methods} - 
+sebuah array berisikan sejumlah \textit{method} dari kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: IOException
+
+\end{itemize}
 \end{enumerate}
 
 \section{Rancangan Antarmuka}

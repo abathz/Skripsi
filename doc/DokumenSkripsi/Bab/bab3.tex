@@ -70,18 +70,18 @@ Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it 
 package javadoc;
 
 /**
- * Kelas ini merupakan kelas abstract dari operasi matematika
+ * Kelas Abstract OperasiMatematika
  * @author Adli Fariz Bonaputra
  */
-public abstract class operasiMatematikaInterface {
-
-  public int pertambahan(int a, int b){return 0;}
-
-  public int pengurangan(int a, int b){return 0;}
-
-  public int pembagian(int a, int b){return 0;}
-
-  public int perkalian(int a, int b){return 0;}
+public abstract class OperasiMatematikaInterface {
+  
+  /**
+   * Method untuk menghasilkan perhitungan 2 buah bilangan
+   * @param a Bilangan pertama
+   * @param b Bilagan kedua
+   * @return hasil perhitungan 2 buah bilangan
+   */
+  public int calculate(int a, int b){return 0;}
 }
 \end{lstlisting}
 
@@ -89,14 +89,14 @@ public abstract class operasiMatematikaInterface {
 package javadoc;
 
 /**
- * Kelas ini merupakan kelas Pertambahan kelas ini memiliki beberapa fungsi
- * yaitu {@link #pertambahan(int,int) pertambahan}
+ * Kelas ini merupakan Kelas Pertambahan kelas ini memiliki beberapa fungsi
+ * yaitu {@link #calculate(int,int) calculate}
  *
  * @author Adli Fariz Bonaputra
  * @see "Pertambahan"
  *
  */
-public class Pertambahan extends operasiMatematikaInterface {
+public class Pertambahan extends OperasiMatematikaInterface {
 
   /**
    * Atribut A
@@ -107,16 +107,8 @@ public class Pertambahan extends operasiMatematikaInterface {
    */
   private int b;
 
-  /**
-   * Method Pertambahan
-   *
-   * @param a Bilangan Pertama
-   * @param b Bilangan Kedua
-   *
-   * @return hasil penjumlahan 2 buah bilangan
-   */
   @Override
-  public int pertambahan(int a, int b) {
+  public int calculate(int a, int b) {
     int hasil = 0;
     hasil = a + b + 10;
     return hasil;

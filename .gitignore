@@ -6,5 +6,7 @@ doc.pdf
 doc.tex
 doc/*/.texpadtmp/
 doc/*/*/.texpadtmp/
-javadoc-to-latex/*
 javadoc/*
+/OperasiMatematika/nbproject/private/
+/OperasiMatematika/dist/
+/OperasiMatematika/build/
