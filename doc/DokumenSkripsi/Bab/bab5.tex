@@ -1,0 +1,502 @@
+\lstdefinestyle{mystyle}{
+    basicstyle=\footnotesize,                
+   	captionpos=b,                     
+   	numbers=left,                    
+   	numbersep=5pt,             
+   	tabsize=2,
+   	breaklines
+}
+\lstset{style=mystyle}
+\chapter{Implementasi dan Pengujian Perangkat Lunak}
+\label{sec: Implementasi dan Pengujian Perangkat Lunak}
+
+Bab ini terdiri atas dua bagian, yaitu Implementasi Perangkat Lunak dan Pengujian Perangkat Lunak. Bagian implementasi berisi penjelasan lingkungan pengembangan perangkat lunak dan hasil implementasi. Sedangkan bagian pengujian berisi hasil pengujian fungsional terhadap perangkat lunak yang telah dibangun.
+\section{Implementasi Perangkat Lunak}
+\label{sec: Implementasi Perangkat Lunak}
+
+Pada bagian ini akan dibahas mengenai implementasi perangkat lunak yang telah dibangun. Sub bab ini terdiri atas tiga bagian, yaitu lingkungan perangkat lunak, hasil implementasi perangkat lunak, dan Pengujian perangkat lunak.
+
+\subsection{Lingkungan Perangkat Lunak}
+\label{sec:lingkungan perangkat lunak}
+Dalam proses membangun perangkat lunak ini digunakan spesifikasi perangkat sebagai berikut.
+
+\begin{enumerate}
+	\item Processor: Intel Core i7 2.5-3.7GHz 
+	\item RAM: 16.00 GB DDR3	
+	\item Harddisk : 512MB SSD
+	\item VGA : Intel Iris Pro dan AMD Radeon R9 M370X
+	\item Sistem Operasi: macOS High Sierra
+	\item Versi Java: 1.8.0\_121
+	\item Code Editor: Netbeans 8.2
+\end{enumerate}
+
+\subsection{Hasil Implementasi}
+\label{sec:hasil implementasi}
+Kode program pada perangkat lunak ditulis dengan bahasa pemrograman {\it java}. Perangkat lunak akan menghasilkan sebuah {\it file} \LaTeX\ yang berisikan dokumentasi sekumpulan kelas-kelas {\it java}. Berikut {\it file} \LaTeX\ yang dihasilkan dari kode program perangkat lunak yang telah dibuat.
+\begin{lstlisting}[caption=Hasil Implementasi]
+\begin{enumerate}
+\item \texttt{AttributeClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang
+ terdapat pada kelas.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractAttributeClassContent(com.sun.javadoc.FieldDoc[] fields, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan atribut-atribut yang dimiliki oleh
+ sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{com.sun.javadoc.FieldDoc[] fields} - 
+sebuah array berisikan sejumlah atribut dari kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
+ file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{ClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractClassContent(com.sun.javadoc.ClassDoc[] classes, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{com.sun.javadoc.ClassDoc[] classes} - 
+sebuah array berisikan sejumlah kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{Extractor}\\ 
+Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}.
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{String fileName} - atribut untuk nama \textit{file}
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static boolean start(RootDoc root)}\\ 
+\textit{Method} ini berperan sebagai \textit{method} untuk menjalankan
+ \textit{custom doclet}
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{RootDoc root} - 
+berperan sebagai mengambil seluruh informasi spesifik dari
+ \textit{option} yang terdapat pada \textit{command-line} sebuah
+ \textit{terminal}. Selain itu berperan juga untuk mengambil informasi dari
+ sekumpulan \textit{file java} yang akan di proses.
+\end{itemize}
+\textbf{Kembalian}: kondisi true
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{private static void init(com.sun.javadoc.ClassDoc[] classes)}\\ 
+\textit{Method} ini berperan untuk menulis kedalam sebuah \textit{file}
+ saat \textit{javadoc} berjalan.
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{com.sun.javadoc.ClassDoc[] classes} - 
+sebuah array yang berisikan sekumpulan \textit{file java}
+ yang akan di proses.
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{public static int optionLength(String option)}\\ 
+Method untuk menghitung banyak option yang digunakan pada
+ \textit{command-line}
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{String option} - 
+sebuah option
+\end{itemize}
+\textbf{Kembalian}: panjang setiap option
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{public static boolean validOptions(java.lang.String[][] args, DocErrorReporter err)}\\ 
+Pengecekan option valid
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{java.lang.String[][] args} - 
+String array 2 dimensi dari option
+\item \texttt{DocErrorReporter err} - 
+sebuah error jika tidak terdapat option tersebut.
+\end{itemize}
+\textbf{Kembalian}: bernilai true jika option tersebut dikenali, false jika option
+ tersebut tidak dikenali
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{MethodClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method}
+ terdapat pada kelas.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractMethodContent(ClassDoc superclass, com.sun.javadoc.MethodDoc[] methods, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan \textit{method-method} yang dimiliki
+ oleh sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{ClassDoc superclass} - 
+sebuah objek ClassDoc
+\item \texttt{com.sun.javadoc.MethodDoc[] methods} - 
+sebuah array berisikan sejumlah \textit{method} dari kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
+ file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\end{enumerate}
+
+\end{lstlisting}
+
+\section{Pengujian Perangkat Lunak}
+\label{sec: pengujian perangkat lunak}
+Pada sub bab ini akan dilakukan pengujian fungsional dan pengujian eksperimental. Pengujian fungsional akan menguji seluruh fungsi pada perangkat lunak. Pengujian eksperimental akan menguji 3 kasus yaitu pengujian terhadap kode program sederhana, pengujian terhadap perangkat lunak yang dibuat dan pengujian terhadap kode program yang memiliki jumlah {\it file} yang banyak.
+\subsection{Pengujian Fungsional}
+\label{sec:pengujian fungsional}
+Pada pengujian fungsional dilakukan untuk mengetahui fungsi-fungsi yang terdapat pada perangkat lunak berjalan sesuai dengan yang diharapkan. Status pengujian dibagi menjadi 2 yaitu "OK" dan "GAGAL". Berikut ini adalah hasil pengujian fungsional yang telah dilakukan.
+\begin{enumerate}
+	\item Langkah Pengujian: Memanggil fungsi \texttt{extractClassContent}\\
+	Hal yang diharapkan: pada saat fungsi \texttt{extractClassContent} dipanggil maka informasi berkaitan dengan kelas tersebut terekstraksi.\\
+	Hasil Pengujian: Informasi yang berkaitan dengan kelas telah terekstraksi.\\
+	Status: OK
+	\item Langkah Pengujian: Memanggil fungsi \texttt{extractAttributeClassContent}\\
+	Hal yang diharapkan: pada saat fungsi \texttt{extractAttributeClassContent} dipanggil maka informasi berkaitan dengan atribut-atribut yang terdapat pada kelas tersebut terekstraksi.\\
+	Hasil Pengujian: Informasi yang berkaitan dengan atribut-atribut yang terdapat pada kelas telah terekstraksi.\\
+	Status: OK
+	\item Langkah Pengujian: Memanggil fungsi \texttt{extractMethodClassContent}\\
+	Hal yang diharapkan: pada saat fungsi \texttt{extractMethodClassContent} dipanggil maka informasi berkaitan dengan fungsi-fungsi yang terdapat pada kelas tersebut terekstraksi.\\
+	Hasil Pengujian: Informasi yang berkaitan dengan fungsi-fungsi yang terdapat pada kelas telah terekstraksi.\\
+	Status: OK
+\end{enumerate}
+
+\subsection{Pengujian Eksperimental}
+\label{sec:pengujian eksperimental}
+Pengujian eksperimental dilakukan terhadap 3 pengujian yaitu pengujian terhadap kode program sederhana, pengujian terhadap kode program perangkat lunak dan pengujian terhadap kode program yang memiliki jumlah {\it file} yang banyak.
+
+\subsubsection{Pengujian Terhadap Kode Program Sederhana}
+\label{sec:pengujian sederhana}
+Pengujian pertama ini melibatkan kode program sederhana yaitu Operasi Matematika. Kode program ini memiliki 5 buah kelas yaitu \texttt{OperasiMatematikaInterface}, \texttt{Pembagian}, \texttt{Perkalian}, \texttt{Pertambahan} dan \texttt{Pengurangan}. Berikut hasil {\it file} \LaTeX\ yang dihasilkan.
+\begin{lstlisting}[caption=Hasil Pengujian Pertama]
+\begin{enumerate}
+\item \texttt{OperasiMatematikaInterface}\\ 
+Kelas Abstract OperasiMatematika.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public int calculate(int a, int b)}\\ 
+Method untuk menghasilkan perhitungan 2 buah bilangan
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{int a} - 
+Bilangan pertama
+\item \texttt{int b} - 
+Bilagan kedua
+\end{itemize}
+\textbf{Kembalian}: hasil perhitungan 2 buah bilangan
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{Pembagian}\\ 
+Kelas ini merupakan Kelas Pembagian.
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{int a} - Atribut A
+\item \texttt{int b} - Atribut B
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public int calculate(int a, int b)}\\ 
+Method untuk menghasilkan perhitungan 2 buah bilangan
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{int a} - 
+Bilangan pertama
+\item \texttt{int b} - 
+Bilagan kedua
+\end{itemize}
+\textbf{Kembalian}: hasil perhitungan 2 buah bilangan
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{Pengurangan}\\ 
+Kelas ini merupakan Kelas Pengurangan.
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{int a} - Atribut A
+\item \texttt{int b} - Atribut B
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public int calculate(int a, int b)}\\ 
+Method untuk menghasilkan perhitungan 2 buah bilangan
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{int a} - 
+Bilangan pertama
+\item \texttt{int b} - 
+Bilagan kedua
+\end{itemize}
+\textbf{Kembalian}: hasil perhitungan 2 buah bilangan
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{Perkalian}\\ 
+Kelas ini merupakan Kelas Perkalian.
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{int a} - Atribut A
+\item \texttt{int b} - Atribut B
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public int calculate(int a, int b)}\\ 
+Method untuk menghasilkan perhitungan 2 buah bilangan
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{int a} - 
+Bilangan pertama
+\item \texttt{int b} - 
+Bilagan kedua
+\end{itemize}
+\textbf{Kembalian}: hasil perhitungan 2 buah bilangan
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{Pertambahan}\\ 
+Kelas ini merupakan Kelas Pertambahan.
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{int a} - Atribut A
+\item \texttt{int b} - Atribut B
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public int calculate(int a, int b)}\\ 
+Method untuk menghasilkan perhitungan 2 buah bilangan
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{int a} - 
+Bilangan pertama
+\item \texttt{int b} - 
+Bilagan kedua
+\end{itemize}
+\textbf{Kembalian}: hasil perhitungan 2 buah bilangan
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\end{enumerate}
+
+\end{lstlisting}
+
+\subsubsection{Pengujian Terhadap Kode Program Perangkat Lunak}
+\label{sec:pengujian perangkat lunak}
+Pengujian kedua ini melibatkan kode program perangkat lunak. Kode program ini memiliki 4 buah kelas yaitu \texttt{Extractor}, \texttt{ClassExtractor}, \texttt{AttributeClassExtractor} dan \texttt{MethodClassExtractor}. Berikut hasil {\it file} \LaTeX\ yang dihasilkan.
+
+\begin{lstlisting}[caption=Hasil Pengujian Kedua]
+\begin{enumerate}
+\item \texttt{AttributeClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang
+ terdapat pada kelas.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractAttributeClassContent(com.sun.javadoc.FieldDoc[] fields, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan atribut-atribut yang dimiliki oleh
+ sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{com.sun.javadoc.FieldDoc[] fields} - 
+sebuah array berisikan sejumlah atribut dari kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
+ file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{ClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractClassContent(com.sun.javadoc.ClassDoc[] classes, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{com.sun.javadoc.ClassDoc[] classes} - 
+sebuah array berisikan sejumlah kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{Extractor}\\ 
+Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}.
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{String fileName} - atribut untuk nama \textit{file}
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static boolean start(RootDoc root)}\\ 
+\textit{Method} ini berperan sebagai \textit{method} untuk menjalankan
+ \textit{custom doclet}
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{RootDoc root} - 
+berperan sebagai mengambil seluruh informasi spesifik dari
+ \textit{option} yang terdapat pada \textit{command-line} sebuah
+ \textit{terminal}. Selain itu berperan juga untuk mengambil informasi dari
+ sekumpulan \textit{file java} yang akan di proses.
+\end{itemize}
+\textbf{Kembalian}: kondisi true
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{private static void init(com.sun.javadoc.ClassDoc[] classes)}\\ 
+\textit{Method} ini berperan untuk menulis kedalam sebuah \textit{file}
+ saat \textit{javadoc} berjalan.
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{com.sun.javadoc.ClassDoc[] classes} - 
+sebuah array yang berisikan sekumpulan \textit{file java}
+ yang akan di proses.
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{public static int optionLength(String option)}\\ 
+Method untuk menghitung banyak option yang digunakan pada
+ \textit{command-line}
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{String option} - 
+sebuah option
+\end{itemize}
+\textbf{Kembalian}: panjang setiap option
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{public static boolean validOptions(java.lang.String[][] args, DocErrorReporter err)}\\ 
+Pengecekan option valid
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{java.lang.String[][] args} - 
+String array 2 dimensi dari option
+\item \texttt{DocErrorReporter err} - 
+sebuah error jika tidak terdapat option tersebut.
+\end{itemize}
+\textbf{Kembalian}: bernilai true jika option tersebut dikenali, false jika option
+ tersebut tidak dikenali
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{MethodClassExtractor}\\ 
+Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method}
+ terdapat pada kelas.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractMethodContent(ClassDoc superclass, com.sun.javadoc.MethodDoc[] methods, BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan \textit{method-method} yang dimiliki
+ oleh sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{ClassDoc superclass} - 
+sebuah objek ClassDoc
+\item \texttt{com.sun.javadoc.MethodDoc[] methods} - 
+sebuah array berisikan sejumlah \textit{method} dari kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
+ file text
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\end{enumerate}
+
+\end{lstlisting}
+
+\subsubsection{Pengujian Terhadap Kode Program dengan Jumlah Banyak}
+\label{sec:pengujian jumlah banyak}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

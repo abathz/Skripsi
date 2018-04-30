@@ -10,3 +10,6 @@ javadoc/*
 /OperasiMatematika/nbproject/private/
 /OperasiMatematika/dist/
 /OperasiMatematika/build/
+/javadoc-to-latex/build/
+/javadoc-to-latex/dist/
+SIAModels/

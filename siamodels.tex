@@ -1,0 +1,70 @@
+\documentclass{article}
+\begin{document}
+\begin{enumerate}
+\item \texttt{HasPraktikum}\\ 
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\end{itemize}
+\item \texttt{HasPrasyarat}\\ 
+Mendefinisikan kelas-kelas yang memiliki prasyarat, terkustomisasi untuk seorang {@link Mahasiswa}. Jika ada tambahan, jangan lupa untuk mendaftarkannya di {@link #DEFAULT_HASPRASYARAT_CLASSES}. Jika berubah package, jangan lupa mengupdate {@link #DEFAULT_PRASYARAT_PACKAGE}..
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{String DEFAULT_HASPRASYARAT_CLASSES} - Daftar dari nama kelas default seluruh turunan interface ini. Perlu didaftarkan
+ manual, karena Java reflection tidak dapat mendeteksi otomatis.
+\item \texttt{String DEFAULT_PRASYARAT_PACKAGE} - Package tempat menyimpan seluruh turunan standar interface ini. Perlu didefinisikan
+ manual, karena Java reflection tidak dapat mendeteksi otomatis.
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public boolean checkPrasyarat(Mahasiswa mahasiswa, java.util.List reasonsContainer)}\\ 
+Memeriksa prasyarat-prasyarat dari kuliah, spesifik untuk mahasiswa
+ yang dituju. Jika ada pesan-pesan khusus, akan ditambahkan pada parameter
+ reasonsContainer.
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{Mahasiswa mahasiswa} - 
+prasyarat kuliah akan diperiksa spesifik pada mahasiswa ini
+\item \texttt{java.util.List reasonsContainer} - 
+pesan-pesan terkait prasyarat akan ditambahkan di sini, jika ada.
+\end{itemize}
+\textbf{Kembalian}: true jika seluruh prasyarat dipenuhi, false jika tidak.
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{HasResponsi}\\ 
+.
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\end{itemize}
+\item \texttt{Kelulusan}\\ 
+.
+
+Atribut yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{String PILIHAN_WAJIB} - 
+\item \texttt{String WAJIB} - 
+\item \texttt{String AGAMA} - 
+\item \texttt{int MIN_SKS_LULUS} - 
+\item \texttt{int MIN_PILIHAN_WAJIB} - 
+\end{itemize}
+\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public boolean checkPrasyarat(Mahasiswa mahasiswa, java.util.List reasonsContainer)}\\ 
+
+
+\textbf{Parameter:}\begin{itemize}
+\item Tidak memiliki parameter \textit{method}
+\end{itemize}
+\textbf{Kembalian}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\textbf{Override}: \texttt{checkPrasyarat} dari kelas \texttt{Object}
+
+\end{itemize}
+\end{enumerate}
+\end{document}
