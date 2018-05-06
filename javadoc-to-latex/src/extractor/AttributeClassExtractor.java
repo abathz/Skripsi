@@ -28,7 +28,7 @@ public class AttributeClassExtractor {
         out.write("\\begin{itemize}\n");
         for (int j = 0; j < fields.length; j++) {
           Type type = fields[j].type();
-          out.write("\\item \\texttt{" + type.typeName() + " " + fields[j].name() + "} - " + fields[j].commentText() + "\n");
+          out.write("\\item \\texttt{" + type.typeName() + " " + fields[j].name().replace("_", "\\_") + "} - " + fields[j].commentText() + "\n");
         }
         out.write("\\end{itemize}\n");
       }

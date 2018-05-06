@@ -40,10 +40,19 @@ public class MethodClassExtractor {
           out.write(overrideMethod.commentText() + "\n\n");
           ParamTag[] paramTags = overrideMethod.paramTags();
           if (paramTags.length == 0) {
-            out.write("\\textbf{Parameter:}");
-            out.write("\\begin{itemize}\n");
-            out.write("\\item Tidak memiliki parameter \\textit{method}\n");
-            out.write("\\end{itemize}\n");
+            if (param.length != 0) {
+              out.write("\\textbf{Parameter:}");
+              out.write("\\begin{itemize}\n");
+              for (int i = 0; i < param.length; i++) {
+                out.write("\\item \\texttt{" + param[i].toString() + "} - \n");
+              }
+              out.write("\\end{itemize}\n");
+            } else {
+              out.write("\\textbf{Parameter:}");
+              out.write("\\begin{itemize}\n");
+              out.write("\\item Tidak memiliki parameter \\textit{method}\n");
+              out.write("\\end{itemize}\n");
+            }
           } else {
             out.write("\\textbf{Parameter:}");
             out.write("\n");
@@ -72,8 +81,7 @@ public class MethodClassExtractor {
             out.write("\\textbf{Exception}: " + throwTags[0].text());
             out.write("\n\n");
           }
-          if (override.length == 0) {
-          } else {
+          if (override.length != 0) {
             out.write("\\textbf{Override}: \\texttt{" + overrideMethod.name() + "} dari kelas \\texttt{" + superclass.superclass().name() + "}");
             out.write("\n\n");
           }
@@ -91,10 +99,19 @@ public class MethodClassExtractor {
           out.write(method.commentText() + "\n\n");
           ParamTag[] paramTags = method.paramTags();
           if (paramTags.length == 0) {
-            out.write("\\textbf{Parameter:}");
-            out.write("\\begin{itemize}\n");
-            out.write("\\item Tidak memiliki parameter \\textit{method}\n");
-            out.write("\\end{itemize}\n");
+            if (param.length != 0) {
+              out.write("\\textbf{Parameter:}");
+              out.write("\\begin{itemize}\n");
+              for (int i = 0; i < param.length; i++) {
+                out.write("\\item \\texttt{" + param[i].toString() + "} - \n");
+              }
+              out.write("\\end{itemize}\n");
+            } else {
+              out.write("\\textbf{Parameter:}");
+              out.write("\\begin{itemize}\n");
+              out.write("\\item Tidak memiliki parameter \\textit{method}\n");
+              out.write("\\end{itemize}\n");
+            }
           } else {
             out.write("\\textbf{Parameter:}");
             out.write("\n");
@@ -123,8 +140,7 @@ public class MethodClassExtractor {
             out.write("\\textbf{Exception}: " + throwTags[0].text());
             out.write("\n\n");
           }
-          if (override.length == 0) {
-          } else {
+          if (override.length != 0) {
             out.write("\\textbf{Override}: \\texttt{" + method.name() + "} dari kelas \\texttt{" + superclass.superclass().name() + "}");
             out.write("\n\n");
           }

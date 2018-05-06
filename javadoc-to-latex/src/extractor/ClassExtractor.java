@@ -21,7 +21,9 @@ public class ClassExtractor {
       for (ClassDoc classDoc : classes) {
 
       out.write("\\item \\texttt{" + classDoc.name() + "}\\\\ \n");
-      out.write(classDoc.commentText() + ".\n\n");
+      if (classDoc.commentText() != "") {
+        out.write(classDoc.commentText() + "\n\n");
+      }
 
       FieldDoc[] fields = classDoc.fields(false);
       AttributeClassExtractor.extractAttributeClassContent(fields, out);
