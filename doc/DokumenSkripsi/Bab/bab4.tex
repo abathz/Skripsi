@@ -15,51 +15,50 @@ Rancangan kelas dibawah ini akan menampilkan keseluruhan kelas yang akan digunak
 \end{figure} 
 
 \begin{enumerate}
-\item \texttt{AttributeClassExtractor}\\ 
-Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang
- terdapat pada kelas.
+\item \texttt{AttributeClassExtractor}\\Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang
+ terdapat pada kelas
 
 Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
-\item \texttt{public static void extractAttributeClassContent(com.sun.javadoc.FieldDoc[] fields, BufferedWriter out)}\\ 
+\item \texttt{public static void extractAttributeClassContent(com.sun.javadoc.FieldDoc[] fields, java.io.BufferedWriter out)}\\ 
 \textit{Method} ini akan menampilkan atribut-atribut yang dimiliki oleh
  sebuah kelas
 
 \textbf{Parameter:}
 \begin{itemize}
-\item \texttt{com.sun.javadoc.FieldDoc[] fields} - 
+\item \texttt{FieldDoc fields} - 
 sebuah array berisikan sejumlah atribut dari kelas
 \item \texttt{BufferedWriter out} - 
 turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
  file text
 \end{itemize}
-\textbf{Kembalian}: Tidak memiliki \textit{return value}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
 \end{itemize}
-\item \texttt{ClassExtractor}\\ 
-Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas.
+\item \texttt{ClassExtractor}\\Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas
 
 Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
-\item \texttt{public static void extractClassContent(com.sun.javadoc.ClassDoc[] classes, BufferedWriter out)}\\ 
-\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari sebuah kelas
+\item \texttt{public static void extractClassContent(com.sun.javadoc.ClassDoc[] classes, java.io.BufferedWriter out)}\\ 
+\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari
+ sebuah kelas
 
 \textbf{Parameter:}
 \begin{itemize}
-\item \texttt{com.sun.javadoc.ClassDoc[] classes} - 
+\item \texttt{ClassDoc classes} - 
 sebuah array berisikan sejumlah kelas
 \item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
+                file text
 \end{itemize}
-\textbf{Kembalian}: Tidak memiliki \textit{return value}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
 \end{itemize}
-\item \texttt{Extractor}\\ 
-Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}.
+\item \texttt{Extractor}\\Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}
 
 Atribut yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
@@ -67,7 +66,7 @@ Atribut yang dimiliki kelas ini adalah sebagai berikut.
 \end{itemize}
 \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
-\item \texttt{public static boolean start(RootDoc root)}\\ 
+\item \texttt{public static boolean start(com.sun.javadoc.RootDoc root)}\\ 
 \textit{Method} ini berperan sebagai \textit{method} untuk menjalankan
  \textit{custom doclet}
 
@@ -75,11 +74,11 @@ Atribut yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
 \item \texttt{RootDoc root} - 
 berperan sebagai mengambil seluruh informasi spesifik dari
- \textit{option} yang terdapat pada \textit{command-line} sebuah
- \textit{terminal}. Selain itu berperan juga untuk mengambil informasi dari
- sekumpulan \textit{file java} yang akan di proses.
+             \textit{option} yang terdapat pada \textit{command-line} sebuah
+             \textit{terminal}. Selain itu berperan juga untuk mengambil informasi dari
+             sekumpulan \textit{file java} yang akan di proses.
 \end{itemize}
-\textbf{Kembalian}: kondisi true
+\textbf{Return Value}: kondisi true
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
@@ -89,15 +88,15 @@ berperan sebagai mengambil seluruh informasi spesifik dari
 
 \textbf{Parameter:}
 \begin{itemize}
-\item \texttt{com.sun.javadoc.ClassDoc[] classes} - 
+\item \texttt{ClassDoc classes} - 
 sebuah array yang berisikan sekumpulan \textit{file java}
- yang akan di proses.
+                yang akan di proses.
 \end{itemize}
-\textbf{Kembalian}: Tidak memiliki \textit{return value}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{public static int optionLength(String option)}\\ 
+\item \texttt{public static int optionLength(java.lang.String option)}\\ 
 Method untuk menghitung banyak option yang digunakan pada
  \textit{command-line}
 
@@ -106,33 +105,32 @@ Method untuk menghitung banyak option yang digunakan pada
 \item \texttt{String option} - 
 sebuah option
 \end{itemize}
-\textbf{Kembalian}: panjang setiap option
+\textbf{Return Value}: panjang setiap option
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{public static boolean validOptions(java.lang.String[][] args, DocErrorReporter err)}\\ 
+\item \texttt{public static boolean validOptions(java.lang.String[][] args, com.sun.javadoc.DocErrorReporter err)}\\ 
 Pengecekan option valid
 
 \textbf{Parameter:}
 \begin{itemize}
-\item \texttt{java.lang.String[][] args} - 
+\item \texttt{String args} - 
 String array 2 dimensi dari option
 \item \texttt{DocErrorReporter err} - 
 sebuah error jika tidak terdapat option tersebut.
 \end{itemize}
-\textbf{Kembalian}: bernilai true jika option tersebut dikenali, false jika option
+\textbf{Return Value}: bernilai true jika option tersebut dikenali, false jika option
  tersebut tidak dikenali
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
 \end{itemize}
-\item \texttt{MethodClassExtractor}\\ 
-Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method}
- terdapat pada kelas.
+\item \texttt{MethodClassExtractor}\\Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method}
+ terdapat pada kelas
 
 Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
-\item \texttt{public static void extractMethodClassContent(ClassDoc superclass, \\com.sun.javadoc.MethodDoc[] methods, BufferedWriter out)}\\ 
+\item \texttt{public static void extractMethodClassContent(com.sun.javadoc.ClassDoc superclass, com.sun.javadoc.MethodDoc[] methods, java.io.BufferedWriter out)}\\ 
 \textit{Method} ini akan menampilkan \textit{method-method} yang dimiliki
  oleh sebuah kelas
 
@@ -140,13 +138,62 @@ Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini
 \begin{itemize}
 \item \texttt{ClassDoc superclass} - 
 sebuah objek ClassDoc
-\item \texttt{com.sun.javadoc.MethodDoc[] methods} - 
+\item \texttt{MethodDoc methods} - 
 sebuah array berisikan sejumlah \textit{method} dari kelas
 \item \texttt{BufferedWriter out} - 
 turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
- file text
+                   file text
 \end{itemize}
-\textbf{Kembalian}: Tidak memiliki \textit{return value}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{private static void ParameterMethod(java.io.BufferedWriter out, com.sun.javadoc.Parameter[] paramMethod, com.sun.javadoc.ParamTag[] paramTags)}\\ 
+\textit{Method} ini akan menampilkan parameter \textit{method-method} yang dimiliki
+ oleh sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\item \texttt{Parameter paramMethod} - 
+sebuah array berisikan sejumlah \textit{method} dari kelas
+\item \texttt{ParamTag paramTags} - 
+sebuah array berisikan sejumlah parameter \textit{method} dari kelas
+\end{itemize}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{private static void ReturnTypeMethod(java.io.BufferedWriter out, com.sun.javadoc.Type type, com.sun.javadoc.Tag[] returnTags)}\\ 
+\textit{Method} ini akan menampilkan \textit{return type} dari \textit{method-method} yang dimiliki
+ oleh sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\item \texttt{Type type} - 
+sebuah objek Type
+\item \texttt{Tag returnTags} - 
+sebuah array berisikan sejumlah \textit{return type} dari \textit{method} dari kelas
+\end{itemize}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\item \texttt{private static void ExceptionMethod(java.io.BufferedWriter out, com.sun.javadoc.Tag[] throwTags)}\\ 
+\textit{Method} ini akan menampilkan \textit{return type} dari \textit{method-method} yang dimiliki
+ oleh sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
+\item \texttt{Tag throwTags} - 
+sebuah array berisikan sejumlah \textit{exception} dari \textit{method} dari kelas
+\end{itemize}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 

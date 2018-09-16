@@ -40,7 +40,7 @@ public class MethodClassExtractor {
                 out.write(", ");
               }
             }
-            out.write(")}\\\\ " + "\n");
+            out.write(")}");
 
             Tag[] inlineTags = overrideMethod.inlineTags();
             for (int i = 0; i < inlineTags.length; i++) {
@@ -76,7 +76,7 @@ public class MethodClassExtractor {
                 out.write(", ");
               }
             }
-            out.write(")}\\\\ " + "\n");
+            out.write(")}");
 
             Tag[] inlineTags = method.inlineTags();
             for (int i = 0; i < inlineTags.length; i++) {
