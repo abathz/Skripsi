@@ -8,23 +8,24 @@
   <component name="ChangeListManager">
     <list default="true" id="2573423c-a5fd-45da-8b01-0bf6d34c1625" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/GenerateJavadocToLatex.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/GenerateJavadocToLatex.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/GenerateJavadocToLatex.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GenerateJavadocToLatex/extractor/ClassExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GenerateJavadocToLatex/extractor/ClassExtractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GenerateJavadocToLatex/extractor/MethodClassExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GenerateJavadocToLatex/extractor/MethodClassExtractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/javadoctolatex.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/operasimatematika.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/siamodels.tex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/extractor/ClassExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/extractor/ClassExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extractor/MethodClassExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/extractor/MethodClassExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bab4.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab1.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab3.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab4.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab5.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab6.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab6.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampA.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampA.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampB.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampB.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampC.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampC.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampD.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/lampD.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/siamodels.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/siamodels.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/siamodels.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Lampiran/siamodels.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/data.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/data.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/referensi.bib" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/referensi.bib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/skripsi.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/skripsi.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../siamodels.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../siamodels.tex" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,15 +38,17 @@
     <session id="245158985">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="MF" value="2" />
           <entry key="iml" value="1" />
+          <entry key="java" value="2" />
           <entry key="tex" value="1" />
           <entry key="xml" value="4" />
         </counts>
@@ -53,6 +56,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="2" />
           <entry key="Manifest" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="4" />
@@ -60,27 +64,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="18" />
+          <entry key="java" value="652" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="18" />
+          <entry key="JAVA" value="652" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/extractor/Extractor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/extractor/AttributeClassExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/extractor/ClassExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+            <state relative-caret-position="169">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,10 +100,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/extractor/Extractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/extractor/MethodClassExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
+            <state relative-caret-position="1386">
               <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
             </state>
           </provider>
@@ -143,7 +147,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="878" />
@@ -165,7 +169,13 @@
             <path>
               <item name="GenerateJavadocToLatex" type="b2602c69:ProjectViewProjectNode" />
               <item name="GenerateJavadocToLatex" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GenerateJavadocToLatex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GenerateJavadocToLatex" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="extractor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GenerateJavadocToLatex" type="b2602c69:ProjectViewProjectNode" />
@@ -289,17 +299,19 @@
       <workItem from="1536195412410" duration="3096000" />
       <workItem from="1536219237000" duration="68000" />
       <workItem from="1537124062225" duration="4029000" />
+      <workItem from="1538425221761" duration="2538000" />
+      <workItem from="1538429022434" duration="513000" />
+      <workItem from="1538459579857" duration="2243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12369000" />
+    <option name="totallyTimeSpent" value="17663000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22777778" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22777778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -315,7 +327,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3283767" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.329602" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32754344" />
       <window_info anchor="bottom" id="Run Dashboard" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -360,36 +372,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extractor/Extractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extractor/AttributeClassExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output/siamodels.tex">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extractor/MethodClassExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/GenerateJavadocToLatex.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -409,13 +395,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extractor/ClassExtractor.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/com/sun/javadoc/ClassDoc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        <state relative-caret-position="260">
+          <caret line="150" column="15" selection-start-line="150" selection-start-column="15" selection-end-line="150" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extractor/AttributeClassExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extractor/MethodClassExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extractor/ClassExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extractor/Extractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>

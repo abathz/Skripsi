@@ -21,18 +21,7 @@ public class ClassExtractor {
   public static void extractClassContent(ClassDoc[] classes, BufferedWriter out) {
     try {
       for (ClassDoc classDoc : classes) {
-        Type[] interfaces = classDoc.interfaceTypes();
-        if (interfaces.length > 0) {
-          if (!classDoc.isInterface()) {
-            for (int i = 0; i < interfaces.length; i++) {
-              out.write("\\item \\texttt{" + classDoc.name() + " implements " + interfaces[i].typeName() + "}\n\n");
-            }
-          } else {
-            out.write("\\item \\texttt{" + classDoc.name() + "}\n\n");
-          }
-        } else {
-          out.write("\\item \\texttt{" + classDoc.name() + "}\n\n");
-        }
+        out.write("\\item \\texttt{" + classDoc.name() + "}\n\n");
 
         Tag[] inlineTags = classDoc.inlineTags();
         for (int i = 0; i < inlineTags.length; i++) {

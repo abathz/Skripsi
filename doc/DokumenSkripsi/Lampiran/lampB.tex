@@ -1,6 +1,17 @@
 %versi 2 (8-10-2016)
-\chapter{Hasil Pengujian}
+\chapter{Pengujian Terhadap Kode Program Perangkat Lunak}
 \label{lamp:B}
+\section{Kode Program}
+\lstinputlisting[language=Java, caption=Extractor.java]{./Lampiran/Extractor.java}
+\lstinputlisting[language=Java, caption=ClassExtractor.java]{./Lampiran/ClassExtractor.java}
+\lstinputlisting[language=Java, caption=AttributeClassExtractor.java]{./Lampiran/AttributeClassExtractor.java}
+\lstinputlisting[language=Java, caption=MethodClassExtractor.java]{./Lampiran/MethodClassExtractor.java}
+\section{Hasil Latex}
+\lstinputlisting[language=TeX, caption=javadoctolatex.tex, label={javadoctolatex}]{./Lampiran/javadoctolatex.tex}
+\section{Hasil PDF}
+Hasil PDF pada listing \ref{javadoctolatex} dapat dilihat pada halaman selanjutnya.
+\includepdf[page=1-2]{./Lampiran/javadoctolatex.pdf}
+\includepdf[page=3,pagecommand={\null\vfill\captionof{figure}{javadoctolatex.pdf}}]{./Lampiran/javadoctolatex.pdf}
 
 %\def\scl{1}
 %\def\leg{\legend{Switching,Homotopic,Buffer*Length,Length}}
@@ -22,16 +33,7 @@
 %  \captionof{figure}{Hasil Pengujian Kode Program Perangkat Lunak}
 %}
 
-\lstinputlisting[language=TeX, caption=siamodels.tex]{./Lampiran/siamodels.tex}
-\newgeometry{scale=1}
-\thispagestyle{empty}
-\includepdf[page=1-43]{./Lampiran/siamodels.pdf}
-{
-  \centering
-  \includegraphics[page=44, scale=1]{./Lampiran/siamodels.pdf}
-  \captionof{figure}{siamodels.pdf}
-}
-\restoregeometry
+
 
 %Hasil eksperimen berikut dibuat dengan menggunakan {\sc tikzpicture} (bukan hasil excel yg diubah ke file bitmap). Sangat berguna jika ingin menampilkan tabel (yang kuantitasnya sangat banyak) yang datanya dihasilkan dari program komputer.\\
 %\begin{minipage}[c]{0.49\textwidth}
