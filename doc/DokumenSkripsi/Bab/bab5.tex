@@ -1,12 +1,12 @@
-\lstdefinestyle{mystyle}{
-    basicstyle=\footnotesize,                
-   	captionpos=b,                     
-   	numbers=left,                    
-   	numbersep=5pt,             
-   	tabsize=2,
-   	breaklines
-}
-\lstset{style=mystyle}
+%\lstdefinestyle{mystyle}{
+%    basicstyle=\footnotesize,                
+%   	captionpos=b,                     
+%   	numbers=left,                    
+%   	numbersep=5pt,             
+%   	tabsize=2,
+%   	breaklines
+%}
+%\lstset{style=mystyle}
 \chapter{Implementasi dan Pengujian}
 \label{sec: Implementasi dan Pengujian}
 
@@ -23,7 +23,7 @@ Perangkat lunak dibuat menggunakan bahasa {\it java} dan dimasukkan ke dalam seb
 Pada potongan perintah diatas memiliki 2 parameter yaitu {\it option} dan {\it packagenames}. Parameter {\it packagename} adalah parameter untuk {\it package} yang akan sebagai masukan dari perangkat lunak. Parameter {\it option} adalah beberapa perintah pendukung. Berikut beberapa perintah {\it option} yang digunakan untuk mendukung berjalannya perangkat lunak.
 \begin{itemize}
 	\item {\tt -filename <file-name>} - Menghasilkan {\it output file} dengan nama {\tt file-name.tex}. Jika {\it option} ini tidak digunakan maka nama {\it file} yang dihasilkan akan bernama {\tt doc.tex}
-	\item {\tt -doclet <class>} - Kelas yang dibuat untuk menghasilkan {\it output}.
+	\item {\tt -doclet <class>} - Kelas yang dibuat untuk menghasilkan {\it output}. Pada kasus ini adalah {\tt extractor.Extractor}
 	\item {\tt -docletpath <path>} - Letak {\it doclet} yang sudah di-{\it package} menjadi {\it file jar}
 	\item {\tt -sourcepath <pathlist>} - Letak {\it source file} sebagai masukan.
 	\item {\tt -subpackages <subpkglist>} - Letak {\it subpackage} yang akan dimuat secara rekursif.
@@ -58,324 +58,73 @@ Dalam proses pengujian perangkat lunak ini digunakan spesifikasi perangkat sebag
 
 \subsection{Pengujian Fungsional}
 \label{sec:pengujian fungsional}
-Pada pengujian fungsional dilakukan pengujian terhadap kode program sederhana dan kode program perangkat lunak yang dibuat. Berikut pengujian yang sudah dilakukan.
-\begin{lstlisting}[language=TeX, caption=Hasil pengujian kode program sederhana]
-\begin{enumerate}
-\item \texttt{OperasiMatematikaInterface}
+Pada pengujian fungsional dilakukan terhadap 2 kasus yaitu pengujian kode program sederhana dan kode program perangkat lunak yang dibuat.
 
-Kelas Abstract OperasiMatematika. Kelas ini memiliki method \texttt{calculate(int, int)}
+Pada kasus pertama dijalankan perintah sebagai berikut.
 
-Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public int calculate(int a, int b)}Method untuk menghasilkan perhitungan 2 buah bilangan
+\begin{verbatim}
+	javadoc -filename operasimatematika
+	        -doclet extractor.Extractor
+	        -docletpath GenerateJavadocToLatex.jar
+	        ../OperasiMatematika/*
+\end{verbatim}
 
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{int a} - 
-Bilangan pertama
-\item \texttt{int b} - 
-Bilagan kedua
-\end{itemize}
-\textbf{Return Value}: hasil perhitungan 2 buah bilangan  DoubleNaN
+Perintah tersebut mengekstrak kode program yang dapat dilihat pada lampiran \ref{kodeProgram:A}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada lampiran \ref{hasilLatex:A}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada lampiran \ref{hasilPDF:A}.
 
-\textbf{Exception}: Tidak memiliki \textit{exception}
+Dapat dilihat dari hasil \ref{hasilPDF:A} terdapat 5 kelas yang diekstrak menjadi 5 buah {\it item list enumarate} yang masing berisikan nama kelas dari 5 file tersebut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter.
 
-\end{itemize}
-\item \texttt{Pembagian}
+Pada kasus kedua dijalankan perintah sebagai berikut.
 
-Kelas ini merupakan Kelas Pembagian
+\begin{verbatim}
+	javadoc -filename javadoctolatex
+	        -doclet extractor.Extractor
+	        -docletpath GenerateJavadocToLatex.jar
+	        src/extractor/*
+\end{verbatim}
 
-Atribut yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{int a} - Atribut A
-\item \texttt{int b} - Atribut B
-\end{itemize}
-\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public int calculate(int a, int b)}Method untuk menghasilkan perhitungan 2 buah bilangan
+Perintah tersebut mengekstrak kode program yang dapat dilihat pada lampiran \ref{kodeProgram:B}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada lampiran \ref{hasilLatex:B}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada lampiran \ref{hasilPDF:B}.
 
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{int a} - 
-Bilangan pertama
-\item \texttt{int b} - 
-Bilagan kedua
-\end{itemize}
-\textbf{Return Value}: hasil perhitungan 2 buah bilangan  DoubleNaN
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{Pengurangan}
-
-Kelas ini merupakan Kelas Pengurangan
-
-Atribut yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{int a} - Atribut A
-\item \texttt{int b} - Atribut B
-\end{itemize}
-\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public int calculate(int a, int b)}Method untuk menghasilkan perhitungan 2 buah bilangan
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{int a} - 
-Bilangan pertama
-\item \texttt{int b} - 
-Bilagan kedua
-\end{itemize}
-\textbf{Return Value}: hasil perhitungan 2 buah bilangan  DoubleNaN
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{Perkalian}
-
-Kelas ini merupakan Kelas Perkalian
-
-Atribut yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{int a} - Atribut A
-\item \texttt{int b} - Atribut B
-\end{itemize}
-\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public int calculate(int a, int b)}Method untuk menghasilkan perhitungan 2 buah bilangan
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{int a} - 
-Bilangan pertama
-\item \texttt{int b} - 
-Bilagan kedua
-\end{itemize}
-\textbf{Return Value}: hasil perhitungan 2 buah bilangan  DoubleNaN
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{Pertambahan}
-
-Kelas ini merupakan Kelas Pertambahan
-
-Atribut yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{int a} - Atribut A
-\item \texttt{int b} - Atribut B
-\end{itemize}
-\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public int calculate(int a, int b)}Method untuk menghasilkan perhitungan 2 buah bilangan
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{int a} - 
-Bilangan pertama
-\item \texttt{int b} - 
-Bilagan kedua
-\end{itemize}
-\textbf{Return Value}: hasil perhitungan 2 buah bilangan  DoubleNaN
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\end{enumerate}
-
-\end{lstlisting}
-
-\begin{lstlisting}[language=TeX, caption=Hasil Pengujian kode program perangkat lunak]
-\begin{enumerate}
-\item \texttt{AttributeClassExtractor}
-
-Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang
- terdapat pada kelas
-
-Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public static void extractAttributeClassContent(FieldDoc[] fields, java.io.BufferedWriter out)}\textit{Method} ini akan menampilkan atribut-atribut yang dimiliki oleh
- sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{FieldDoc fields} - 
-sebuah array berisikan sejumlah atribut dari kelas
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
- file text
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{ClassExtractor}
-
-Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas
-
-Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public static void extractClassContent(ClassDoc[] classes, java.io.BufferedWriter out)}\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari
- sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{ClassDoc classes} - 
-sebuah array berisikan sejumlah kelas
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
-                file text
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{Extractor}
-
-Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}
-
-Atribut yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{String fileName} - atribut untuk nama \textit{file}
-\end{itemize}
-\textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public static boolean start(RootDoc root)}\textit{Method} ini berperan sebagai \textit{method} untuk menjalankan
- \textit{custom doclet}
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{RootDoc root} - 
-berperan sebagai mengambil seluruh informasi spesifik dari
-             \textit{option} yang terdapat pada \textit{command-line} sebuah
-             \textit{terminal}. Selain itu berperan juga untuk mengambil informasi dari
-             sekumpulan \textit{file java} yang akan di proses.
-\end{itemize}
-\textbf{Return Value}: kondisi true
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\item \texttt{private static void init(ClassDoc[] classes)}\textit{Method} ini berperan untuk menulis kedalam sebuah \textit{file}
- saat \textit{javadoc} berjalan.
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{ClassDoc classes} - 
-sebuah array yang berisikan sekumpulan \textit{file java}
-                yang akan di proses.
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\item \texttt{public static int optionLength(java.lang.String option)}Method untuk menghitung banyak option yang digunakan pada
- \textit{command-line}
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{String option} - 
-sebuah option
-\end{itemize}
-\textbf{Return Value}: panjang setiap option
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\item \texttt{public static boolean validOptions(java.lang.String[][] args, DocErrorReporter err)}Pengecekan option valid
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{String args} - 
-String array 2 dimensi dari option
-\item \texttt{DocErrorReporter err} - 
-sebuah error jika tidak terdapat option tersebut.
-\end{itemize}
-\textbf{Return Value}: bernilai true jika option tersebut dikenali, false jika option
- tersebut tidak dikenali
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{MethodClassExtractor}
-
-Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method}
- terdapat pada kelas
-
-Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public static void extractMethodClassContent(ClassDoc superclass, MethodDoc[] methods, java.io.BufferedWriter out)}\textit{Method} ini akan menampilkan \textit{method-method} yang dimiliki
- oleh sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{ClassDoc superclass} - 
-sebuah objek ClassDoc
-\item \texttt{MethodDoc methods} - 
-sebuah array berisikan sejumlah \textit{method} dari kelas
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
-                   file text
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\item \texttt{private static void ParameterMethod(java.io.BufferedWriter out, Parameter[] paramMethod, ParamTag[] paramTags)}\textit{Method} ini akan menampilkan parameter \textit{method-method} yang dimiliki
- oleh sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
-\item \texttt{Parameter paramMethod} - 
-sebuah array berisikan sejumlah \textit{method} dari kelas
-\item \texttt{ParamTag paramTags} - 
-sebuah array berisikan sejumlah parameter \textit{method} dari kelas
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\item \texttt{private static void ReturnTypeMethod(java.io.BufferedWriter out, Type type, Tag[] returnTags)}\textit{Method} ini akan menampilkan \textit{return type} dari \textit{method-method} yang dimiliki
- oleh sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
-\item \texttt{Type type} - 
-sebuah objek Type
-\item \texttt{Tag returnTags} - 
-sebuah array berisikan sejumlah \textit{return type} dari \textit{method} dari kelas
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\item \texttt{private static void ExceptionMethod(java.io.BufferedWriter out, Tag[] throwTags)}\textit{Method} ini akan menampilkan \textit{return type} dari \textit{method-method} yang dimiliki
- oleh sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
-\item \texttt{Tag throwTags} - 
-sebuah array berisikan sejumlah \textit{exception} dari \textit{method} dari kelas
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\end{enumerate}
-\end{lstlisting}
-
-Hasil pengujian lengkap terdapat pada lampiran \ref{lamp:A} untuk pengujian kode program sederhana dan lampiran \ref{lamp:B} untuk pengujian kode program perangkat lunak.
+Dapat dilihat dari hasil \ref{hasilPDF:B} terdapat 4 kelas yang diekstrak menjadi 4 buah {\it item list enumarate} yang masing berisikan nama kelas dari 4 file tersebut. Atribut kelas akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah atribut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter.
 
 \subsection{Pengujian Eksperimental}
 \label{sec:pengujian eksperimental}
-Pengujian eksperimental dilakukan terhadap kode program SIAModels. SIAModels adalah sekumpulan kelas {\it java} yang mewakili objek-objek Sistem Informasi Akademik Universitas Katolik Parahyangan. SIAModels ini berisikan objek matakuliah pada Fakultas Teknologi Informasi dan Sains.  Hasil pengujian terdapat pada lampiran \ref{lamp:C}
+Pengujian eksperimental dilakukan terhadap kode program SIAModels. SIAModels adalah sekumpulan kelas {\it java} yang mewakili objek-objek Sistem Informasi Akademik Universitas Katolik Parahyangan. SIAModels ini berisikan objek matakuliah pada Fakultas Teknologi Informasi dan Sains.
+
+Pada pengujian menggunakan SIAModels dilakukan perintah sebagai berikut.
+
+\begin{verbatim}
+	javadoc -filename siamodels
+	        -doclet extractor.Extractor
+	        -docletpath GenerateJavadocToLatex.jar
+	        -sourcepath SIAModels/src/main/java
+	        -subpackages id.ac.unpar.siamodels
+	        id.ac.unpar.siamodels
+\end{verbatim}
+
+Perintah tersebut mengekstrak kode program yang dapat dilihat pada lampiran \ref{kodeProgram:C}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada lampiran \ref{hasilLatex:C}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada lampiran \ref{hasilPDF:C}.
+
+Dapat dilihat dari hasil \ref{hasilPDF:C} terdapat {\tt n} buah kelas dan {\tt n} buah {\it innerclass} yang diekstrak menjadi {\tt n} buah {\it item list enumarate} yang masing berisikan nama kelas dan {\it innerclass} dari {\tt n} {\it file} tersebut. Atribut kelas akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah atribut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter. Terdapat beberapa keanehan yang ditemukan setelah mengeksekusi perintah {\tt pdflatex}.
+
+\begin{itemize}
+	\item Terdapat karakter aneh yaitu tanda "!" terbalik yang merepresentasikan tanda lebih kecil "<" dan tanda "?" terbalik yang merepresentasikan tanda lebih besar ">". Karakter aneh ini muncul pada kelas: 
+	\begin{enumerate}
+		\item {\tt TahunSemester} - pada atribut kelas
+		\item {\tt Mahasiswa} - pada {\it method} {\tt calculateIPKLulus()}, {\tt calculateIPLulus()}, {\tt calculateIPTempuh()}, {\tt calculateIPKumulatif()}, {\tt calculateIPKTempuh()} dan {\tt calculateIPS()}
+	\end{enumerate}
+	Karakter aneh tersebut muncul karena perangkat lunak tidak menangani hal tersebut.
+	\item Beberapa deskripsi tidak muncul, contohnya seperti pada kelas:
+	\begin{enumerate}
+		\item {\tt Semester} - pada deskripsi kelas, atribut kelas dan {\it method}
+		\item {\tt TahunSemester} - pada deskripsi {\it method} seperti pada {\it method} {\tt  getTahun()}
+		\item {\tt Mahasiswa} - pada deskripsi kelas, atribut kelas dan beberapa {\it method}
+		\item {\tt Mahasiswa.Nilai} - pada beberapa deskripsi {\it method}
+		\item {\tt JadwalKuliah} - pada deskrpisi kelas, atribut kelas dan {\it method}
+		\item {\tt MataKuliah} - pada deskripsi kelas, atribut kelas, dan {\it method}
+		\item {\tt Dosen} - pada deskripsi kelas, atribut kelas dan {\it method}
+	\end{enumerate}
+	Setelah dilakukan pemeriksaan terhadap deskripsi yang tidak muncul pada hasil PDF ternyata kesalahan bukan dari perangkat lunak melainkan kode program yang menjadi masukan perangkat lunak memiliki dokumentasi yang kurang lengkap.
+	\item Parameter setiap {\it method method} memiliki tipe variabel yang panjang. Setelah dilakukan pemeriksaan ternyata kesalahan terdapat pada perangkat lunak yang tidak menangani agar tipe variabel menjadi lebih singkat.
+\end{itemize}
 
 
 
