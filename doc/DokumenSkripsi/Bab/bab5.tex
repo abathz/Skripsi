@@ -15,28 +15,33 @@ Bab ini terdiri atas dua bagian, yaitu Implementasi Perangkat Lunak dan Pengujia
 \label{sec: Implementasi Perangkat Lunak}
 
 Perangkat lunak dibuat menggunakan bahasa {\it java} dan dimasukkan ke dalam sebuah {\it jar} sehingga dapat digunakan dengan cara mengeksekusi perintah. Penggunaan {\it file jar} tersebut dapat dilakukan melalui {\it Terminal} di Linux/Mac atau {\it Command Prompt} di Windows. Berikut perintah yang digunakan untuk menjalankan perangkat lunak.
-\\
-
-{\tt javadoc [options] \{sourcefiles|packagenames\}}
-\\
-
-Pada potongan perintah diatas memiliki 2 parameter yaitu {\it option} dan {\it packagenames}. Parameter {\it packagename} adalah parameter untuk {\it package} yang akan sebagai masukan dari perangkat lunak. Parameter {\it option} adalah beberapa perintah pendukung. Berikut beberapa perintah {\it option} yang digunakan untuk mendukung berjalannya perangkat lunak.
-\begin{itemize}
-	\item {\tt -filename <file-name>} - Menghasilkan {\it output file} dengan nama {\tt file-name.tex}. Jika {\it option} ini tidak digunakan maka nama {\it file} yang dihasilkan akan bernama {\tt doc.tex}
-	\item {\tt -doclet <class>} - Kelas yang dibuat untuk menghasilkan {\it output}. Pada kasus ini adalah {\tt extractor.Extractor}
-	\item {\tt -docletpath <path>} - Letak {\it doclet} yang sudah di-{\it package} menjadi {\it file jar}
-	\item {\tt -sourcepath <pathlist>} - Letak {\it source file} sebagai masukan.
-	\item {\tt -subpackages <subpkglist>} - Letak {\it subpackage} yang akan dimuat secara rekursif.
-\end{itemize}
-
-Untuk penggunaan perintah diatas, Langkah pertama membuka aplikasi {\it Terminal} atau {\it Command Prompt}. Langkah kedua mengetik perintah {\tt javadoc} lalu diikuti dengan perintah pendukungnya seperti yang sudah dijelaskan diatas. Berikut contoh perintah lengkap yang digunakan.
-
 \begin{verbatim}
 	javadoc -filename <file-name>
 	        -doclet extractor.Extractor
 	        -docletpath GenerateJavadocToLatex.jar
 	        -sourcepath <path/to/directory>
-	        -subpackages <packagenames> <sourcefiles|packagenames>
+	        -subpackages <packagenames>
+	        <sourcefiles|packagenames>
+\end{verbatim}
+Pada potongan perintah diatas memiliki 2 parameter yaitu {\it option} dan {\it packagenames}. Parameter {\it packagename} adalah parameter untuk {\it package} yang akan sebagai masukan dari perangkat lunak. Parameter {\it option} adalah beberapa perintah pendukung. Berikut beberapa perintah {\it option} yang digunakan untuk mendukung berjalannya perangkat lunak.
+\begin{itemize}
+	\item {\tt -filename <file-name>} - Menghasilkan {\it output file} dengan nama {\tt file-name.tex}. Jika {\it option} ini tidak digunakan maka nama {\it file} yang dihasilkan akan bernama {\tt doc.tex}
+	\item {\tt -doclet <class>} - Kelas yang dibuat untuk menghasilkan {\it output}. Pada kasus ini adalah {\tt extractor.Extractor}
+	\item {\tt -docletpath <path>} - Letak {\it doclet} yang sudah di-{\it package} menjadi {\it file jar}
+	\item {\tt -sourcepath <pathlist>} - Letak {\it source file} sebagai masukan. Perintah ini dapat digunakan secara opsional jika masukan adalah sebuah {\it package}
+	\item {\tt -subpackages <subpkglist>} - Letak {\it subpackage} yang akan dimuat secara rekursif. Perintah ini dapat digunakan secara opsional jika terdapat sebuah {\it subpackage} didalam {\it package} yang menjadi masukan.
+	\item {\tt <sourcefiles|packagenames>} - Letak {\it sourcefiles} atau {\it packagenames} yang menjadi masukan. Jika masukan adalah sebuah {\tt packagenames} maka harus terdapat perintah {\tt -sourcepath} sebagai letak {\it packagenames} tersebut. Jika masukan adalah sebuah {\tt sourcefiles} maka tidak perlu terdapat perintah {\tt -sourcepath} karena masukan dapat berupa direktori {\it source files} tersebut.
+\end{itemize}
+
+Untuk penggunaan perintah diatas, Langkah pertama membuka aplikasi {\it Terminal} atau {\it Command Prompt}. Langkah kedua mengetik perintah {\tt javadoc} lalu diikuti dengan perintah pendukungnya seperti yang sudah dijelaskan diatas. Berikut contoh perintah lengkap yang digunakan.
+
+\begin{verbatim}
+	javadoc -filename siamodels
+	        -doclet extractor.Extractor
+	        -docletpath GenerateJavadocToLatex.jar
+	        -sourcepath SIAModels/src/main/java
+	        -subpackages id.ac.unpar.siamodels
+	        id.ac.unpar.siamodels
 \end{verbatim}
 
 \section{Pengujian Perangkat Lunak}
@@ -66,7 +71,8 @@ Pada kasus pertama dijalankan perintah sebagai berikut.
 	javadoc -filename operasimatematika
 	        -doclet extractor.Extractor
 	        -docletpath GenerateJavadocToLatex.jar
-	        ../OperasiMatematika/*
+	        -sourcepath OperasiMatematika/src
+	        operasi
 \end{verbatim}
 
 Perintah tersebut mengekstrak kode program yang dapat dilihat pada lampiran \ref{kodeProgram:A}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada lampiran \ref{hasilLatex:A}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada lampiran \ref{hasilPDF:A}.
@@ -79,7 +85,8 @@ Pada kasus kedua dijalankan perintah sebagai berikut.
 	javadoc -filename javadoctolatex
 	        -doclet extractor.Extractor
 	        -docletpath GenerateJavadocToLatex.jar
-	        src/extractor/*
+	        -sourcepath GenerateJavadocToLatex/src
+	        extractor
 \end{verbatim}
 
 Perintah tersebut mengekstrak kode program yang dapat dilihat pada lampiran \ref{kodeProgram:B}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada lampiran \ref{hasilLatex:B}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada lampiran \ref{hasilPDF:B}.
@@ -103,29 +110,28 @@ Pada pengujian menggunakan SIAModels dilakukan perintah sebagai berikut.
 
 Perintah tersebut mengekstrak kode program yang dapat dilihat pada lampiran \ref{kodeProgram:C}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada lampiran \ref{hasilLatex:C}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada lampiran \ref{hasilPDF:C}.
 
-Dapat dilihat dari hasil \ref{hasilPDF:C} terdapat {\tt n} buah kelas dan {\tt n} buah {\it innerclass} yang diekstrak menjadi {\tt n} buah {\it item list enumarate} yang masing berisikan nama kelas dan {\it innerclass} dari {\tt n} {\it file} tersebut. Atribut kelas akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah atribut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter. Terdapat beberapa keanehan yang ditemukan setelah mengeksekusi perintah {\tt pdflatex}.
+Dapat dilihat dari hasil \ref{hasilPDF:C} terdapat {\tt n} buah kelas dan {\tt n} buah {\it innerclass} yang diekstrak menjadi {\tt n} buah {\it item list enumarate} yang masing berisikan nama kelas dan {\it innerclass} dari {\tt n} {\it file} tersebut. Atribut kelas akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah atribut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter. Terdapat beberapa ketidaklazimanan yang ditemukan setelah mengeksekusi perintah {\tt pdflatex}.
 
 \begin{itemize}
-	\item Terdapat karakter aneh yaitu tanda "!" terbalik yang merepresentasikan tanda lebih kecil "<" dan tanda "?" terbalik yang merepresentasikan tanda lebih besar ">". Karakter aneh ini muncul pada kelas: 
-	\begin{enumerate}
-		\item {\tt TahunSemester} - pada atribut kelas
-		\item {\tt Mahasiswa} - pada {\it method} {\tt calculateIPKLulus()}, {\tt calculateIPLulus()}, {\tt calculateIPTempuh()}, {\tt calculateIPKumulatif()}, {\tt calculateIPKTempuh()} dan {\tt calculateIPS()}
-	\end{enumerate}
-	Karakter aneh tersebut muncul karena perangkat lunak tidak menangani hal tersebut.
-	\item Beberapa deskripsi tidak muncul, contohnya seperti pada kelas:
-	\begin{enumerate}
-		\item {\tt Semester} - pada deskripsi kelas, atribut kelas dan {\it method}
-		\item {\tt TahunSemester} - pada deskripsi {\it method} seperti pada {\it method} {\tt  getTahun()}
-		\item {\tt Mahasiswa} - pada deskripsi kelas, atribut kelas dan beberapa {\it method}
-		\item {\tt Mahasiswa.Nilai} - pada beberapa deskripsi {\it method}
-		\item {\tt JadwalKuliah} - pada deskrpisi kelas, atribut kelas dan {\it method}
-		\item {\tt MataKuliah} - pada deskripsi kelas, atribut kelas, dan {\it method}
-		\item {\tt Dosen} - pada deskripsi kelas, atribut kelas dan {\it method}
-	\end{enumerate}
-	Setelah dilakukan pemeriksaan terhadap deskripsi yang tidak muncul pada hasil PDF ternyata kesalahan bukan dari perangkat lunak melainkan kode program yang menjadi masukan perangkat lunak memiliki dokumentasi yang kurang lengkap.
-	\item Parameter setiap {\it method method} memiliki tipe variabel yang panjang. Setelah dilakukan pemeriksaan ternyata kesalahan terdapat pada perangkat lunak yang tidak menangani agar tipe variabel menjadi lebih singkat.
+	\item Terdapat karakter yang tidak lazim yaitu tanda \textexclamdown\ yang merepresentasikan tanda lebih kecil "<" dan tanda \textquestiondown\ yang merepresentasikan tanda lebih besar ">". Karakter tersebut muncul pada kelas: 
+		\begin{enumerate}
+			\item {\tt TahunSemester} - pada atribut kelas
+			\item {\tt Mahasiswa} - pada {\it method} {\tt calculateIPKLulus()}, {\tt calculateIPLulus()}, {\tt calculateIPTempuh()}, {\tt calculateIPKumulatif()}, {\tt calculateIPKTempuh()} dan {\tt calculateIPS()}
+		\end{enumerate}
+		Karakter yang tidak lazim tersebut muncul karena {\it file} \LaTeX\ yang dibuat oleh perangkat lunak tidak menggunakan {\it package} {\tt \string\usepackage[T1]\{fontenc\}} atau merubahnya menjadi command {\tt \string\textless} sebagai tanda lebih kecil dan {\tt \string\textgreater} sebagai tanda lebih besar. Pada \LaTeX\ beberapa spesial karakter dapat dimunculkan dengan menambahkan tanda {\it backslash} sebelum karakternya seperti karakter \_ {\it (underscore)} pada \LaTeX\ harus ditulis seperti \texttt{\string\_} dan beberapa spesial karakter yang tidak dapat dimunculkan dengan menambahkan tanda {\it backslash} harus menambahkan {\it package} tersebut.
+	\item Beberapa deskripsi tidak muncul pada hasil PDF, contohnya seperti pada kelas:
+		\begin{enumerate}
+			\item {\tt Semester} - pada deskripsi kelas, atribut kelas dan {\it method}
+			\item {\tt TahunSemester} - pada deskripsi {\it method} seperti pada {\it method} {\tt  getTahun()}
+			\item {\tt Mahasiswa} - pada deskripsi kelas, atribut kelas dan beberapa {\it method}
+			\item {\tt Mahasiswa.Nilai} - pada beberapa deskripsi {\it method}
+			\item {\tt JadwalKuliah} - pada deskrpisi kelas, atribut kelas dan {\it method}
+			\item {\tt MataKuliah} - pada deskripsi kelas, atribut kelas, dan {\it method}
+			\item {\tt Dosen} - pada deskripsi kelas, atribut kelas dan {\it method}
+		\end{enumerate}
+		Setelah dilakukan pemeriksaan pada hal tersebut, kesalahan yang terjadi bukan dari perangkat lunak melainkan kode program yang menjadi masukan memiliki dokumentasi yang kurang lengkap.
+	\item Parameter setiap {\it method} memiliki tipe variabel yang panjang. Setelah dilakukan pemeriksaan, tipe variabel yang bersifat Objek akan menghasilkan tipe variabel yang {\it fullqualified} seperti contohnya pada tipe variabel {\tt String} yang akan menghasilkan {\tt java.lang.String}.
 \end{itemize}
-
 
 
 

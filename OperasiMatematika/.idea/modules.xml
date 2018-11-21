@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/javadoc.iml" filepath="$PROJECT_DIR$/.idea/javadoc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OperasiMatematika.iml" filepath="$PROJECT_DIR$/OperasiMatematika.iml" />
     </modules>
   </component>
 </project>

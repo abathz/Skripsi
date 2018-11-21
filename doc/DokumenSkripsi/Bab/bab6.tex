@@ -5,14 +5,13 @@
 \label{sec:kesimpulan}
 Dari hasil pembangunan perangkat lunak Konversi Javadoc ke \LaTeX\ , didapatkanlah kesimpulan-kesimpulan sebagai berikut:
 \begin{enumerate}
-	\item Telah berhasil mengimplementasikan {\it library} Javadoc Doclet API untuk mengekstraksi informasi dari sekumpulan {\it file java}.
+	\item Telah berhasil mengimplementasikan {\it library} Javadoc Doclet API untuk mengekstraksi informasi dari sekumpulan {\it file java} yang terdapat pada sebuah {\it package}.
 \end{enumerate}
 
 \section{Saran}
 \label{sec:saran}
 Dari hasil penelitian termasuk kesimpulan yang didapat, berikut adalah beberapa saran untuk pengembangan.
 \begin{enumerate}
-	\item Pada saat ini, perangkat lunak tidak mengatasi {\it tag-tag html}. Pada pengujian menggunakan SIAModels terdapat beberapa kelas yang memiliki {\it tag-tag} html pada {\it javadoc} seperti contoh pada kelas {\tt Mahasiswa} pada fungsi {\tt calculateIPKLulus()}. Terdapat kode aneh yaitu tanda "!" terbalik yang merepresentasikan tanda lebih kecil "<" dan tanda "?" terbalik yang merepresentasikan tanda lebih besar ">". Sebaiknya perangkat lunak dapat mengatasi {\it tag-tag html} jika javadoc memiliki {\it tag-tag} tersebut.
-	\item Parameter setiap {\it method signature} memiliki tipe variabel yang panjang. Sebaiknya perangkat lunak dapat mengatasi tipe variabel yang panjang tersebut menjadi lebih singkat agar parameter pada {\it method} tersebut yang didokumentasikan akan sama seperti pada kode program yang dibuat.
+	\item Pada saat ini, perangkat lunak tidak mengatasi {\it tag-tag html}. Pada pengujian menggunakan SIAModels terdapat beberapa kelas yang memiliki {\it tag-tag} html pada {\it javadoc} seperti contoh pada kelas {\tt Mahasiswa} pada fungsi {\tt calculateIPKLulus()}. Terdapat kode yang tidak lazim yaitu tanda \textexclamdown\ yang merepresentasikan tanda lebih kecil "<" dan tanda \textquestiondown\ yang merepresentasikan tanda lebih besar ">". Sebaiknya perangkat lunak dapat mengatasi {\it tag-tag html} jika javadoc memiliki {\it tag-tag} tersebut.
 	\item Pada saat ini, perangkat lunak menampilkan tulisan "tidak memiliki {\it exception}" pada bagian {\bf Exception}. Sebaiknya mengikutin standar dari {\it javadoc} bahwa jika {\it method} tidak memiliki {\it exception} maka bagian {\bf Exception} tidak akan muncul pada dokumentasi.
 \end{enumerate}

@@ -1,8 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="GenerateJavadocToLatex:jar">
     <output-path>$PROJECT_DIR$/dist</output-path>
+    <properties id="ant-preprocessing">
+      <options enabled="true" />
+    </properties>
     <root id="archive" name="GenerateJavadocToLatex.jar">
       <element id="module-output" name="GenerateJavadocToLatex" />
+      <element id="file-copy" path="$PROJECT_DIR$/../tools.jar" />
     </root>
   </artifact>
 </component>
