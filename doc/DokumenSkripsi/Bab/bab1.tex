@@ -7,44 +7,43 @@
 
 Dalam sebuah penelitian, membuat dokumentasi perlu dilakukan. Dokumentasi yang dibuat bisa dalam bentuk {\it hardcopy} atau {\it softcopy}, tergantung kebutuhannya. Dokumentasi adalah kegiatan untuk mencatat suatu peristiwa atau aktifitas yang dianggap berharga atau penting. Dokumentasi yang sudah dibuat dapat menjadi referensi untuk memandu dalam melakukan sebuah aktifitas.
 
-Dalam bidang Teknologi Informasi, dokumentasi kode program java umumnya ditulis dalam format {\it Javadoc}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh Java yang berguna untuk mengekstrak informasi dari sebuah {\it file} java menjadi sebuah dokumentasi. Umumnya digunakan untuk mendokumentasikan sebuah nama kelas, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file} java. Informasi tersebut dapat menjelaskan sebuah kelas yang dibuat dalam sebuah dokumentasi perangkat lunak. 
+Dalam bidang Teknologi Informasi, dokumentasi kode program {\it Java} umumnya ditulis dalam format {\it Javadoc}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi dari sebuah {\it file Java} menjadi sebuah dokumentasi. Umumnya digunakan untuk mendokumentasikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file Java}. Informasi tersebut dapat menjelaskan sebuah kelas yang dibuat dalam sebuah dokumentasi perangkat lunak. 
 
-Skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it java}. Seperti yang sudah dijelaskan, bahasa pemrograman {\it java} memiliki {\it Javadoc} sebagai informasi dari kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi Skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. \LaTeX\ membuat apa yang ditampilkan sama seperti apa yang yang ditulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF
+Skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it Java}. Seperti yang sudah dijelaskan, bahasa pemrograman {\it Java} memiliki {\it Javadoc} sebagai informasi dari kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi Skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. \LaTeX\ membuat apa yang ditampilkan sama seperti apa yang yang ditulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF.
 
-Pada salah satu bab dokumentasi Skripsi, terdapat penjelasan dari setiap kelas pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap kelas pada perangkat lunak yang dibuat.
+Pada salah satu bab dokumentasi Skripsi, terdapat penjelasan dari setiap kelas pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it Java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap kelas pada perangkat lunak yang dibuat.
 
-Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengekstraksi informasi pada {\it Javadoc} ke format \LaTeX\ secara otomatis. Perangkat lunak ini mengimplementasikan sebuah {\it Application Programming Interface} (API) yang digunakan untuk mengambil informasi berupa nama kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang terdapat pada sebuah {\it file java}
+Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengambil informasi pada {\it Javadoc} ke format \LaTeX\ secara otomatis. Perangkat lunak ini mengimplementasikan sebuah {\it Application Programming Interface} (API) yang digunakan untuk mengambil informasi berupa nama kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang terdapat pada sebuah {\it file Java}.
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
-Bedasarkan latar belakang yang telah disebutkan di atas, maka dihasilkan beberapa poin yang menjadi rumusan masalah dari masalah ini. Rumusan masalah yang akan dibangun antara lain sebagai berikut:
+Berdasarkan latar belakang yang telah disebutkan di atas, maka dihasilkan sebuah poin yang menjadi rumusan masalah dari masalah ini. Rumusan masalah yang akan dibangun antara lain sebagai berikut:
 \begin{itemize}
-	\item Bagaimana membuat perangkat lunak yang dapat mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis?
+	\item Bagaimana membuat perangkat lunak yang dapat mengambil informasi dari sekumpulan {\it file Java} yang terdapat pada sebuah {\it package} dan mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis?
 \end{itemize}
 
 \section{Tujuan}
 \label{sec:tujuan}
 Adapun tujuan yang ingin dicapai dari penelitian ini adalah menjawab rumusan masalah di atas, yaitu:
-\begin{enumerate}
-	\item Membuat perangkat lunak yang dapat mengonversikan format {\it Javadoc} ke format \LaTeX\ secara otomatis.
-\end{enumerate}
+\begin{itemize}
+	\item Membuat perangkat lunak yang dapat mengambil informasi dari sekumpulan {\it file Java} yang terdapat pada sebuah {\it package} dan mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis.
+\end{itemize}
 
 \section{Batasan Masalah}
 \label{sec:batasan}
 Agar pembahasan masalah tidak terlalu luas, masalah yang akan dikaji di dalam penelitian ini memiliki batasan, yaitu:
 \begin{enumerate}
-	\item Perangkat lunak yang dikembangkan menggunakan bahasa pemrograman {\it Java}.
-	\item Perangkat lunak hanya dapat menerima masukan berupa sekumpulan {\it file java} yang terdapat pada sebuah {\it package}.
-	\item Perangkat lunak hanya menghasilkan {\it output} berupa format \LaTeX\ yang selanjutnya akan dimasukkan ke dalam file \LaTeX.
+	\item Perangkat lunak memanfaatkan {\it library Doclet} yang sudah disediakan.
+	\item Perangkat lunak menghasilkan {\it file} \LaTeX\ tanpa mengonversikan menjadi {\it file} PDF. 
 \end{enumerate}
 
 \section{Metodologi}
 \label{sec:metlit}
 Untuk menyelesaikan penelitian ini disusunlah tahap-tahap tugas yang perlu dilakukan. Tahap-tahap yang dimaksud adalah sebagai berikut:
 \begin{enumerate}
-	\item Melakukan studi literatur untuk mengetahui {\it syntax} yang terdapat pada \LaTeX\ dan mengetahui apa saja isi dari dokumentasi Javadoc Doclet API.
+	\item Melakukan studi literatur untuk mengetahui {\it syntax} yang terdapat pada \LaTeX\ dan mengetahui apa saja isi dari dokumentasi {\it Javadoc Doclet} API.
 	\item Melakukan survei terhadap format penulisan pada suatu bab pada skripsi yang berisi tentang dokumentasi perangkat lunak yang dibuat. Membutuhkan minimal 3 dokumen skripsi sebagai panduan format penulisan.
-	\item Mengimplementasikan langkah-langkah untuk mengkonversi {\it Javadoc} ke format \LaTeX.
+	\item Mengimplementasikan langkah-langkah untuk mengonversi {\it Javadoc} ke format \LaTeX.
 	\item Melakukan pengujian terhadap perangkat lunak yang telah diimplementasi.
 	\item Menarik kesimpulan berdasarkan hasil pengujian.
 \end{enumerate}

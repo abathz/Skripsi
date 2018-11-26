@@ -3,24 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a02aaf52-456e-4866-97b3-b75bfc952801" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../GenerateJavadocToLatex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GenerateJavadocToLatex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GenerateJavadocToLatex/output/javadoctolatex.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GenerateJavadocToLatex/output/javadoctolatex.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GenerateJavadocToLatex/output/operasimatematika.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GenerateJavadocToLatex/output/operasimatematika.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GenerateJavadocToLatex/output/siamodels.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GenerateJavadocToLatex/output/siamodels.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/javadoc.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OperasiMatematikaInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pembagian.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pengurangan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Perkalian.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pertambahan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/Bab/bab5.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/data.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/data.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/skripsi.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/DokumenSkripsi/skripsi.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/DokumenSkripsi/skripsi.synctex.gz" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,41 +18,87 @@
     <session id="-282257217">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="10" />
+          <entry key="java" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="10" />
+          <entry key="JAVA" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="18" />
+          <entry key="java" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="18" />
+          <entry key="JAVA" value="39" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/operasi/OperasiMatematikaInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="16" />
+            <state relative-caret-position="252">
+              <caret line="14" column="16" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="14" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/Transferable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/FlavorMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/StringSelection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/Clipboard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/DataFlavor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1242">
+              <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -75,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/operasi/Pembagian.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="414">
+              <caret line="23" column="3" selection-start-line="19" selection-start-column="2" selection-end-line="23" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -99,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/operasi/Pertambahan.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -123,11 +154,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/operasi/OperasiMatematikaInterface.java" />
         <option value="$PROJECT_DIR$/src/operasi/Pembagian.java" />
         <option value="$PROJECT_DIR$/src/operasi/Pengurangan.java" />
         <option value="$PROJECT_DIR$/src/operasi/Perkalian.java" />
         <option value="$PROJECT_DIR$/src/operasi/Pertambahan.java" />
+        <option value="$PROJECT_DIR$/src/operasi/OperasiMatematikaInterface.java" />
       </list>
     </option>
   </component>
@@ -148,7 +179,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,11 +187,22 @@
               <item name="OperasiMatematika" type="b2602c69:ProjectViewProjectNode" />
               <item name="OperasiMatematika" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OperasiMatematika" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OperasiMatematika" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OperasiMatematika" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OperasiMatematika" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="operasi" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -202,11 +244,13 @@
       <updated>1542815370446</updated>
       <workItem from="1542815373925" duration="65000" />
       <workItem from="1542815798965" duration="181000" />
+      <workItem from="1543140283866" duration="333000" />
+      <workItem from="1543141183650" duration="494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246000" />
+    <option name="totallyTimeSpent" value="1073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -243,52 +287,43 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Pertambahan.java">
+    <entry file="file://$PROJECT_DIR$/src/Pertambahan.java" />
+    <entry file="file://$PROJECT_DIR$/src/OperasiMatematikaInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/Perkalian.java" />
+    <entry file="file://$PROJECT_DIR$/src/Pengurangan.java" />
+    <entry file="file://$PROJECT_DIR$/src/Pembagian.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/Transferable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="324">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OperasiMatematikaInterface.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/FlavorMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="252">
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Perkalian.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/Clipboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="360">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pengurangan.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/DataFlavor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pembagian.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/operasi/OperasiMatematikaInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="16" />
+        <state relative-caret-position="1242">
+          <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/operasi/Pembagian.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="414">
+          <caret line="23" column="3" selection-start-line="19" selection-start-column="2" selection-end-line="23" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -310,6 +345,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.datatransfer/java/awt/datatransfer/StringSelection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/operasi/OperasiMatematikaInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>

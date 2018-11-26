@@ -1,8 +1,6 @@
 \lstdefinestyle{mystyle}{
     basicstyle=\footnotesize,                
-   	captionpos=b,                     
-   	numbers=left,                    
-   	numbersep=5pt,             
+   	captionpos=b,            
    	tabsize=2
 }
 \lstset{style=mystyle}
@@ -13,56 +11,57 @@ Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. T
 
 \section{Javadoc}
 \label{sec:javadoc} 
-{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi dari sekumpulan {\it source file Java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengekstraksi informasi tersebut dari sebuah {\it package java}, sebuah {\it file java} atau keduanya~\cite{javadoc:01:javadoc}.
+{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi dari sekumpulan {\it source file Java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengambil informasi tersebut dari sebuah {\it package Java}, sebuah {\it file Java} atau keduanya~\cite{javadoc:01:javadoc}.
 
 \subsection{\textit{Processing of source files}}
 \label{sec:javadoc}
-{\it Javadoc} akan memproses {\it file} yang memiliki akhiran {\it ".java"} dan keseluruhan {\it file} yang terdapat di dalam folder yang sama. {\it Javadoc} dapat mengambil informasi dari 1 atau lebih {\it file java} dan sebuah {\it package}.
+{\it Javadoc} akan memproses {\it file} yang memiliki akhiran {\it ".java"}. {\it Javadoc} dapat mengambil informasi dari lebih dari 1 {\it file Java} atau sebuah {\it package}.
 
-{\it Javadoc} dapat memproses sebuah {\it link} secara otomatis yang mengarah kepada sebuah {\it package}, kelas dan sebuah nama yang akan didokumentasikan pada saat {\it Javadoc} memprosesnya. {\it Link-link} tersebut berada pada beberapa posisi seperti:
+{\it Javadoc} secara otomatis akan menambahkan sebuah tautan yang mengarahkan ke sebuah {\it package}, kelas dan anggota dari kelas tersebut yang akan didokumentasikan pada saat {\it Javadoc} memprosesnya. Tautan tersebut berada pada beberapa posisi seperti:
 \begin{enumerate}
 	\item {\it Declaration} ({\it return types}, {\it argument types}, {\it field types}).
-	\item Bagian {\it "See Also"} yang dihasilkan oleh {\it tag @see}.
+	\item {\it "See Also"} yang dihasilkan oleh {\it tag @see}.
 	\item {\it In-line text} yang dihasilkan oleh {\it tag {@link}}.
-	\item {\it Exeption} yang dihasilkan oleh {\it tag @throws}.
+	\item {\it Exception} yang dihasilkan oleh {\it tag @throws}.
 	\item {\it Link "Specified by"} untuk {\it member} dari sebuah {\it interface}.
 	\item {\it Link "Override"} untuk {\it member} dari sebuah kelas.
 	\item Ringkasan daftar tabel {\it package}, kelas dan seluruh anggota dari kelas.
 	\item Turunan dari setiap {\it package} dan kelas.
-	\item Indeks
+	\item Indeks.
 \end{enumerate}
 
-Dalam mengekstrak informasi yang terdapat dalam sebuah {\it package java} atau beberapa {\it file java} umumnya menghasilkan sebuah dokumentasi standar yang berbentuk {\it file} HTML dan format penulisan yang mengikuti standar {\it Javadoc}, akan tetapi untuk menghasilkan sebuah format dokumentasi yang diingin, dapat menggunakan sebuah {\it doclet} yang disediakan oleh {\it Javadoc}.
+Dalam mengambil informasi yang terdapat dalam sebuah {\it package Java} atau beberapa {\it file Java} umumnya menghasilkan sebuah dokumentasi standar yang berbentuk {\it file} HTML dan format penulisan yang mengikuti standar {\it Javadoc}, akan tetapi untuk menghasilkan sebuah format dokumentasi yang diingin, dapat menggunakan sebuah {\it doclet} yang disediakan oleh {\it Javadoc}.
 
 \subsection{Terminologi}
 \label{sec:terminologi}
 Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc} sebagai berikut:
 \begin{itemize}
 	\item {\it Generated Document}\\
-	Dokumen yang dihasilkan oleh {\it Javadoc tools} adalah sebuah {\it file} HTML dan dibuat oleh {\it standard doclet}
+	Dokumen yang dihasilkan oleh {\it Javadoc tools} adalah sebuah {\it file} HTML dan dibuat oleh standar {\it doclet}.
 	\item {\it Name}\\
-	Nama dari sebuah perangkat lunak dituliskan dalam bahasa {\it Java}. Nama-nama tersebut yaitu nama {\it package}, kelas, {\it interface}, {\it field}, {\it constructor} atau {\it method}. Nama tersebut dapat berupa informasi lengkapnya seperti {\it java.lang.String.equals(java.lang.Object)} atau informasi pendeknya seperti {\it equals(Object)}
+	Nama dari elemen program yang dideklarasikan atau dilakukan pemanggilan maka dapat berupa informasi lengkapnya seperti {\tt java.lang.String} dan {\tt java.lang.String.equals(java.lang.Object)} atau informasi pendeknya seperti {\tt String} dan {\tt equals(Object)}. Nama-nama tersebut dapat berupa nama {\it package}, kelas, {\it interface}, {\it field}, {\it constructor} atau {\it method}.
 	\item {\it Documented Classes}\\
-	Detail dari sebuah kelas dan {\it interface} akan didokumentasikan pada saat {\it Javadoc} berjalan. Untuk dapat didokumentasikan, {\it source file} harus tersedia, kemudian nama dari {\it source file} atau nama dari {\it package} tersebut harus diletakkan pada {\it Javadoc command-line}
+	Detail dari sebuah kelas dan {\it interface} akan didokumentasikan pada saat {\it Javadoc} berjalan. Untuk dapat didokumentasikan, {\it source file} harus tersedia, kemudian nama dari {\it source file} atau nama dari {\it package} tersebut harus diletakkan pada {\it Javadoc command-line}.
 	\item {\it Included Classes}\\
-	kelas dan {\it Interface} akan didokumentasikan pada saat {\it Javadoc} berjalan, hal ini sama seperti {\it Documented Classes}
+	Kelas dan {\it Interface} akan didokumentasikan pada saat {\it Javadoc} berjalan, hal ini sama seperti {\it Documented Classes}.
 	\item {\it Excluded Classes}\\
-	kelas dan {\it Interface} tidak akan didokumenasikan pada saat {\it Javadoc} berjalan.
+	Kelas dan {\it Interface} tidak akan didokumenasikan pada saat {\it Javadoc} berjalan.
 	\item {\it Referenced Classes}\\
-	kelas dan {\it Interface} yang secara eksplisit disebut oleh kelas dan {\it interface} lainnya, seperti {\it return type}, {\it parameter type}, {\it cast type}, {\it extended class}, {\it implemented interface}, {\it imported class}, kelas yang digunakan pada {\it method body}, {\it @see}, {\it {@link}}, {\it {@linkplain}} dan {\it {@inheritDoc} tag} 
-	\item {\it External Referenced Classes}\\
-	kelas yang tidak dihasilkan saat {\it Javadoc} berjalan. Dengan kata lain, kelas tersebut tidak diletakkan pada {\it Javadoc command-line}. {\it Links} akan dihasilkan jika sebuah kelas mengatakan memiliki {\it external references} atau {\it external link}.
+	Kelas dan {\it Interface} yang secara eksplisit disebutkan oleh kelas dan {\it interface} lainnya, seperti {\it return type}, {\it parameter type}, {\it cast type}, {\it extended class}, {\it implemented interface}, {\it imported class}, kelas yang digunakan pada {\it method body}, {\it @see}, {\it {@link}}, {\it {@linkplain}} dan {\it {@inheritDoc} tag}.
+	%\item {\it External Referenced Classes}\\
+	%Kelas yang tidak dihasilkan saat {\it Javadoc} berjalan. Dengan kata lain, kelas tersebut tidak diletakkan pada {\it Javadoc command-line}. {\it Links} akan dihasilkan jika sebuah kelas mengatakan memiliki {\it external references} atau {\it external link}.
 \end{itemize}
 
 \subsection{\textit{Source Files}}
 \label{sec:source-files}
-{\it Javadoc} akan menghasilkan {\it output} yang berasal dari beberapa tipe {\it file}, yaitu sebagai berikut:
+{\it Javadoc} akan menghasilkan {\it output} yang berasal dari 4 tipe {\it file}, yaitu sebagai berikut:
 \begin{itemize}
 	\item {\it Class Source Code Files}\\
-	Setiap kelas atau {\it interface} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it file java}
+	Setiap kelas atau {\it interface} memiliki dokumentasinya masing-masing.
 	\item {\it Package Comment Files}\\
-	Setiap {\it package} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it root} folder kemudian {\it Javadoc} akan menggabungkan {\it file-file} yang terdapat pada {\it root} menjadi sebuah ringkasan. Untuk membuat dokumentasi tersebut, terdapat 2 pilihan yaitu sebuah {\it file} package.html \ref{package} atau sebuah {\it file} package-info.java \ref{package-info}.
-	\begin{lstlisting}[language=Html, caption={\it File} package.html, label={package}]
+	Setiap {\it package} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it root} folder {\it package}. Contohnya {\it java/applet/package.html}, kemudian {\it Javadoc} akan menggabungkan dokumentasi tersebut menjadi sebuah ringkasan dari {\it package} yang ada. 
+	Terdapat 2 cara penulisan yaitu dengan sebuah {\it file} package.html pada listing \ref{package} atau sebuah {\it file} package-info.java pada listing \ref{package-info}.
+	\begin{lstlisting}[language=Html, caption={\it File package.html}, label={package}]
 	<html>
 	<body>
 	Provides the classes necessary to create an applet and the classes
@@ -74,7 +73,7 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 	</html>
 	\end{lstlisting}
 	
-	\begin{lstlisting}[language=Java, caption={\it File} package-info.java, label={package-info}]
+	\begin{lstlisting}[language=Java, caption={\it File package-info.java}, label={package-info}]
 	/**
 	 * Provides the classes necessary to create an applet
 	 * and the classes an applet uses to communicate
@@ -88,44 +87,52 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 	Ketika {\it Javadoc} memproses {\it package} tersebut, {\it Javadoc} akan melakukan beberapa langkah yaitu sebagai berikut:
 	\begin{enumerate}
 		\item Menyalin informasi untuk diproses. Jika {\it file} berupa HTML maka pada bagian {\it <body>} hingga {\it </body>} akan disalin.
-		\item Memproses semua {\it tag} pada {\it package} yang ada.
-		\item Memasukan teks yang sudah diproses tersebut pada bagian bawah halaman dokumentasi yang dihasilkan.
-		\item Salin kalimat pertama pada {\it package} tersebut pada bagian atas halaman dokumentasi
+		\item Memproses semua {\it tag} yang ada.
+		\item Memasukkan teks yang sudah diproses tersebut pada bagian bawah halaman dokumentasi yang dihasilkan.
+		\item Menyalin kalimat pertama pada {\it package} tersebut pada bagian atas halaman dokumentasi.
 	\end{enumerate}
 	\item {\it Overview Comment Files}\\
-	Setiap aplikasi atau sekumpulan {\it package} yang akan didokumentasikan akan memiliki dokumentasi {\it overview}. Dokumentasi tersebut dapat dibuat lebih dari 1, jika pada saat pembuatan perangkat lunak menggunakan sekumpulan {\it package} yang berbeda. Untuk membuat sebuah dokumentasi ini, perlu membuat sebuah {\it file} HTML yang umumnya bernama {\it overview.html}. Kemudian {\it Javadoc} akan memproses seperti pada {\it Package Comment Files}
+	Setiap aplikasi atau sekumpulan {\it package} yang akan didokumentasikan akan memiliki dokumentasi {\it overview}. Dokumentasi tersebut dapat dibuat lebih dari 1, jika pada saat pembuatan perangkat lunak menggunakan sekumpulan {\it package} yang berbeda.
+	Untuk membuat sebuah dokumentasi ini, perlu membuat sebuah {\it file} HTML yang umumnya bernama {\it overview.html} yang diletakkan pada bagian paling atas sebuah {\it source code} yang dibuat. {\it Javadoc} akan melakukan beberapa langkah yaitu sebagai berikut:
+	\begin{enumerate}
+		\item Menyalin informasi untuk diproses.
+		\item Memproses semua {\it tag} yang ada.
+		\item Memasukan teks yang sudah diproses tersebut pada bagian bawah halaman dokumentasi yang dihasilkan.
+		\item Menyalin kalimat pertama pada {\it package} tersebut pada bagian atas halaman dokumentasi.
+	\end{enumerate}
 	\item {\it Miscellaneous Unprocessed Files}\\
-	{\it File} tersebut dapat berubah sebuah {\it graphic files}, {\it file java} dan sebuah {\it file} HTML.
+	{\it Javadoc} dapat memproses berbagai macam format {\it file}. {\it File} tersebut dapat berupa sebuah {\it graphic files}, {\it Java source (.java)} dan {\it class (.class)} dan sebuah {\it file} HTML.
+	Untuk memproses {\it file} tersebut, perlu membuat sebuah folder bernama {\it doc-files} yang diletakkan pada {\it package} tertentu lalu {\it file-file} tersebut dapat diakses dengan menggunakan lokasi direktori yang menyimpan {\it file} tersebut.
 \end{itemize}
 
 \subsection{\textit{Generated Files}}
 \label{sec:generated-files}
-Secara {\it default}, {\it Javadoc} akan menggunakan {\it standard doclet} yang akan menghasilkan sebuah dokumentasi berformat HTML. Doclet tersebu akan menghasilkan {\it file} HTML secara terpisah. Terdapat 3 grup yang masing-masing grup memiliki kriterianya sendiri, 3 grup tersebut adalah sebagai berikut:
+{\it Javadoc} memiliki sebuah {\it doclet} bawaan yang disebut dengan standar {\it doclet}. Standar {\it doclet} akan menghasilkan dokumentasi dengan format HTML. Terdapat 3 grup yang masing-masing memiliki kriterianya sendiri, ketiga grup tersebut adalah sebagai berikut:
 \begin{itemize}
 	\item {\it Basic Content Pages}
 	\begin{itemize}
-		\item sebuah halaman kelas atau {\it interface} ({\it classname}.html) untuk masing-masing kelas atau {\it interface} yang akan didokumentasikan
-		\item sebuah halaman {\it package} ({\it package-summary.html}) untuk masing-masing {\it package} yang akan didokumentasikan
-		\item sebuah halaman {\it overview} ({\it overview-summary.html}) untuk keseluruhan sekumpulan {\it package}. Halaman ini adalah halaman utama yang dihasilkan.
+		\item Sebuah halaman kelas atau {\it interface} ({\it classname.html}) untuk masing-masing kelas atau {\it interface} yang akan didokumentasikan.
+		\item Sebuah halaman {\it package} ({\it package-summary.html}) untuk masing-masing {\it package} yang akan didokumentasikan.
+		\item Sebuah halaman {\it overview} ({\it overview-summary.html}) untuk keseluruhan sekumpulan {\it package}. Halaman ini adalah halaman utama yang dihasilkan.
 	\end{itemize}
 	\item {\it Cross-Reference Pages}
 	\begin{itemize}
-		\item sebuah halaman hirarki dari kelas untuk sekumpulan dari semua {\it package} ({\it overview-tree.html})
-		\item sehalaman hirarki dari kelas untuk setiap {\it package} ({\it package-tree.html})
-		\item sehalaman {\it "use"} ({\it package-use.html}) yang berisikan {\it package}, {\it classes}, {\it methods}, {\it constructors} atau {\it interface}. Jika diberikan sebuah kelas bernama A, makan halaman tersebut akan berisikan {\it subclasses} dari A, {\it methods} yang memiliki {\it return} A dan {\it methods} atau {\it constructors} dengan parameter bertipe A.
-		\item sebuah halaman {\it deprecated API} ({\it deprecated-list.html}). Halaman ini adalah halaman dari sekumpulan nama yang tidak direkomendasikan untuk digunakan.
-		\item sebuah halaman sekumpulan nilai {\it constant} ({\it constant-values.html}) untuk sekumpulan nilai {\it static}.
-		\item sebuah halaman {\it serialized form} ({\it serialized-form.html})
-		\item sebuah halaman {\it index} ({\it index-*.html}).
+		\item Sebuah halaman hirarki untuk keseluruhan {\it package} ({\it overview-tree.html}).
+		\item Sebuah halaman hirarki untuk setiap {\it package} ({\it package-tree.html}).
+		\item Sebuah halaman {\it "use"} ({\it package-use.html}) yang berisikan {\it package}, {\it classes}, {\it methods}, {\it constructors} atau {\it interface}. Jika diberikan sebuah kelas bernama A, maka halaman tersebut akan berisikan {\it subclasses} dari A, {\it methods} yang memiliki {\it return} A dan {\it methods} atau {\it constructors} dengan parameter bertipe A.
+		\item Sebuah halaman {\it deprecated API} ({\it deprecated-list.html}). Halaman ini adalah halaman dari sekumpulan kelas atau {\it interface} yang tidak direkomendasikan untuk digunakan.
+		\item Sebuah halaman sekumpulan nilai {\it constant} ({\it constant-values.html}) untuk sekumpulan nilai {\it static}.
+		\item Sebuah halaman {\it serialized form} ({\it serialized-form.html}).
+		\item Sebuah halaman {\it index} ({\it index-*.html}).
 	\end{itemize}
 	\item {\it Support Files}
 	\begin{itemize}
-		\item sebuah halaman bantuan ({\it help-doc.html}).
-		\item sebuah halaman {\it index} ({\it index.html}) yang membuat sebuah HTML {\it frames}.
-		\item beberapa {\it frame file} ({\it *-frame.html}) yang berisi sekumpulan {\it packages}, kelas dan {\it interface} dan digunakan pada saat HTML {\it frames} ditampilkan
-		\item sebuah {\it file} teks {\it package list} ({\it package-list}).
-		\item sebuah {\it style sheet file} ({\it stylesheet.css}) untuk mengontrol warna, jenis {\it font}, ukuran {\it font} dan posisi dari halamanan yang dihasilkan
-		\item sebuah {\it doc-files} yang berisikan gambar dan beberapa contoh {\it file java}
+		\item Sebuah halaman bantuan ({\it help-doc.html}).
+		\item Sebuah halaman {\it index} ({\it index.html}) yang membuat sebuah HTML {\it frames}.
+		\item Seberapa {\it frame file} ({\it *-frame.html}) yang berisi sekumpulan {\it packages}, kelas dan {\it interface} dan digunakan pada saat HTML {\it frames} ditampilkan.
+		\item Sebuah {\it file} teks {\it package list} ({\it package-list}).
+		\item Sebuah {\it style sheet file} ({\it stylesheet.css}) untuk mengontrol warna, jenis {\it font}, ukuran {\it font} dan posisi dari halaman yang dihasilkan.
+		\item Sebuah {\it doc-files} yang berisikan gambar dan beberapa contoh {\it file Java}.
 	\end{itemize}
 \end{itemize}
 {\it Javadoc} akan menghasilkan 2 atau 3 HTML {\it frame}. {\it Javadoc} akan membuat minimum {\it frame} yang dibutuhkan. Jika hanya terdapat 1 {\it package}, maka {\it Javadoc} akan membuat 1 {\it frame} yang berisi dari sekumpulan kelas pada {\it package} tersebut. Jika terdapat lebih dari 2 {\it package}, maka {\it Javadoc} akan membuat 3 {\it frame} dari sekumpulan {\it package}. Jika kelas yang digunakan adalah {\it java.applet.Applet} dan semua dokumentasi yang dihasilkan akan berada pada folder yang bernama {\it apidocs}, struktur {\it file} yang dihasilkan adalah sebagai berikut:
@@ -176,67 +183,67 @@ Secara {\it default}, {\it Javadoc} akan menggunakan {\it standard doclet} yang 
 \end{lstlisting}
 \section{Doclet}
 \label{sec:doclet}
-{\it Doclet} yang terdapat pada {\it Javadoc} dapat digunakan untuk menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Standar {\it doclet} yang dihasilkan oleh {\it Javadoc} adalah dokumentasi dengan format HTML. Selain menghasilkan {\it output} yang dapat disesuaikan, Doclet juga dapat mengekstrak informasi secara spesifik~\cite{doclet:02:doclet}.
+{\it Doclet} yang terdapat pada {\it Javadoc} dapat digunakan untuk menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Standar {\it doclet} yang dihasilkan oleh {\it Javadoc} adalah dokumentasi dengan format HTML. Selain menghasilkan {\it output} yang dapat disesuaikan, {\it Doclet} juga dapat mengambil informasi secara spesifik~\cite{doclet:02:doclet}.
 
 \subsection{\textit{Interface-interface} pada Doclet}
 \label{sec:interface-doclet}
 Berikut adalah beberapa {\it interface} yang terdapat pada {\it Doclet}:
 \begin{itemize}
-	\item {\verb RootDoc }
-	sebuah {\it interface} yang menyatakan sebuah {\it root} dari perangkat lunak yang dibuat. Dari {\it root} tersebut semua informasi dapat diekstrak. {\it Method-method} yang digunakan adalah sebagai berikut
+	\item {\tt RootDoc}\\
+	sebuah {\it interface} yang menyatakan sebuah {\it root} dari perangkat lunak yang dibuat. Dari {\it root} tersebut semua informasi dapat diambil. {\it Method-method} yang digunakan adalah sebagai berikut:
 	\begin{itemize}
-		\item {\verb classes() }\\
-		{\it Method} ini akan mengembalikan sejumlah kelas dan {\it interface} pada {\it package}
+		\item {\tt classes()}\\
+		{\it Method} ini akan mengembalikan sejumlah kelas dan {\it interface} pada {\it package}.
 	\end{itemize}
-	\item {\verb ClassDoc }
-	sebuah {\it interface} yang menyatakan informasi dari sebuah kelas. Informasi tersebut dapat berupa nama kelas, nama {\it method} dan {\it tag}. {\it Method-method} yang digunakan adalah sebagai berikut
+	\item {\tt ClassDoc}\\
+	sebuah {\it interface} yang menyatakan informasi dari sebuah kelas. Informasi tersebut dapat berupa nama kelas, nama {\it method} dan {\it tag}. {\it Method-method} yang digunakan adalah sebagai berikut:
 	\begin{itemize}
-		\item {\verb name() }\\
-		{\it Method} ini akan mengembalikan sebuah nama kelas atau {\it interface} pada {\it package}
-		\item {\verb commentText() }\\
-		{\it Method} ini akan mengembalikan sebuah informasi dari deskripsi kelas
-		\item {\verb methods() }\\
-		{\it Method} ini akan mengembalikan sebuah {\it array of methods}
+		\item {\tt name()}\\
+		{\it Method} ini akan mengembalikan sebuah nama kelas atau {\it interface} pada {\it package}.
+		\item {\tt commentText()}\\
+		{\it Method} ini akan mengembalikan sebuah informasi dari deskripsi kelas.
+		\item {\tt methods()}\\
+		{\it Method} ini akan mengembalikan sebuah {\it array of methods}.
 	\end{itemize}
-	\item {\verb MethodDoc }
-	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it method}. {\it Method-method} yang digunakan adalah sebagai berikut
+	\item {\tt MethodDoc}\\
+	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it method}. {\it Method-method} yang digunakan adalah sebagai berikut:
 	\begin{itemize}
-		\item {\verb name() }\\
-		{\it Method} ini akan mengembalikan sebuah nama {\it method}
-		\item {\verb modifiers() }\\
-		{\it Method} ini akan mengembalikan sebuah {\it access modifier} dari sebuah {\it method}
-		\item {\verb returnType() }\\
-		{\it Method} ini akan mengembalikan sebuah {\it return type} dari sebuah {\it method}
-		\item {\verb flatSignature() }\\
-		{\it Method} ini akan mengembalikan {\it signature} dari sebuah {\it method}. Jika terdapat {\it Method} dengan parameter (String x, int y), maka akan mengembalikan (String, int)
+		\item {\tt name()}\\
+		{\it Method} ini akan mengembalikan sebuah nama {\it method}.
+		\item {\tt modifiers()}\\
+		{\it Method} ini akan mengembalikan sebuah {\it access modifier} dari sebuah {\it method}.
+		\item {\tt returnType()}\\
+		{\it Method} ini akan mengembalikan sebuah {\it return type} dari sebuah {\it method}.
+		\item {\tt flatSignature()}\\
+		{\it Method} ini akan mengembalikan {\it signature} dari sebuah {\it method}. Jika terdapat {\it Method} dengan parameter (String x, int y), maka akan mengembalikan (String, int).
 	\end{itemize}
-	\item {\verb ParamTag }
-	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it Tag} parameter. {\it Method-method} yang digunakan adalah sebagai berikut
+	\item {\tt ParamTag}\\
+	sebuah {\it interface} yang menyatakan informasi dari sebuah {\it Tag} parameter. {\it Method-method} yang digunakan adalah sebagai berikut:
 	\begin{itemize}
-		\item {\verb name() }\\
-		{\it Method} ini akan mengembalikan sebuah {\it tag @param} 
-		\item {\verb parameterName() }\\
-		{\it Method} ini akan mengembalikan sebuah nama parameter dari sebuah {\it method}
-		\item {\verb parameterComment() }\\
-		{\it Method} ini akan mengembalikan sebuah deskripsi dari parameter yang terdapat pada {\it method}
+		\item {\tt name()}\\
+		{\it Method} ini akan mengembalikan sebuah {\it tag @param}.
+		\item {\tt parameterName()}\\
+		{\it Method} ini akan mengembalikan sebuah nama parameter dari sebuah {\it method}.
+		\item {\tt parameterComment()}\\
+		{\it Method} ini akan mengembalikan sebuah deskripsi dari parameter yang terdapat pada {\it method}.
 	\end{itemize}
 \end{itemize}
 
 \subsection{Penggunaan Doclet}
 \label{sec:penggunaan-doclet}
-Doclet dapat menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Penggunaan {\it Doclet} API dapat mengekstrak bermacam-macam informasi seperti nama kelas, nama {\it method}, deskripsi singkat untuk sebuah parameter dari sebuah {\it method} hingga {\it return type} dari {\it method}.
+Doclet dapat menghasilkan sebuah {\it output Javadoc} yang dapat disesuaikan. Penggunaan {\it Doclet} API dapat mengambil bermacam-macam informasi seperti nama kelas, nama {\it method}, deskripsi singkat untuk sebuah parameter dari sebuah {\it method} hingga {\it return type} dari {\it method}.
 
-Berikut adalah langkah-langkah untuk menggunakan {\it doclet}:
+Berikut adalah langkah-langkah dasar untuk membuat dan menggunakan {\it doclet}:
 \begin{enumerate}
-	\item Membuat sebuah kelas pada {\it java} sebagai {\it doclet}. {\it class java} tersebut harus meng-{\it import}  \verb com.sun.javadoc.*  untuk menggunakan {\it doclet} API.
-	\item {\it Doclet} tersebut diawali dengan sebuah {\it method} \verb public  \verb static  \verb boolean  \verb start  yang memiliki parameter \verb RootDoc .
-	\item {\it Compile doclet} tersebut dengan menggunakan {\it compiler} Java 2 SDK yaitu {\it javac} pada {\it command prompt(Windows)}/{\it terminal(Linux)}.
-	\item Jalankan {\it Javadoc} menggunakan \verb -doclet  {\it \textbf{startingclass}} {\it option} untuk menghasilkan {\it output} yang telah disesuaikan, dimana {\it \textbf{startingclass}} adalah sebuah kelas yang sudah dibuat pada langkah 1.
+	\item Membuat sebuah kelas {\it Java} yang akan menjadi {\it doclet}. Kelas {\it Java} tersebut harus ditambahkan {\it package} {\tt com.sun.javadoc.*} untuk menggunakan {\it doclet} API.
+	\item Kelas tersebut harus diawali dengan sebuah {\it method} {\tt public static boolean start} yang memiliki parameter {\tt RootDoc}.
+	\item {\it Compile} doclet tersebut dengan menggunakan {\it compiler Java} yaitu {\tt javac} yang dapat dilakukan melalui {\it Terminal} pada Linux/Mac atau {\it Command Prompt} pada Windows.
+	\item Jalankan perintah {\it Javadoc} menggunakan {\it option} {\tt -doclet <class>} untuk menghasilkan {\it output} yang telah disesuaikan, dimana {\tt <class>} adalah kelas {\it doclet} yang sudah di-{\it compile} pada langkah ketiga. Jika tidak menggunakan {\it option} {\tt -doclet} maka {\it Javadoc} akan menghasilkan {\it output} standar yaitu berupa {\it file} HTML.
 \end{enumerate}
 
-{\it File doclet} API terdapat pada direktori {\it folder jdk} yang ter-{\it install} pada komputer pada {\it subfolder}  \verb lib\tools.jar .{\it doclet} yang sudah dibuat harus di-{\it compile} menggunakan {\it file}  \verb tools.jar  dan menambahkan {\it option}  \verb -classpath  setelah {\it command}  \verb javac . Jika tidak menggunakan {\it option}  \verb -doclet  , {\it Javadoc} akan menghasilkan {\it output} standar yaitu berupa {\it file} HTML.
+Kelas-kelas yang dimiliki oleh {\it doclet} API terdapat pada direktori {\tt lib\string\tools.jar}. {\it Doclet} yang sudah dibuat harus di-{\it compile} menggunakan {\it file} {\tt tools.jar} dan menambahkan {\it option} {\tt -classpath} setelah {\it command} {\tt javac}. 
 
-{\it Package}  \verb com.sun.javadoc  terdiri {\it interface} yang mendefinisikan {\it doclet} API dan sedangkan {\it file}  \verb tools.jar  berisikan {\it interface-interface} tersebut dan juga berisikan {\it private package} dengan {\it class-class} yang mengimplementasi {\it interface} tersebut serta {\it file} tools.jar berisikan pula {\it class-class} yang mengimplementasi sebuah standar {\it doclet}.
+{\it Package} {\tt com.sun.javadoc.*} terdiri dari {\it interface} yang mendefinisikan {\it doclet} API. {\tt tools.jar} berisikan {\it interface} tersebut.
 
 \begin{lstlisting}[language=Java, caption=kelas ListClass.java, label={program-doclet}]
 	import com.sun.javadoc.*;
@@ -251,7 +258,7 @@ Berikut adalah langkah-langkah untuk menggunakan {\it doclet}:
 		}
 	}
 \end{lstlisting}
-Potongan {\it program} ini \ref{program-doclet} adalah sebuah {\it doclet} sederhana untuk menampilkan nama-nama kelas pada {\it file java}. Hal pertama yang harus dilakukan adalah meng-{\it import package}  \verb com.sun.javadoc.* , kemudian membuat sebuah {\it method} \verb public  \verb static  \verb boolean  \verb start  dengan parameter sebuah  \verb RootDoc  doc  yang akan menampung sekumpulan {\it file java} yang akan diproses.  \verb ClassDoc  pada {\it method} tersebut akan menampung nama-nama kelas yang terdapat pada variabel  \verb doc  dengan menggunakan {\it method}  \verb classes() .
+Potongan {\it program} pada Listing \ref{program-doclet} adalah sebuah {\it doclet} sederhana untuk menampilkan nama dari kelas yang dijadikan sebagai masukan. {\it Method} {\tt public static boolean start} memiliki parameter {\tt RootDoc doc} yang akan menampung masukan dari sekumpulan {\it file Java} yang akan diproses lalu sekumpulan {\it file} tersebut akan ditampung pada {\tt ClassDoc[] classes} sebagai {\tt array} kemudian {\it array of classes} akan dijalankan sebanyak panjang {\it array} tersebut.
 
 \section{\LaTeX}
 \label{sec:latex}

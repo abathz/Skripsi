@@ -134,7 +134,9 @@ public class MethodClassExtractor {
         out.write("\\begin{itemize}\n");
         for (int k = 0; k < paramTags.length; k++) {
           Type type = paramMethod[k].type();
-          out.write("\\item \\texttt{" + type.typeName() + " " + paramTags[k].parameterName() + "} - \n");
+          String[] typeParam = type.toString().split("\\.");
+          System.out.println(typeParam[typeParam.length - 1]);
+          out.write("\\item \\texttt{" + typeParam[typeParam.length - 1] + " " + paramTags[k].parameterName() + "} - \n");
           Tag[] inlineTagsInParameter = paramTags[k].inlineTags();
           for (int i = 0; i < inlineTagsInParameter.length; i++) {
             if (i == 1) {

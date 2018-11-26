@@ -12,53 +12,12 @@ Rancangan kelas dibawah ini akan menampilkan keseluruhan kelas yang akan digunak
 	\includegraphics[scale=0.4]{kelas-diagram}  
 	\caption[Kelas Diagram]{Kelas Diagram} 
 	\label{fig:kelas-diagram} 
-\end{figure} 
+\end{figure}
 
 \begin{enumerate}
-\item \texttt{AttributeClassExtractor}\\Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang
- terdapat pada kelas
+\item \texttt{Extractor}
 
-Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public static void extractAttributeClassContent(com.sun.javadoc.FieldDoc[] fields, java.io.BufferedWriter out)}\\ 
-\textit{Method} ini akan menampilkan atribut-atribut yang dimiliki oleh
- sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{FieldDoc fields} - 
-sebuah array berisikan sejumlah atribut dari kelas
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
- file text
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{ClassExtractor}\\Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas
-
-Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
-\begin{itemize}
-\item \texttt{public static void extractClassContent(com.sun.javadoc.ClassDoc[] classes, java.io.BufferedWriter out)}\\ 
-\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari
- sebuah kelas
-
-\textbf{Parameter:}
-\begin{itemize}
-\item \texttt{ClassDoc classes} - 
-sebuah array berisikan sejumlah kelas
-\item \texttt{BufferedWriter out} - 
-turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
-                file text
-\end{itemize}
-\textbf{Return Value}: Tidak memiliki \textit{return value}
-
-\textbf{Exception}: Tidak memiliki \textit{exception}
-
-\end{itemize}
-\item \texttt{Extractor}\\Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}
+Kelas ini merupakan kelas untuk menjalan \textit{custom doclet}
 
 Atribut yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
@@ -66,7 +25,8 @@ Atribut yang dimiliki kelas ini adalah sebagai berikut.
 \end{itemize}
 \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
-\item \texttt{public static boolean start(com.sun.javadoc.RootDoc root)}\\ 
+\item \texttt{public static boolean start(com.sun.javadoc.RootDoc root)}
+
 \textit{Method} ini berperan sebagai \textit{method} untuk menjalankan
  \textit{custom doclet}
 
@@ -82,13 +42,14 @@ berperan sebagai mengambil seluruh informasi spesifik dari
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{private static void init(com.sun.javadoc.ClassDoc[] classes)}\\ 
+\item \texttt{private static void init(com.sun.javadoc.ClassDoc[] classes)}
+
 \textit{Method} ini berperan untuk menulis kedalam sebuah \textit{file}
  saat \textit{javadoc} berjalan.
 
 \textbf{Parameter:}
 \begin{itemize}
-\item \texttt{ClassDoc classes} - 
+\item \texttt{ClassDoc[] classes} - 
 sebuah array yang berisikan sekumpulan \textit{file java}
                 yang akan di proses.
 \end{itemize}
@@ -96,7 +57,8 @@ sebuah array yang berisikan sekumpulan \textit{file java}
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{public static int optionLength(java.lang.String option)}\\ 
+\item \texttt{public static int optionLength(java.lang.String option)}
+
 Method untuk menghitung banyak option yang digunakan pada
  \textit{command-line}
 
@@ -109,12 +71,13 @@ sebuah option
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{public static boolean validOptions(java.lang.String[][] args, com.sun.javadoc.DocErrorReporter err)}\\ 
+\item \texttt{public static boolean validOptions(java.lang.String[][] args, com.sun.javadoc.DocErrorReporter err)}
+
 Pengecekan option valid
 
 \textbf{Parameter:}
 \begin{itemize}
-\item \texttt{String args} - 
+\item \texttt{String[][] args} - 
 String array 2 dimensi dari option
 \item \texttt{DocErrorReporter err} - 
 sebuah error jika tidak terdapat option tersebut.
@@ -125,12 +88,39 @@ sebuah error jika tidak terdapat option tersebut.
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
 \end{itemize}
-\item \texttt{MethodClassExtractor}\\Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method}
+\item \texttt{ClassExtractor}
+
+Kelas ini merupakan kelas untuk mengambil informasi dari sebuah kelas
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractClassContent(com.sun.javadoc.ClassDoc[] classes, java.io.BufferedWriter out)}
+
+\textit{Method} ini akan menampilkan nama kelas berserta penjelasan dari
+ sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{ClassDoc[] classes} - 
+sebuah array berisikan sejumlah kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
+                file text
+\end{itemize}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{MethodClassExtractor}
+
+Kelas ini merupakan kelas untuk mengambil informasi sebuah \textit{method}
  terdapat pada kelas
 
 Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
 \begin{itemize}
-\item \texttt{public static void extractMethodClassContent(com.sun.javadoc.ClassDoc superclass, com.sun.javadoc.MethodDoc[] methods, java.io.BufferedWriter out)}\\ 
+\item \texttt{public static void extractMethodClassContent(com.sun.javadoc.ClassDoc superclass, com.sun.javadoc.MethodDoc[] methods, java.io.BufferedWriter out)}
+
 \textit{Method} ini akan menampilkan \textit{method-method} yang dimiliki
  oleh sebuah kelas
 
@@ -138,7 +128,7 @@ Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini
 \begin{itemize}
 \item \texttt{ClassDoc superclass} - 
 sebuah objek ClassDoc
-\item \texttt{MethodDoc methods} - 
+\item \texttt{MethodDoc[] methods} - 
 sebuah array berisikan sejumlah \textit{method} dari kelas
 \item \texttt{BufferedWriter out} - 
 turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
@@ -148,7 +138,8 @@ turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{private static void ParameterMethod(java.io.BufferedWriter out, com.sun.javadoc.Parameter[] paramMethod, com.sun.javadoc.ParamTag[] paramTags)}\\ 
+\item \texttt{private static void ParameterMethod(java.io.BufferedWriter out, com.sun.javadoc.Parameter[] paramMethod, com.sun.javadoc.ParamTag[] paramTags)}
+
 \textit{Method} ini akan menampilkan parameter \textit{method-method} yang dimiliki
  oleh sebuah kelas
 
@@ -156,16 +147,17 @@ turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
 \begin{itemize}
 \item \texttt{BufferedWriter out} - 
 turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
-\item \texttt{Parameter paramMethod} - 
+\item \texttt{Parameter[] paramMethod} - 
 sebuah array berisikan sejumlah \textit{method} dari kelas
-\item \texttt{ParamTag paramTags} - 
+\item \texttt{ParamTag[] paramTags} - 
 sebuah array berisikan sejumlah parameter \textit{method} dari kelas
 \end{itemize}
 \textbf{Return Value}: Tidak memiliki \textit{return value}
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{private static void ReturnTypeMethod(java.io.BufferedWriter out, com.sun.javadoc.Type type, com.sun.javadoc.Tag[] returnTags)}\\ 
+\item \texttt{private static void ReturnTypeMethod(java.io.BufferedWriter out, com.sun.javadoc.Type type, com.sun.javadoc.Tag[] returnTags)}
+
 \textit{Method} ini akan menampilkan \textit{return type} dari \textit{method-method} yang dimiliki
  oleh sebuah kelas
 
@@ -175,14 +167,15 @@ sebuah array berisikan sejumlah parameter \textit{method} dari kelas
 turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
 \item \texttt{Type type} - 
 sebuah objek Type
-\item \texttt{Tag returnTags} - 
+\item \texttt{Tag[] returnTags} - 
 sebuah array berisikan sejumlah \textit{return type} dari \textit{method} dari kelas
 \end{itemize}
 \textbf{Return Value}: Tidak memiliki \textit{return value}
 
 \textbf{Exception}: Tidak memiliki \textit{exception}
 
-\item \texttt{private static void ExceptionMethod(java.io.BufferedWriter out, com.sun.javadoc.Tag[] throwTags)}\\ 
+\item \texttt{private static void ExceptionMethod(java.io.BufferedWriter out, com.sun.javadoc.Tag[] throwTags)}
+
 \textit{Method} ini akan menampilkan \textit{return type} dari \textit{method-method} yang dimiliki
  oleh sebuah kelas
 
@@ -190,8 +183,33 @@ sebuah array berisikan sejumlah \textit{return type} dari \textit{method} dari k
 \begin{itemize}
 \item \texttt{BufferedWriter out} - 
 turunan dari kelas \texttt{Writer} yang digunakan untuk menulis file text
-\item \texttt{Tag throwTags} - 
+\item \texttt{Tag[] throwTags} - 
 sebuah array berisikan sejumlah \textit{exception} dari \textit{method} dari kelas
+\end{itemize}
+\textbf{Return Value}: Tidak memiliki \textit{return value}
+
+\textbf{Exception}: Tidak memiliki \textit{exception}
+
+\end{itemize}
+\item \texttt{AttributeClassExtractor}
+
+Kelas ini merupakan kelas untuk mengambil informasi sebuah atribut yang
+ terdapat pada kelas
+
+Kelas ini tidak memiliki atribut. \textit{Method-method} yang dimiliki kelas ini adalah sebagai berikut.
+\begin{itemize}
+\item \texttt{public static void extractAttributeClassContent(com.sun.javadoc.FieldDoc[] fields, java.io.BufferedWriter out)}
+
+\textit{Method} ini akan menampilkan atribut-atribut yang dimiliki oleh
+ sebuah kelas
+
+\textbf{Parameter:}
+\begin{itemize}
+\item \texttt{FieldDoc[] fields} - 
+sebuah array berisikan sejumlah atribut dari kelas
+\item \texttt{BufferedWriter out} - 
+turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
+ file text
 \end{itemize}
 \textbf{Return Value}: Tidak memiliki \textit{return value}
 
@@ -202,31 +220,31 @@ sebuah array berisikan sejumlah \textit{exception} dari \textit{method} dari kel
 
 \section{Rancangan Antarmuka}
 \label{sec:antarmuka}
-Rancangan antarmuka perangkat lunak yang dibuat adalah melalui sebuah {\it terminal} pada {\it Linux} dan {\it command prompt} pada {\it Windows}. Berikut adalah antarmuka jika menggunakan {\it terminal} pada {\it Linux}: 
+Rancangan antarmuka perangkat lunak adalah melalui sebuah {\it Terminal} pada {\it Linux/Mac} atau {\it Command Prompt} pada {\it Windows}. Berikut adalah antarmuka jika menggunakan {\it Terminal} pada {\it Mac}: 
 
 \begin{figure}[H]
 	\centering  
-	\includegraphics[scale=0.5]{1}  
+	\includegraphics[scale=0.7]{1}  
 	\caption[]{Mengarahkan kedalam folder dari perangkat lunak} 
 	\label{fig:1} 
 \end{figure}
-Langkah pertama adalah berpindah dari direktori awal ke direktori perangkat lunak yang dibuat. Untuk berpindah direktori perlukan {\it command} \texttt{cd} atau kepanjangan dari {\it change directory} lalu diikuti dengan lokasi direktori yang diinginkan. Pada gambar \ref{fig:1} direktori perangkat lunak terdapat di dalam folder Document lalu folder KULIAH lalu folder Skripsi dan terakhir folder javadoc-to-latex kemudian tekan tombol {\it enter} lalu direktori akan langsung berpindah ke direktori yang dituju.
+Langkah pertama adalah berpindah dari direktori awal ke direktori perangkat lunak yang dibuat. Untuk berpindah direktori perlukan perintah \texttt{cd} atau kepanjangan dari {\it change directory} lalu diikuti dengan lokasi direktori yang diinginkan. Pada Gambar \ref{fig:1} direktori perangkat lunak terdapat di dalam folder Document lalu folder KULIAH lalu folder Skripsi kemudian tekan tombol {\it enter} lalu direktori akan langsung berpindah ke direktori yang dituju.
 
 \begin{figure}[H]
 	\centering  
-	\includegraphics[scale=0.5]{2}  
-	\caption[]{Memasukkan {\it option} yang akan digunakan} 
+	\includegraphics[scale=0.6]{2}  
+	\caption[]{Memasukkan perintah yang akan digunakan} 
 	\label{fig:2} 
 \end{figure}
-Langkah kedua adalah menjalan perangkat lunak yang dibuat. Diawali dengan command \texttt{javadoc} lalu dikuti 5 buah argumen. Argumen pertama(hijau) adalah {\it option} untuk menamai {\it file} sesuai dengan yang ditentukan. Sebagai contoh pada gambar \ref{fig:2}, {\it file} akan bernama "bab4", jika argumen pertama tidak dimasukkan pada {\it command-line} maka nama dari {\it file} tersebut secara otomatis menjadi "doc". Argumen kedua(biru muda) berperan sebagai penunjuk kelas-kelas yang digunakan. Argumen kedua ini bersifat {\it optional}, jika kode program yang akan didokumentasikan menggunakan {\it external library} maka argumen ini digunakan. Argumen ketiga(jingga) adalah sebuah kelas untuk menjalankan {\it custom doclet} dari perangkat lunak yang dibuat. Argumen ketiga tersebut akan menjalankan kelas bernama \texttt{Extractor} yang terdapat didalam {\it package} \texttt{extractor}. Kemudian argumen keempat(kuning) adalah {\it custom doclet} yang berperan untuk mengambil informasi kelas, atribut, {\it method} dari sekumpulan {\it file java}. Argumen kelima(biru) adalah lokasi sekumpulan {\it file java} yang akan diproses. Pada gambar \ref{fig:2}, lokasi {\it file-file} tersebut terdapat pada folder javadoc. Folder javadoc tersebut berada direktori folder Skripsi.
+Langkah kedua adalah menjalan perangkat lunak yang dibuat. Diawali dengan perintah perintah \texttt{javadoc} lalu dikuti 5 buah argumen. Argumen pertama yaitu {\tt -filename} adalah {\it option} untuk menamai {\it file} sesuai dengan yang ditentukan. Sebagai contoh pada Gambar \ref{fig:2}, {\it file} akan bernama "file", jika argumen pertama tidak dimasukkan pada {\it command-line} maka nama dari {\it file} tersebut secara otomatis menjadi "doc". Argumen kedua yaitu {\tt -classpath} berperan sebagai penunjuk kelas-kelas yang digunakan. Argumen kedua ini bersifat {\it optional}, jika kode program yang akan didokumentasikan menggunakan {\it external library} maka argumen ini dibutuhkan. Argumen ketiga yaitu {\tt -doclet} adalah sebuah kelas untuk menjalankan {\it custom doclet} dari perangkat lunak yang dibuat. Argumen ketiga tersebut akan menjalankan kelas bernama \texttt{Extractor} yang terdapat didalam {\it package} \texttt{extractor}. Kemudian argumen keempat yaitu {\tt -docletpath} adalah {\it custom doclet} yang berperan untuk mengambil informasi kelas, atribut, {\it method} dari sekumpulan {\it file java}. Argumen kelima yaitu {\tt -sourcepath} adalah lokasi sekumpulan {\it file java} yang akan diproses. Pada gambar \ref{fig:2}, lokasi {\it file-file} tersebut terdapat pada folder GenerateJavadocToLatex lalu folder {\it src} lalu argumen keenam yaitu adalah sebuah {\it package} yang berisikan sekumpulan {\it file Java}, pada kasus ini adalah {\it package extractor}.
 
 \begin{figure}[H]
 	\centering  
-	\includegraphics[scale=0.5]{3}  
+	\includegraphics[scale=0.6]{3}  
 	\caption[]{Hasil tampilan jika proses konversi selesai} 
 	\label{fig:3} 
 \end{figure}
-Perangkat lunak yang dibuat akan membaca seluruh isi folder yang dituju, pada contoh gambar \ref{fig:3}, terdapat 5 {\it file java} yang terdapat didalam folder javadoc. Lalu perangkat lunak akan melakukan ekstrasi informasi terhadap masing-masing {\it file} tersebut. Jika proses ekstraksi selesai maka proses berhenti.
+Perangkat lunak yang dibuat akan membaca seluruh isi {\it package}. Pada contoh Gambar \ref{fig:3}, perangkat lunak akan melakukan pengambilan informasi terhadap {\it package} tersebut. Jika proses pengambilan selesai maka proses berhenti.
 
 
 

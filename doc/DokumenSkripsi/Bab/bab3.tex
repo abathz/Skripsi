@@ -1,8 +1,6 @@
 \lstdefinestyle{mystyle}{
     basicstyle=\footnotesize,                
-   	captionpos=b,                     
-   	numbers=left,                    
-   	numbersep=5pt,             
+   	captionpos=b,             
    	tabsize=2
 }
 \lstset{style=mystyle}
@@ -26,7 +24,7 @@ Struktur \LaTeX\ yang digunakan memiliki format sebagai berikut.
 		{penjelasan tentang atribut}.
 	\end{itemize}
 	
-	\textit{Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
+	\textit{Method} yang terdapat pada kelas namaKelas adalah sebagai berikut.
 	\begin{itemize}
 		\item \texttt{method}\\
 		{penjelasan method}
@@ -42,20 +40,19 @@ Struktur \LaTeX\ yang digunakan memiliki format sebagai berikut.
 		\textbf{See Also:} {penjelasan tag @see jika terdapat tag tersebut}
 		\textbf{Override:} {penjelasan apabila jika terdapat {\it override method} }
 	\end{itemize}
-
+	\end{enumerate}
 \end{lstlisting}
 
-Potongan kode yang terdapat pada listing \ref{kode-latex} adalah struktur lengkap \LaTeX\ yang digunakan, akan dijelaskan sebagai berikut.
+Potongan kode yang terdapat pada Listing \ref{kode-latex} adalah bagian isi dari sebuah dokumen \LaTeX. Bagian ini nantinya akan dipindahkan ke salah satu bab pada skripsi yang akan menjelaskan perangkat lunak secara rinci. Bagian ini akan dijelaskan sebagai berikut.
 
 \begin{enumerate}
-	\item {\it List level} pertama\\
-	Pada {\it list level} pertama ini menampilkan sebuah nama kelas dan penjelasan terkait dengan kelas tersebut. {\it List} yang dibuat menggunakan {\it ordered list} dengan {\it command} \texttt{\string\begin\{enumerate\}}\dots\\\texttt{\string\end\{enumerate\}} dan {\it command} \texttt{\string\texttt\{namaKelas\}} akan digunakan untuk menampilkan nama kelas.
-	\item {\it List level} kedua\\
-	Pada {\it list level} kedua ini terdapat dua {\it list} yang masing-masing menampilkan atribut dan {\it method} yang dimiliki oleh kelas tersebut. {\it List} pertama yang dibuat menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} untuk mengisi atribut-atribut yang terdapat pada kelas ini jika kelas ini tidak memiliki atribut maka menampilkan tulisan tidak memiliki atribut. {\it Command} \texttt{\string\texttt\{atribut\}} digunakan untuk menampilkan atribut. Atribut ini menampilkan tipe atribut dan nama atribut.
-	
+	\item {\it List} indentasi tingkat pertama\\
+	Pada {\it list} tingkat pertama ini menampilkan sebuah nama kelas dan penjelasan terkait dengan kelas tersebut. {\it List} yang dibuat menggunakan {\it ordered list} dengan {\it command} \texttt{\string\begin\{enumerate\}}\dots\\\texttt{\string\end\{enumerate\}} dan {\it command} \texttt{\string\texttt\{namaKelas\}} akan digunakan untuk menampilkan nama kelas.
+	\item {\it List} indentasi tingkat kedua\\
+	Pada {\it list} tingkat kedua ini terdapat dua {\it list} yang masing-masing menampilkan atribut dan {\it method} yang dimiliki oleh kelas tersebut. {\it List} pertama yang dibuat menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} untuk mengisi atribut-atribut yang terdapat pada kelas ini jika kelas ini tidak memiliki atribut maka menampilkan tulisan tidak memiliki atribut. {\it Command} \texttt{\string\texttt\{atribut\}} digunakan untuk menampilkan atribut. Atribut ini menampilkan tipe atribut dan nama atribut.
 	{\it List} kedua menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} untuk mengisi {\it method-method} yang terdapat pada kelas ini dan penjelasan terkait dengan {\it method} tersebut. {\it Command} \texttt{\string\texttt\{method\}} digunakan untuk menampilkan {\it method}. {\it Method} ini menampilkan {\it access modifier} dari {\it method}, tipe kembalian {\it method}, nama {\it method} dan daftar nama parameter.
-	\item {\it List level} ketiga\\
-	Pada {\it list level} ketiga ini menampilkan parameter yang digunakan pada {\it method} dan penjelasan terkait dengan parameter tersebut. {\it List} yang dibuat menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} jika {\it method} tidak memiliki parameter maka menampilkan tulisan tidak memiliki parameter dan {\it command} \texttt{\string\texttt\{parameter\}} akan digunakan untuk menampilkan parameter. Parameter ini menampilkan tipe parameter dan nama parameter.
+	\item {\it List} indentasi tingkat ketiga\\
+	Pada {\it list} tingkat ketiga ini menampilkan parameter yang digunakan pada {\it method} dan penjelasan terkait dengan parameter tersebut. {\it List} yang dibuat menggunakan {\it unordered list} dengan {\it command} \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}} jika {\it method} tidak memiliki parameter maka menampilkan tulisan tidak memiliki parameter dan {\it command} \texttt{\string\texttt\{parameter\}} akan digunakan untuk menampilkan parameter. Parameter ini menampilkan tipe parameter dan nama parameter.
 	\item {\it Return Value} \& {\it Exception}\\
 	{\it Return value} yang terdapat dalam {\it method} tersebut akan ditampilkan setelah {\it list level} ketiga jika tipe {\it return value} adalah {\verb void } maka akan menampilkan tulisan tidak memiliki {\it return value}. {\it Exception} maka ditampilkan setelah {\it Return value} jika {\it method} tidak terdapat {\it exception} maka akan menampilkan tulisan tidak memiliki {\it exception}.
 	\item {\it Optional Tags}\\
@@ -64,67 +61,17 @@ Potongan kode yang terdapat pada listing \ref{kode-latex} adalah struktur lengka
 	{\it Override} akan menampilkan informasi apakah {\it method} dari sebuah {\it superclass} ditulis kembali di sebuah {\it subclass}. jika tidak ada informasi tersebut maka bagian penjelasan akan dihilangkan.
 \end{enumerate}
 
-Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it file java} yang berada di dalam sebuah {\it package}. Struktur kode {\it java} yang digunakan dapat dilihat pada lampiran \ref{lamp:A}. Struktur kode akan dijelaskan sebagai berikut. %memiliki format sebagai berikut.
-
-%\begin{lstlisting}[language=Java, caption=Contoh kode {\it java} dari {\it superclass} yang diuji, label=kode-java-superclass]
-%package javadoc;
-%
-%/**
-% * Kelas Abstract OperasiMatematika
-% * @author Adli Fariz Bonaputra
-% */
-%public abstract class OperasiMatematikaInterface {
-%  
-%  /**
-%   * Method untuk menghasilkan perhitungan 2 buah bilangan
-%   * @param a Bilangan pertama
-%   * @param b Bilagan kedua
-%   * @return hasil perhitungan 2 buah bilangan
-%   */
-%  public int calculate(int a, int b){return 0;}
-%}
-%\end{lstlisting}
-%
-%\begin{lstlisting}[language=Java, caption=Contoh kode {\it java} dari {\it subclass} yang diuji, label={kode-java-subclass}]
-%package javadoc;
-%
-%/**
-% * Kelas ini merupakan Kelas Pertambahan kelas ini memiliki beberapa fungsi
-% * yaitu {@link #calculate(int,int) calculate}
-% *
-% * @author Adli Fariz Bonaputra
-% * @see "Pertambahan"
-% *
-% */
-%public class Pertambahan extends OperasiMatematikaInterface {
-%
-%  /**
-%   * Atribut A
-%   */
-%  private int a;
-%  /**
-%   * Atribut B
-%   */
-%  private int b;
-%
-%  @Override
-%  public int calculate(int a, int b) {
-%    int hasil = 0;
-%    hasil = a + b + 10;
-%    return hasil;
-%  }
-%}
-%\end{lstlisting}
+Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it file Java} yang berada di dalam sebuah {\it package}. Struktur kode {\it Java} yang digunakan dapat dilihat pada Lampiran \ref{lamp:A}. Struktur kode akan dijelaskan sebagai berikut.
 
 \begin{enumerate}
-	\item Setiap {\it file java} harus terletak di dalam sebuah {\it package} yang sama.
-	\item Setiap deklarasi kelas harus diawali dengan huruf kapital serta memiliki javadoc untuk penjelasan tentang kelas tersebut dan secara opsional dapat menambahkan {\it tag - tag} javadoc seperti {\it tag} \texttt{@see} sebagai penunjuk ke sebuah referensi dan {\it tag} \texttt{\{@link\}} sebagai penunjuk ke dokumentasi sebuah {\it package}, {\it class} ataupun {\it method} yang dimiliki oleh kelas lain.
-	\item Setiap deklarasi atribut harus memiliki {\it access modifier}, tipe atribut dan nama atribut serta memiliki javadoc untuk penjelasan tentang atribut tersebut.
-	\item Seiap deklarasi {\it method} harus memiliki {\it access modifier}, tipe kembalian, nama {\it method}, tipe dan variabel parameter serta memiliki javadoc untuk penjelasan {\it method}, parameter yang digunakan dan hasil kembalian sebuah {\it method}.
+	\item Setiap {\it file Java} harus terletak di dalam sebuah {\it package} yang sama.
+	\item Setiap deklarasi kelas harus diawali dengan huruf kapital serta memiliki {\it Javadoc} untuk penjelasan tentang kelas tersebut dan secara opsional dapat menambahkan {\it tag - tag} {\it javadoc} seperti {\it tag} \texttt{@see} sebagai penunjuk ke sebuah referensi dan {\it tag} \texttt{\{@link\}} sebagai penunjuk ke dokumentasi sebuah {\it package}, {\it class} ataupun {\it method} yang dimiliki oleh kelas lain.
+	\item Setiap deklarasi atribut harus memiliki {\it access modifier}, tipe atribut dan nama atribut serta memiliki {\it Javadoc} untuk penjelasan tentang atribut tersebut.
+	\item Seiap deklarasi {\it method} harus memiliki {\it access modifier}, tipe kembalian, nama {\it method}, tipe dan variabel parameter serta memiliki {\it Javadoc} untuk penjelasan {\it method}, parameter yang digunakan dan hasil kembalian sebuah {\it method}.
 \end{enumerate}
 
 %{\it Package} yang berisikan sekumpulan {\it file java} tersebut akan menjadi sebuah masukan perangkat lunak dan akan menghasilkan sebuah dokumen dalam format \LaTeX.
-Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat \LaTeX. Perangkat lunak akan membaca satu persatu {\it file java} dan informasi yang terdapat pada setiap {\it file java} tersebut dimasukan ke dalam {\it file} \LaTeX.
+Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat \LaTeX. Perangkat lunak akan membaca satu persatu {\it file Java} dan informasi yang terdapat pada setiap {\it file Java} tersebut dimasukan ke dalam {\it file} \LaTeX.
 
 \begin{lstlisting}[caption=Contoh hasil konversi {\it Javadoc} ke \LaTeX, label={hasil}]
 \begin{enumerate}
@@ -159,16 +106,16 @@ Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat
 \end{enumerate}
 \end{lstlisting}
 
-Hasil konversi \ref{hasil} akan menampilkan nama kelas serta penjelasan kelas tersebut, atribut yang digunakan serta penjelasan untuk setiap atributnya, {\it method} yang digunakan serta penjelasan {\it method}, parameter yang digunakan serta penjelasan setiap parameternya, {\it return value} dan {\it exception}.
+Hasil konversi pada Listing \ref{hasil} akan menampilkan nama kelas serta penjelasan kelas tersebut, atribut yang digunakan serta penjelasan untuk setiap atributnya, {\it method} yang digunakan serta penjelasan {\it method}, parameter yang digunakan serta penjelasan setiap parameternya, {\it return value} dan {\it exception}.
 
 \section{Analisis Program Sejenis TeXDoclet}
 \label{sec:texdoclet}
-TeXDoclet merupakan sebuah program yang mengimplementasi {\it Doclet} yang dimiliki oleh {\it Java}. Program ini akan mengkonversi sekumpulan {\it file java} yang terletak di dalam satu {\it package} yang sama. TeXDoclet dapat menghasilkan dokumen berupa {\it file} \LaTeX\ atau {\it file} PDF. Untuk dapat menghasilkan {\it file} PDF, TeXDoclet mengintegrasikan Lua\LaTeX\ untuk menghasilkan dokumen PDF dari sebuah {\it file} \LaTeX. Hasil PDF yang dihasilkan oleh TeXDoclet dapat dilihat pada lampiran \ref{lamp:D}
+TeXDoclet merupakan sebuah program yang mengimplementasi {\it Doclet} yang dimiliki oleh {\it Java}. Program ini akan mengonversi sekumpulan {\it file Java} yang terletak di dalam satu {\it package} yang sama. TeXDoclet dapat menghasilkan dokumen berupa {\it file} \LaTeX\ atau {\it file} PDF. Untuk dapat menghasilkan {\it file} PDF, TeXDoclet mengintegrasikan Lua\LaTeX\ untuk menghasilkan dokumen PDF dari sebuah {\it file} \LaTeX. Hasil PDF yang dihasilkan oleh TeXDoclet dapat dilihat pada Lampiran \ref{lamp:D}.
 
 TeXDoclet memiliki beberapa {\it option} yang dapat digunakan, akan dijelaskan sebagai berikut.
 \begin{enumerate}
 	\item \texttt{-sectionlevel <level>}\\
-	Untuk menentukan {\it level} teratas dari {\it section} sebuah dokumen. {\it Section} tersebut bisa berupa {\it chapter}, {\it section} atau {\it subsection}
+	Untuk menentukan {\it level} teratas dari {\it section} sebuah dokumen. {\it Section} tersebut bisa berupa {\it chapter}, {\it section} atau {\it subsection}.
 	\item \texttt{-createPdf}\\
 	Untuk menghasilkan {\it file} PDF dari sebuah hasil {\it file} \LaTeX\ dengan menggunakan Lua\LaTeX.
 	\item \texttt{-twosided}\\
@@ -177,6 +124,14 @@ TeXDoclet memiliki beberapa {\it option} yang dapat digunakan, akan dijelaskan s
 	Untuk menambahkan {\it command-command} yang lain sebelum {\it command} \texttt{\string\begin\{document\}}.
 	\item \texttt{-docclass <class>}\\
 	Untuk menentukan tipe dokumen yang akan dibuat. {\it Default} untuk {\it option} adalah tipe dokumen {\it report}.
+	\item {\tt -title <title>}\\
+	Untuk menentukan judul dari dokumentasi yang dibuat.
+	\item {\tt -output <outfile>}\\
+	Menentukan nama {\it file} yang akan dihasilkan. Jika perintah ini tidak digunakan maka secara otomatis akan menghasilkan file {\it doc.tex}.
+	\item {\tt -date <date string>}\\
+	Menentukan tanggal dari dokumen.
+	\item {\tt -author <author>}\\
+	Menentukan penulis dari dokumen.
 \end{enumerate}
 
 
