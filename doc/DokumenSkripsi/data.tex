@@ -76,8 +76,8 @@
 %=============================================================================
 %\mode{bimbingan} 		% untuk keperluan bimbingan
 %\mode{sidang} 			% untuk sidang 1
-\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
-%\mode{final} 			% untuk mencetak buku skripsi 
+%\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
+\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -131,8 +131,8 @@
 %=============================================================================
 \gambar{yes}
 %\gambar{no}
-\tabel{yes}
-%\tabel{no}  
+%\tabel{yes}
+\tabel{no}  
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -171,7 +171,7 @@
 % seterusnya, harus dilakukan secara manual dengan mengubah file skripsi.tex
 % Catatan: bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
-\lampiran{A,B,C,D}
+\lampiran{A,B,C,D,E}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -197,9 +197,9 @@
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda
 %=============================================================================
 \namanpm{Adli Fariz Bonaputra}{2012730082}
-\tanggal{20}{12}{2018}
-\pembimbing{\PAN}{}    
-\penguji{<<penguji 1>>}{<<penguji 2>>} 
+\tanggal{18}{12}{2018}
+\pembimbing{\VSM}{}    
+\penguji{\TAB}{\ELH} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -215,8 +215,8 @@
 % - gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
 % - judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
-\judulINA{Konversi Javadoc ke \LaTeX}
-\judulENG{Javadoc to \LaTeX\ Conversion}
+\judulINA{Perangkat Lunak Konversi Komentar Java ke \LaTeX}
+\judulENG{Java Comment to \LaTeX\ Software Conversion}
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN X
@@ -229,18 +229,18 @@
 % - langsung mulai setelah '{' awal, jangan mulai menulis di baris bawahnya
 %=============================================================================
 \abstrakINA{
-Skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it Java}. Seperti yang sudah dijelaskan, bahasa pemrograman {\it Java} memiliki {\it Javadoc} sebagai informasi dari kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi Skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. \LaTeX\ membuat apa yang ditampilkan sama seperti apa yang yang ditulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF.
+Tujuan skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it Java}. Bahasa pemrograman {\it Java} memiliki komentar yang berguna sebagai informasi dari kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. Bahasa {\it markup} adalah sebuah bahasa yang menganotasikan dokumen dengan cara menambahkan sintaks tertentu agar dapat dibedakan. \LaTeX\ dapat menghasilkan dokumen yang terstruktur sesuai dengan yang ditulis oleh penulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF.
 
-Pada salah satu bab dokumentasi Skripsi, terdapat penjelasan dari setiap kelas pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it Java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap kelas pada perangkat lunak yang dibuat.
+Pada salah satu bab dokumentasi skripsi, terdapat penjelasan dari setiap kelas pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it Java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap kelas pada perangkat lunak yang dibuat.
 
 Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengekstraksi informasi pada {\it Javadoc} ke format \LaTeX\ secara otomatis. Perangkat lunak ini mengimplementasikan sebuah {\it Application Programming Interface} (API) yang digunakan untuk mengambil informasi berupa nama kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang terdapat pada sebuah {\it file Java}.
 }
 \abstrakENG{
-Student Thesis The Informatics Engineering and Science Faculty (FTIS) Informatics Engineering Study Program at Parahyangan Catholic University (Unpar) is making software. Software made generally uses the programming language Java. As explained, the programming language Java has Javadoc as information from the class, interface, method and also custom tag created, so that the information can be used as an explanation of the software in the software documentation. To document the software created, all students are required to use \LaTeX\ in making a Thesis documentation. \LaTeX\ is the language markup to compile a documentation. \LaTeX\ makes what is displayed the same as what was written. Generally the final form of a document created by \LaTeX\ is usually a file PDF.
+The purpose of the undergraduate thesis is the Information Technology and Science Faculty (FTIS) Informatics Engineering Study Program at Parahyangan Catholic University (Unpar) is to make software. Software made generally uses the programming language {\it Java}. The programming language {\ it Java} has useful comments as information from the class, {\it interface}, {\it method} and also {\it custom tag} created, so that the information can be used as a software explanation in the device documentation soft. To document the software made, all students are required to use \LaTeX\ in making a thesis documentation. \LaTeX\ is the language of {\it markup} to compile a documentation. Language {\it markup} is a language that annotates documents by adding certain syntax so that they can be distinguished. \LaTeX\ can produce structured documents as written by the author. Generally the final form of a document created by \LaTeX\ is usually a {\it file} PDF.
 
-In one of the Thesis documentation chapters, there is an explanation of each class in the software made. This explanation can actually be taken from Javadoc which was created in the Java class, but currently based on these observations it is still manually typed from Javadoc into the \LaTeX format, so that it takes more time to document each class in the software created.
+In one of the thesis documentation chapters, there is an explanation of each class in the software created. This explanation can actually be taken from {\it Javadoc} which was created in the {\it Java} class, but currently based on these observations it is still typed manually from {\it Javadoc} into the format \LaTeX, so that it takes more time to document each class in the software created.
 
-Therefore, it is necessary to develop a software that can extract information on Javadoc to \LaTeX\ format automatically. This software implements a Application Programming Interface (API) which is used to retrieve information in the form of a class name, interface, method and also custom tag contained in a Java file.
+Therefore, it is necessary to develop a software that can extract information on {\it Javadoc} to \LaTeX\ format automatically. This software implements a {\it Application Programming Interface} (API) which is used to retrieve information in the form of a class name, {\it interface}, {\it method} and also {\it custom tag} contained in a {\it Java file}.
 } 
 %=============================================================================
 
@@ -264,7 +264,7 @@ Therefore, it is necessary to develop a software that can extract information on
 % Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\untuk{<<kepada siapa anda mempersembahkan skripsi ini\ldots?>>}
+\untuk{Keluarga, karmila, orang terdekat dan diri sendiri}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -275,7 +275,19 @@ Therefore, it is necessary to develop a software that can extract information on
 % kasih kepada yang telah membantu anda bla bla bla ....  
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\prakata{<<Tuliskan kata pengantar dari anda di sini \ldots>>} 
+\prakata{Puji syukur kepada Tuhan Yang Maha Esa atas seluruh berkat yang diberikan kepada penulis sehingga dapat menyelesaikan tugas akhir dengan judul Perangkat Lunak Konversi Komentar Java ke \LaTeX\ dengan baik dan tepat waktu. Penulis juga berterima kasih kepada pihak-pihak yang telah memberikan dukungan dan bantuan kepada penulis dalam menyelesaikan tugas akhir ini, yaitu:
+\begin{enumerate}
+  \item Orang tua dan keluarga yang selalu memberikan dukungan kepada penulis.
+  \item Bapak Pascal Alfadian sebagai dosen pembimbing yang telah membimbing penulis hingga dapat menyelesaikan tugas akhir ini.
+  \item Bapak Thomas Anung Basuki dan Bapak Elisati sebagai dosen penguji yang telah membantu dalam menguji tugas akhir ini.
+  \item Karmila Puspitasari yang tidak pernah berhenti untuk selalu menemani, memberikan dukungan dan memberikan semangat kepada penulis hingga dapat menyelesaikan tugas akhir ini.
+  \item Andre dan Momon yang sampai penulis tidak tahu harus berkata-kata apa. Terima kasih.
+  \item Teman-teman Zero Hour Coffee dan Bahagia Kopi yang selalu memberikan semangat dan dukungan.
+  \item Teman-teman kontakan 7B yang sudah memberikan tempatnya sebagai tempat penulis mencari inspirasi.
+  \item Teman-teman Teknik Informatika UNPAR angkatan 2012 yang telah berbagi ilmu dan selalu memberikan semangat kepada penulis.
+  \item Pihak-pihak lain yang belum disebutkan, yang berperan dalam penyelesaian tugas akhir ini.
+\end{enumerate}Akhir kata, penulis berharap agar tugas akhir ini dapat bermanfaat bagi pembaca yang hendak melakukan penelitian dan pengembangan yang terkait dengan tugas akhir ini.
+} 
 %=============================================================================
 
 %_____________________________________________________________________________

@@ -1,4 +1,4 @@
-package extractor;
+package app;
 
 import com.sun.javadoc.*;
 import java.io.*;

@@ -5,13 +5,13 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Dalam sebuah penelitian, membuat dokumentasi perlu dilakukan. Dokumentasi yang dibuat bisa dalam bentuk {\it hardcopy} atau {\it softcopy}, tergantung kebutuhannya. Dokumentasi adalah kegiatan untuk mencatat suatu peristiwa atau aktifitas yang dianggap berharga atau penting. Dokumentasi yang sudah dibuat dapat menjadi referensi untuk memandu dalam melakukan sebuah aktifitas.
+Dalam sebuah penelitian, membuat dokumentasi perlu dilakukan. Dokumentasi yang dibuat bisa dalam bentuk {\it hardcopy} atau {\it softcopy}, tergantung kebutuhannya. Dokumentasi adalah kegiatan untuk mencatat suatu peristiwa atau aktivitas yang dianggap berharga atau penting. Dokumentasi yang sudah dibuat dapat menjadi referensi untuk memandu dalam melakukan sebuah aktivitas.
 
-Dalam bidang Teknologi Informasi, dokumentasi kode program {\it Java} umumnya ditulis dalam format {\it Javadoc}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi dari sebuah {\it file Java} menjadi sebuah dokumentasi. Umumnya digunakan untuk mendokumentasikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file Java}. Informasi tersebut dapat menjelaskan sebuah kelas yang dibuat dalam sebuah dokumentasi perangkat lunak. 
+Dalam bidang teknologi informasi, dokumentasi kode program {\it Java} umumnya ditulis dalam komentar disetiap {\it file java}. Komentar tersebut berisikan informasi dari sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi tersebut dan menjadikannya sebagai dokumentasi. Umumnya mendokumentasikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. Oleh karena itu, {\it Javadoc} sangatlah penting karena dapat memuat berbagai informasi dari sebuah {\it file Java}. Informasi tersebut dapat menjelaskan sebuah kelas yang dibuat dalam sebuah dokumentasi perangkat lunak. 
 
-Skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it Java}. Seperti yang sudah dijelaskan, bahasa pemrograman {\it Java} memiliki {\it Javadoc} sebagai informasi dari kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi Skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. \LaTeX\ membuat apa yang ditampilkan sama seperti apa yang yang ditulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF.
+Tujuan skripsi mahasiswa Program Studi Teknik Informatika Fakultas Teknologi Informasi dan Sains (FTIS) Universitas Katolik Parahyangan (Unpar) adalah membuat perangkat lunak. Perangkat lunak yang dibuat umumnya menggunakan bahasa pemrograman {\it Java}. Bahasa pemrograman {\it Java} memiliki komentar yang berguna sebagai informasi dari kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang dibuat, sehingga informasi tersebut dapat digunakan sebagai penjelasan perangkat lunak pada dokumentasi perangkat lunak. Untuk mendokumentasikan perangkat lunak yang dibuat, seluruh mahasiswa diwajibkan untuk menggunakan \LaTeX\ dalam pembuatan sebuah dokumentasi skripsi. \LaTeX\ merupakan bahasa {\it markup} untuk menyusun sebuah dokumentasi. Bahasa {\it markup} adalah sebuah bahasa yang menganotasikan dokumen dengan cara menambahkan sintaks tertentu agar dapat dibedakan. \LaTeX\ dapat menghasilkan dokumen yang terstruktur sesuai dengan yang ditulis oleh penulis. Umumnya bentuk akhir dari dokumen yang dibuat oleh \LaTeX\ biasanya berupa sebuah {\it file} PDF.
 
-Pada salah satu bab dokumentasi Skripsi, terdapat penjelasan dari setiap kelas pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it Java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap kelas pada perangkat lunak yang dibuat.
+Pada salah satu bab dokumentasi skripsi, terdapat penjelasan dari setiap kelas pada perangkat lunak yang dibuat. Penjelasan tersebut sebenarnya dapat diambil dari {\it Javadoc} yang telah dibuat pada kelas {\it Java}, namun saat ini berdasarkan pengamatan tersebut masih diketik secara manual dari {\it Javadoc} ke dalam format \LaTeX, sehingga membutuhkan lebih banyak waktu untuk mendokumentasikan setiap kelas pada perangkat lunak yang dibuat.
 
 Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengambil informasi pada {\it Javadoc} ke format \LaTeX\ secara otomatis. Perangkat lunak ini mengimplementasikan sebuah {\it Application Programming Interface} (API) yang digunakan untuk mengambil informasi berupa nama kelas, {\it interface}, {\it method} dan juga {\it custom tag} yang terdapat pada sebuah {\it file Java}.
 
@@ -19,6 +19,8 @@ Oleh karena itu, perlu dikembangkan sebuah perangkat lunak yang dapat mengambil 
 \label{sec:rumusan}
 Berdasarkan latar belakang yang telah disebutkan di atas, maka dihasilkan sebuah poin yang menjadi rumusan masalah dari masalah ini. Rumusan masalah yang akan dibangun antara lain sebagai berikut:
 \begin{itemize}
+    \item Bagaimana masukan yang sesuai dengan perangkat lunak?
+    \item Bagaimana keluaran yang dihasilkan oleh perangkat lunak?
 	\item Bagaimana membuat perangkat lunak yang dapat mengambil informasi dari sekumpulan {\it file Java} yang terdapat pada sebuah {\it package} dan mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis?
 \end{itemize}
 
@@ -26,7 +28,9 @@ Berdasarkan latar belakang yang telah disebutkan di atas, maka dihasilkan sebuah
 \label{sec:tujuan}
 Adapun tujuan yang ingin dicapai dari penelitian ini adalah menjawab rumusan masalah di atas, yaitu:
 \begin{itemize}
-	\item Membuat perangkat lunak yang dapat mengambil informasi dari sekumpulan {\it file Java} yang terdapat pada sebuah {\it package} dan mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis.
+    \item Menganalisa struktur kode program {\it java} yang baik
+    \item Menganalisa struktur \LaTeX\ yang akan sebagai keluaran perangkat lunak
+	\item Membangun perangkat lunak yang dapat mengambil informasi dari sekumpulan {\it file Java} yang terdapat pada sebuah {\it package} dan mengonversikan format {\it Javadoc} ke dalam format \LaTeX\ secara otomatis.
 \end{itemize}
 
 \section{Batasan Masalah}

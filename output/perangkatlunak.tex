@@ -1,19 +1,5 @@
-\chapter{Perancangan}
-\label{sec:perancangan}
-
-Bab ini membahas mengenai perancangan aplikasi yang akan dibangun meliputi diagram kelas rinci beserta deskripsi dan fungsinya.
-
-\section{Rancangan Kelas Lengkap}
-\label{sec:kelaslengkap}
-Rancangan kelas di bawah ini akan menampilkan keseluruhan kelas yang akan digunakan. Deskripsi kelas berserta fungsi dari diagram kelas tersebut adalah sebagai berikut:
-
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.4]{kelas-diagram}  
-	\caption[Kelas Diagram]{Kelas Diagram} 
-	\label{fig:kelas-diagram} 
-\end{figure}
-
+\documentclass{article}
+\begin{document}
 \begin{enumerate}
 \item \texttt{Extractor}
 
@@ -217,67 +203,4 @@ turunan dari kelas \texttt{Writer} yang digunakan untuk menulis
 
 \end{itemize}
 \end{enumerate}
-
-\section{Sequence Diagram}
-\label{sec:sequence-diagram}
-
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.5]{sequence-diagram}  
-	\caption[]{Sequence Diagram} 
-	\label{fig:sequence-diagram} 
-\end{figure}
-
-Dapat dilihat pada gambar \ref{fig:sequence-diagram}, pada saat ingin menjalankan perangkat lunak ini user/pengguna harus memberikan masukan sekumpulan {\it file java}, lalu {\it file-file} tersebut diambil informasinya oleh {\it doclet}, kemudian informasi yang sudah diambil tersebut akan diletakkan sesuai tempatnya pada struktur latex yang sudah dibuat.
-
-\section{Rancangan Antarmuka}
-\label{sec:antarmuka}
-Rancangan antarmuka perangkat lunak adalah melalui sebuah {\it Terminal} pada {\it Linux/Mac} atau {\it Command Prompt} pada {\it Windows}. Berikut adalah antarmuka jika menggunakan {\it Terminal} pada {\it Mac}: 
-
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.7]{1}  
-	\caption[]{Mengarahkan ke dalam folder dari perangkat lunak} 
-	\label{fig:1} 
-\end{figure}
-Langkah pertama adalah berpindah dari direktori awal ke direktori perangkat lunak yang dibuat. Untuk berpindah direktori diperlukan perintah \texttt{cd} atau kepanjangan dari {\it change directory} lalu diikuti dengan lokasi direktori yang diinginkan. Pada Gambar \ref{fig:1} direktori perangkat lunak terdapat di dalam folder Document lalu folder KULIAH lalu folder Skripsi kemudian tekan tombol {\it enter} lalu direktori akan langsung berpindah ke direktori yang dituju.
-
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.6]{2}  
-	\caption[]{Memasukkan perintah yang akan digunakan} 
-	\label{fig:2} 
-\end{figure}
-Langkah kedua adalah menjalankan perangkat lunak yang dibuat. Diawali dengan perintah-perintah \texttt{javadoc} lalu dikuti 5 buah argumen. Argumen pertama yaitu {\tt -filename} adalah {\it option} untuk menamai {\it file} sesuai dengan yang ditentukan. Sebagai contoh pada Gambar \ref{fig:2}, {\it file} akan bernama "file", jika argumen pertama tidak dimasukkan pada {\it command-line} maka nama dari {\it file} tersebut secara otomatis menjadi "doc". Argumen kedua yaitu {\tt -classpath} berperan sebagai penunjuk kelas-kelas yang digunakan. Argumen kedua ini bersifat {\it optional}, jika kode program yang akan didokumentasikan menggunakan {\it external library} maka argumen ini dibutuhkan. Argumen ketiga yaitu {\tt -doclet} adalah sebuah kelas untuk menjalankan {\it custom doclet} dari perangkat lunak yang dibuat. Argumen ketiga tersebut akan menjalankan kelas bernama \texttt{Extractor} yang terdapat didalam {\it package} \texttt{extractor}. Kemudian argumen keempat yaitu {\tt -docletpath} adalah {\it custom doclet} yang berperan untuk mengambil informasi kelas, atribut, {\it method} dari sekumpulan {\it file java}. Argumen kelima yaitu {\tt -sourcepath} adalah lokasi sekumpulan {\it file java} yang akan diproses. Pada gambar \ref{fig:2}, lokasi {\it file-file} tersebut terdapat pada folder GenerateJavadocToLatex lalu folder {\it src} lalu argumen keenam yaitu adalah sebuah {\it package} yang berisikan sekumpulan {\it file Java}, pada kasus ini adalah {\it package extractor}.
-
-\begin{figure}[H]
-	\centering  
-	\includegraphics[scale=0.6]{3}  
-	\caption[]{Hasil tampilan jika proses konversi selesai} 
-	\label{fig:3} 
-\end{figure}
-Perangkat lunak yang dibuat akan membaca seluruh isi {\it package}. Pada contoh Gambar \ref{fig:3}, perangkat lunak akan melakukan pengambilan informasi terhadap {\it package} tersebut. Jika proses pengambilan selesai maka proses berhenti.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\end{document}

@@ -24,18 +24,18 @@ Perangkat lunak dibuat menggunakan bahasa {\it java} dan dimasukkan ke dalam seb
 	        -subpackages <subpkglist>
 	        <packagenames>
 \end{verbatim}
-Pada potongan perintah diatas memiliki 2 parameter yaitu {\it option} dan {\it packagenames}. Parameter {\it packagename} adalah parameter untuk {\it package} yang akan sebagai masukan dari perangkat lunak. Parameter {\it option} adalah beberapa perintah pendukung. Berikut beberapa perintah {\it option} yang digunakan untuk mendukung berjalannya perangkat lunak.
+Potongan perintah di atas memiliki 2 parameter yaitu {\it option} dan {\it packagenames}. Parameter {\it packagename} adalah parameter untuk {\it package} yang akan digunakan sebagai masukan dari perangkat lunak. Parameter {\it option} adalah beberapa perintah pendukung. Berikut beberapa perintah {\it option} yang digunakan untuk mendukung berjalannya perangkat lunak.
 \begin{itemize}
 	\item {\tt -filename <file-name>} - Menghasilkan {\it output file} dengan nama {\tt file-name.tex}. Jika {\it option} ini tidak digunakan maka nama {\it file} yang dihasilkan akan bernama {\tt doc.tex}.
 	\item {\tt -classpath <pathlist>} - Letak {\it file} {\tt jar} yang dipergunakan. Perintah ini bersifat opsional jika kelas tersebut membutuhkan kelas yang tidak ada di dalam standar {\it library Java}.
 	\item {\tt -doclet <class>} - Kelas yang dibuat untuk menghasilkan {\it output}. Pada kasus ini adalah {\tt extractor.Extractor}.
 	\item {\tt -docletpath <path>} - Letak {\it doclet} yang sudah di-{\it package} menjadi {\it file jar}.
 	\item {\tt -sourcepath <pathlist>} - Letak {\it source file} sebagai masukan. 
-	\item {\tt -subpackages <subpkglist>} - Letak {\it subpackage} yang akan dimuat secara rekursif. Perintah ini dapat digunakan secara opsional jika terdapat sebuah {\it subpackage} didalam {\it package} yang menjadi masukan.
+	\item {\tt -subpackages <subpkglist>} - Letak {\it subpackage} yang akan dimuat secara rekursif. Perintah ini dapat digunakan secara opsional jika terdapat sebuah {\it subpackage} di dalam {\it package} yang menjadi masukan.
 	\item {\tt <packagenames>} - Nama {\it package} yang menjadi masukan. Lokasi {\it package} bergantung pada {\tt -sourcepath} yang dituju.
 \end{itemize}
 
-Untuk penggunaan perintah diatas, Langkah pertama membuka aplikasi {\it Terminal} atau {\it Command Prompt}. Langkah kedua mengetik perintah {\tt javadoc} lalu diikuti dengan perintah pendukungnya seperti yang sudah dijelaskan diatas. Berikut contoh perintah lengkap yang digunakan.
+Untuk penggunaan perintah di atas, Langkah pertama membuka aplikasi {\it Terminal} atau {\it Command Prompt}. Langkah kedua mengetik perintah {\tt javadoc} lalu diikuti dengan perintah pendukungnya seperti yang sudah dijelaskan di atas. Berikut contoh perintah lengkap yang digunakan.
 
 \begin{verbatim}
 	javadoc -filename siamodels
@@ -46,10 +46,7 @@ Untuk penggunaan perintah diatas, Langkah pertama membuka aplikasi {\it Terminal
 	        id.ac.unpar.siamodels
 \end{verbatim}
 
-\section{Pengujian Perangkat Lunak}
-\label{sec: pengujian perangkat lunak}
-Pada sub bab ini akan menjelaskan Lingkungan Pengujian dan Pengujian Fungsional. Pengujian Fungsional akan menguji perangkat lunak terhadap kode program sederhana serta menguji kode program perangkat lunak yang dibuat.
-\subsection{Lingkungan Pengujian}
+\subsection{Lingkungan Implementasi}
 \label{sec:lingkungan perangkat lunak}
 Dalam proses pengujian perangkat lunak ini digunakan spesifikasi perangkat sebagai berikut.
 
@@ -62,6 +59,10 @@ Dalam proses pengujian perangkat lunak ini digunakan spesifikasi perangkat sebag
 	\item Versi Java: 1.8.0\_121
 	\item Code Editor: Netbeans 8.2
 \end{enumerate}
+
+\section{Pengujian Perangkat Lunak}
+\label{sec: pengujian perangkat lunak}
+Pada sub bab ini akan menjelaskan Pengujian Fungsional dan Pengujian Eksperimental. Pengujian Fungsional akan menguji perangkat lunak terhadap kode program sederhana serta menguji kode program perangkat lunak yang dibuat. Pengujian Eksperimental akan menguji perangkat lunak terhadap kode program SIAModels.
 
 \subsection{Pengujian Fungsional}
 \label{sec:pengujian fungsional}
@@ -79,7 +80,7 @@ Pada kasus pertama dijalankan perintah sebagai berikut.
 
 Perintah tersebut akan mengambil informasi dari kode program yang dapat dilihat pada Lampiran \ref{kodeProgram:A}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada Lampiran \ref{hasilLatex:A}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada Lampiran \ref{hasilPDF:A}.
 
-Dapat dilihat dari hasil yang terdapat Lampiran \ref{hasilPDF:A}, didapatkan 5 kelas yang dikonversi menjadi 5 buah {\it item list enumarate} yang masing berisikan nama kelas dari 5 file tersebut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter.
+Dapat dilihat dari hasil yang terdapat Lampiran \ref{hasilPDF:A}, didapatkan 5 kelas yang dikonversi menjadi 5 buah {\it item list enumarate} yang masing berisikan nama kelas dari 5 file tersebut. {\it Method-method} yang terdapat pada kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter.
 
 Pada kasus kedua dijalankan perintah sebagai berikut.
 
@@ -92,9 +93,22 @@ Pada kasus kedua dijalankan perintah sebagai berikut.
 	        extractor
 \end{verbatim}
 
-Perintah tersebut akan mengambil informasi dari kode program yang dapat dilihat pada Lampiran \ref{kodeProgram:B}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada Lampiran \ref{hasilLatex:B}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada Lampiran \ref{hasilPDF:B}.
+Perintah tersebut akan mengambil informasi dari kode program yang dapat dilihat pada Lampiran \ref{kodeProgram:B}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada Lampiran \ref{hasilLatex:B}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasilkan sebuah {\it file} PDF yang dapat dilihat pada Lampiran \ref{hasilPDF:B}.
 
 Dapat dilihat dari hasil yang terdapat Lampiran \ref{hasilPDF:B}, didapatkan 4 kelas yang dikonversi menjadi 4 buah {\it item list enumarate} yang masing berisikan nama kelas dari 4 file tersebut. Atribut kelas akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah atribut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter.
+
+Pada kasus ketiga dijalankan perintah sebagai berikut.
+
+\begin{verbatim}
+	javadoc -classpath tools.jar
+	        -doclet extractor.Extractor
+	        -docletpath GenerateJavadocToLatex.jar
+	        GenerateJavadocToLatex/src/MyApp.java
+\end{verbatim}
+
+Perintah tersebut akan mengambil informasi dari kode program yang dapat dilihat pada Lampiran \ref{kodeProgram:C}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada Lampiran \ref{hasilLatex:C}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasilkan sebuah {\it file} PDF yang dapat dilihat pada Lampiran \ref{hasilPDF:C}.
+
+Dapat dilihat dari hasil yang terdapat pada Lampiran \ref{hasilPDF:C}, didapatkan kurangnya penjelasan deskripsi kelas, deskripsi atribut, deskripsi {\it method} dan penjelasan {return value}.
 
 \subsection{Pengujian Eksperimental}
 \label{sec:pengujian eksperimental}
@@ -111,9 +125,9 @@ Pada pengujian menggunakan SIAModels dilakukan perintah sebagai berikut.
 	        id.ac.unpar.siamodels
 \end{verbatim}
 
-Perintah tersebut akan mengambil informasi dari kode program yang dapat dilihat pada Lampiran \ref{kodeProgram:C}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada Lampiran \ref{hasilLatex:C}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasil sebuah {\it file} PDF yang dapat dilihat pada Lampiran \ref{hasilPDF:C}.
+Perintah tersebut akan mengambil informasi dari kode program yang dapat dilihat pada Lampiran \ref{kodeProgram:D}. Setelah perintah tersebut dieksekusi akan menghasilkan {\it file} \LaTeX\ yang dapat dilihat pada Lampiran \ref{hasilLatex:D}. Jika {\it file} \LaTeX\ tersebut diekseskusi menggunakan perintah {\tt pdflatex} akan menghasilkan sebuah {\it file} PDF yang dapat dilihat pada Lampiran \ref{hasilPDF:D}.
 
-Dapat dilihat dari hasil yang terdapat Lampiran \ref{hasilPDF:C}, didapatkan {\tt n} buah kelas dan {\tt n} buah {\it innerclass} yang dikonversi menjadi {\tt n} buah {\it item list enumarate} yang masing berisikan nama kelas dan {\it innerclass} dari {\tt n} {\it file} tersebut. Atribut kelas akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah atribut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter. Terdapat beberapa ketidaklaziman yang ditemukan setelah mengeksekusi perintah {\tt pdflatex}.
+Dapat dilihat dari hasil yang terdapat Lampiran \ref{hasilPDF:D}, didapatkan {\tt n} buah kelas dan {\tt n} buah {\it innerclass} yang dikonversi menjadi {\tt n} buah {\it item list enumarate} yang masing-masing berisikan nama kelas dan {\it innerclass} dari {\tt n} {\it file} tersebut. Atribut kelas akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah atribut. {\it Method-method} yang terdapat kelas tersebut akan dibuat dengan menggunakan {\it list itemize} sebanyak {\tt n} buah {\it method} dan parameter dari {\it method} tersebut dibuat menggunakan {\it list itemize} sebanyak {\tt n} buah parameter. Terdapat beberapa ketidaklaziman yang ditemukan setelah mengeksekusi perintah {\tt pdflatex}.
 
 \begin{itemize}
 	\item Terdapat karakter yang tidak lazim yaitu tanda \textexclamdown\ yang merepresentasikan tanda lebih kecil "<" dan tanda \textquestiondown\ yang merepresentasikan tanda lebih besar ">". Karakter tersebut muncul pada kelas: 
@@ -121,7 +135,7 @@ Dapat dilihat dari hasil yang terdapat Lampiran \ref{hasilPDF:C}, didapatkan {\t
 			\item {\tt TahunSemester} - pada atribut kelas
 			\item {\tt Mahasiswa} - pada {\it method} {\tt calculateIPKLulus()}, {\tt calculateIPLulus()}, {\tt calculateIPTempuh()}, {\tt calculateIPKumulatif()}, {\tt calculateIPKTempuh()} dan {\tt calculateIPS()}
 		\end{enumerate}
-		Karakter yang tidak lazim tersebut muncul karena secara otomatis \LaTeX\ menggunakan OT1 {\it font encoding}. Pada {\it Ascii Table} tanda \textless\ memiliki kode {\tt 3C} dan tanda \textgreater\ memiliki kode {\tt 3E} dan secara otomatis \LaTeX\ akan memetakan tanda \textless\ dan tanda \textgreater\ menjadi tanda \textexclamdown\ dan \textquestiondown\ ~\cite{ot1fontencoding:04:ot1fontencoding}. %{\it file} \LaTeX\ yang dibuat oleh perangkat lunak tidak menggunakan {\it package} {\tt \string\usepackage[T1]\{fontenc\}} atau merubahnya menjadi command {\tt \string\textless} sebagai \textless\ dan {\tt \string\textgreater} sebagai \textgreater. Pada \LaTeX\ beberapa spesial karakter dapat dimunculkan dengan menambahkan tanda {\it backslash} sebelum karakternya, contoh karakter \_ {\it (underscore)} pada \LaTeX\ harus ditulis seperti \texttt{\string\_}. Beberapa spesial karakter yang tidak dapat dimunculkan dengan menambahkan tanda {\it backslash} harus menambahkan {\it package} tersebut.
+		Karakter yang tidak lazim tersebut muncul karena secara otomatis \LaTeX\ menggunakan OT1 {\it font encoding}. Pada {\it Ascii Table} tanda \textless\ memiliki kode {\tt 3C} dan tanda \textgreater\ memiliki kode {\tt 3E} dan secara otomatis \LaTeX\ akan memetakan tanda \textless\ dan tanda \textgreater\ menjadi tanda \textexclamdown\ dan \textquestiondown\ ~\cite{ot1fontencoding:04:ot1fontencoding}. Untuk dapat memunculkan tanda \textless\ dan tanda \textgreater\ terdapat 2 cara yaitu dengan menambahkan {\it package} {\tt \string\usepackage[T1]\{fontenc\}} atau menggunakan command {\tt \string\textless} sebagai \textless\ dan {\tt \string\textgreater} sebagai \textgreater.
 	\item Beberapa deskripsi tidak muncul pada hasil PDF, contohnya seperti pada kelas:
 		\begin{enumerate}
 			\item {\tt Semester} - pada deskripsi kelas, atribut kelas dan {\it method}

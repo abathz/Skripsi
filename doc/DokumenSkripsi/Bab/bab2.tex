@@ -11,7 +11,7 @@ Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. T
 
 \section{Javadoc}
 \label{sec:javadoc} 
-{\it Javadoc} adalah sebuah {\it tools} yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi dari sekumpulan {\it source file Java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengambil informasi tersebut dari sebuah {\it package Java}, sebuah {\it file Java} atau keduanya~\cite{javadoc:01:javadoc}.
+{\it Javadoc} adalah sebuah perangkat lunak yang dimiliki oleh {\it Java} yang berguna untuk mengambil informasi dari sebuah komentar yang terdapat pada sekumpulan {\it source file Java} menjadi sebuah dokumentasi. Umumnya {\it Javadoc} menghasilkan sekumpulan {\it file} HTML yang mendeskripsikan sebuah kelas, {\it interface}, {\it method} dan {\it custom tag}. {\it Javadoc} dapat mengambil informasi tersebut dari sebuah {\it package Java}, sebuah {\it file Java} atau keduanya~\cite{javadoc:01:javadoc}.
 
 \subsection{\textit{Processing of source files}}
 \label{sec:javadoc}
@@ -30,14 +30,14 @@ Bab ini akan membahas teori-teori yang akan menjadi dasar dari penelitian ini. T
 	\item Indeks.
 \end{enumerate}
 
-Dalam mengambil informasi yang terdapat dalam sebuah {\it package Java} atau beberapa {\it file Java} umumnya menghasilkan sebuah dokumentasi standar yang berbentuk {\it file} HTML dan format penulisan yang mengikuti standar {\it Javadoc}, akan tetapi untuk menghasilkan sebuah format dokumentasi yang diingin, dapat menggunakan sebuah {\it doclet} yang disediakan oleh {\it Javadoc}.
+Dalam mengambil informasi yang terdapat dalam sebuah {\it package Java} atau beberapa {\it file Java} umumnya menghasilkan sebuah dokumentasi standar yang berbentuk {\it file} HTML dan format penulisan yang mengikuti standar {\it Javadoc}. Akan tetapi untuk menghasilkan sebuah format dokumentasi yang diinginkan, dapat mengimplementasi sebuah API yang disediakan oleh {\it Javadoc}.
 
 \subsection{Terminologi}
 \label{sec:terminologi}
 Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc} sebagai berikut:
 \begin{itemize}
 	\item {\it Generated Document}\\
-	Dokumen yang dihasilkan oleh {\it Javadoc tools} adalah sebuah {\it file} HTML dan dibuat oleh standar {\it doclet}.
+	Dokumen yang dihasilkan oleh {\it Javadoc} adalah sebuah {\it file} HTML.
 	\item {\it Name}\\
 	Nama dari elemen program yang dideklarasikan atau dilakukan pemanggilan maka dapat berupa informasi lengkapnya seperti {\tt java.lang.String} dan {\tt java.lang.String.equals(java.lang.Object)} atau informasi pendeknya seperti {\tt String} dan {\tt equals(Object)}. Nama-nama tersebut dapat berupa nama {\it package}, kelas, {\it interface}, {\it field}, {\it constructor} atau {\it method}.
 	\item {\it Documented Classes}\\
@@ -58,8 +58,16 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 \begin{itemize}
 	\item {\it Class Source Code Files}\\
 	Setiap kelas atau {\it interface} memiliki dokumentasinya masing-masing.
+	\begin{figure}[H]
+	  \centering  
+	  \includegraphics[scale=0.4]{a}  
+	  \caption[Hasil dokumentasi pada kelas atau {\it interface}]{Hasil dokumentasi pada kelas atau {\it interface}} 
+	  \label{fig:a} 
+    \end{figure}
+    Pada gambar \ref{fig:a}, {\it Javadoc} akan menghasilkan dokumentasinya berupa {\it file} HTML
+    
 	\item {\it Package Comment Files}\\
-	Setiap {\it package} dapat memiliki dokumentasinya masing-masing yang terdapat pada {\it root} folder {\it package}. Contohnya {\it java/applet/package.html}, kemudian {\it Javadoc} akan menggabungkan dokumentasi tersebut menjadi sebuah ringkasan dari {\it package} yang ada. 
+	Setiap {\it package} memiliki {\it file} yang berisikan komentar yang berkaitan dengan {\it package} tersebut. {\it File} tersebut terletak pada folder {\it package}. Contohnya {\it java/applet/package.html}, kemudian {\it Javadoc} akan menggabungkan dokumentasi tersebut menjadi sebuah ringkasan dari {\it package} yang ada. 
 	Terdapat 2 cara penulisan yaitu dengan sebuah {\it file} package.html pada listing \ref{package} atau sebuah {\it file} package-info.java pada listing \ref{package-info}.
 	\begin{lstlisting}[language=Html, caption={\it File package.html}, label={package}]
 	<html>
@@ -91,6 +99,13 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 		\item Memasukkan teks yang sudah diproses tersebut pada bagian bawah halaman dokumentasi yang dihasilkan.
 		\item Menyalin kalimat pertama pada {\it package} tersebut pada bagian atas halaman dokumentasi.
 	\end{enumerate}
+	\begin{figure}[H]
+	  \centering  
+	  \includegraphics[scale=0.4]{b}
+	  \caption[Hasil dokumentasi pada dari {\it package}]{Hasil dokumentasi pada dari {\it package}}
+	  \label{fig:b} 
+    \end{figure}
+    Pada gambar \ref{fig:b} adalah hasil {\it Javadoc} mendokumentasikan setiap {\it package}
 	\item {\it Overview Comment Files}\\
 	Setiap aplikasi atau sekumpulan {\it package} yang akan didokumentasikan akan memiliki dokumentasi {\it overview}. Dokumentasi tersebut dapat dibuat lebih dari 1, jika pada saat pembuatan perangkat lunak menggunakan sekumpulan {\it package} yang berbeda.
 	Untuk membuat sebuah dokumentasi ini, perlu membuat sebuah {\it file} HTML yang umumnya bernama {\it overview.html} yang diletakkan pada bagian paling atas sebuah {\it source code} yang dibuat. {\it Javadoc} akan melakukan beberapa langkah yaitu sebagai berikut:
@@ -100,14 +115,21 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 		\item Memasukan teks yang sudah diproses tersebut pada bagian bawah halaman dokumentasi yang dihasilkan.
 		\item Menyalin kalimat pertama pada {\it package} tersebut pada bagian atas halaman dokumentasi.
 	\end{enumerate}
+	Hasil dari dokumentasi {\it overview} terdapat pada gambar \ref{fig:c}.
+	\begin{figure}[H]
+	  \centering  
+	  \includegraphics[scale=0.4]{c}
+	  \caption[Hasil dokumentasi pada dari {\it overview}]{Hasil dokumentasi pada dari {\it overview}}
+	  \label{fig:c} 
+    \end{figure}
 	\item {\it Miscellaneous Unprocessed Files}\\
 	{\it Javadoc} dapat memproses berbagai macam format {\it file}. {\it File} tersebut dapat berupa sebuah {\it graphic files}, {\it Java source (.java)} dan {\it class (.class)} dan sebuah {\it file} HTML.
-	Untuk memproses {\it file} tersebut, perlu membuat sebuah folder bernama {\it doc-files} yang diletakkan pada {\it package} tertentu lalu {\it file-file} tersebut dapat diakses dengan menggunakan lokasi direktori yang menyimpan {\it file} tersebut.
+	Untuk memproses {\it file} tersebut, perlu membuat sebuah folder bernama {\it doc-files} yang diletakkan pada {\it package} tertentu lalu {\it file-file} tersebut dapat diakses dengan menggunakan lokasi direktori yang menyimpan {\it file} tersebut. Sebagai contoh jika terdapat sebuah gambar {\tt myimage.jpg} yang terletak dalam folder {\it doc-files} maka cara mengaksesnya adalah dengan menulis {\tt doc-files/myimage.jpg}.
 \end{itemize}
 
 \subsection{\textit{Generated Files}}
 \label{sec:generated-files}
-{\it Javadoc} memiliki sebuah {\it doclet} bawaan yang disebut dengan standar {\it doclet}. Standar {\it doclet} akan menghasilkan dokumentasi dengan format HTML. Terdapat 3 grup yang masing-masing memiliki kriterianya sendiri, ketiga grup tersebut adalah sebagai berikut:
+{\it Javadoc} memiliki sebuah {\it doclet} bawaan yang disebut dengan standar {\it doclet}. Standar {\it doclet} akan menghasilkan dokumentasi dengan format HTML. Terdapat 3 grup yaitu {\it Basic Content Pages}, {\it Cross-Reference Pages} dan {\it Support Files}. Setiap grup tersebut memiliki kriterianya sendiri, ketiga grup tersebut adalah sebagai berikut:
 \begin{itemize}
 	\item {\it Basic Content Pages}
 	\begin{itemize}
@@ -135,7 +157,15 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 		\item Sebuah {\it doc-files} yang berisikan gambar dan beberapa contoh {\it file Java}.
 	\end{itemize}
 \end{itemize}
-{\it Javadoc} akan menghasilkan 2 atau 3 HTML {\it frame}. {\it Javadoc} akan membuat minimum {\it frame} yang dibutuhkan. Jika hanya terdapat 1 {\it package}, maka {\it Javadoc} akan membuat 1 {\it frame} yang berisi dari sekumpulan kelas pada {\it package} tersebut. Jika terdapat lebih dari 2 {\it package}, maka {\it Javadoc} akan membuat 3 {\it frame} dari sekumpulan {\it package}. Jika kelas yang digunakan adalah {\it java.applet.Applet} dan semua dokumentasi yang dihasilkan akan berada pada folder yang bernama {\it apidocs}, struktur {\it file} yang dihasilkan adalah sebagai berikut:
+{\it Javadoc} akan menghasilkan 2 atau 3 HTML {\it frame}.
+	\begin{figure}[H]
+	  \centering  
+	  \includegraphics[scale=0.3]{d}
+	  \caption[Frame pada hasil dokumentasi]{Frame pada hasil dokumentasi}
+	  \label{fig:d} 
+    \end{figure}
+    Pada gambar \ref{fig:d} terdapat 3 buat frame. {\it Frame} pada HTML dapat disebut sebagai {\it section}. {\it Javadoc} akan membuat minimum {\it frame} yang dibutuhkan. Jika hanya terdapat 1 {\it package}, maka {\it Javadoc} akan membuat 1 {\it frame} yang berisi dari sekumpulan kelas pada {\it package} tersebut yaitu {\it frame} 3. Jika terdapat lebih dari 2 {\it package}, maka {\it Javadoc} akan membuat 3 {\it frame} dari sekumpulan {\it package} yaitu {\it frame} 1, 2 dan 3. 
+Jika kelas yang digunakan adalah {\it java.applet.Applet} dan semua dokumentasi yang dihasilkan akan berada pada folder yang bernama {\it apidocs}, struktur {\it file} yang dihasilkan adalah sebagai berikut:
 \begin{lstlisting}[caption=Struktur {\it file} yang dihasilkan]
 	apidocs						  			  		    Top directory
 		index.html											  Initial page that sets up HTML frames
@@ -190,7 +220,7 @@ Terdapat beberapa istilah yang memiliki arti spesifik dalam konteks {\it Javadoc
 Berikut adalah beberapa {\it interface} yang terdapat pada {\it Doclet}:
 \begin{itemize}
 	\item {\tt RootDoc}\\
-	sebuah {\it interface} yang menyatakan sebuah {\it root} dari perangkat lunak yang dibuat. Dari {\it root} tersebut semua informasi dapat diambil. {\it Method-method} yang digunakan adalah sebagai berikut:
+	sebuah {\it interface} yang menjadi parameter masukan sebuah {\it doclet} dari perangkat lunak yang dibuat. Dari {\it root} tersebut semua informasi dapat diambil. {\it Method-method} yang digunakan adalah sebagai berikut:
 	\begin{itemize}
 		\item {\tt classes()}\\
 		{\it Method} ini akan mengembalikan sejumlah kelas dan {\it interface} pada {\it package}.
@@ -258,11 +288,11 @@ Kelas-kelas yang dimiliki oleh {\it doclet} API terdapat pada direktori {\tt lib
 		}
 	}
 \end{lstlisting}
-Potongan {\it program} pada Listing \ref{program-doclet} adalah sebuah {\it doclet} sederhana untuk menampilkan nama dari kelas yang dijadikan sebagai masukan. {\it Method} {\tt public static boolean start} memiliki parameter {\tt RootDoc doc} yang akan menampung masukan dari sekumpulan {\it file Java} yang akan diproses lalu sekumpulan {\it file} tersebut akan ditampung pada {\tt ClassDoc[] classes} sebagai {\tt array} kemudian {\it array of classes} akan dijalankan sebanyak panjang {\it array} tersebut.
+Potongan {\it program} pada Listing \ref{program-doclet} adalah sebuah perogram sederhana menggunakan {\it doclet} untuk menampilkan nama dari kelas yang dijadikan sebagai masukan. {\it Method} {\tt public static boolean start} memiliki parameter {\tt RootDoc doc} yang akan menampung masukan dari sekumpulan {\it file Java} yang akan diproses lalu sekumpulan {\it file} tersebut akan ditampung pada {\tt ClassDoc[] classes} sebagai {\tt array} kemudian {\it array of classes} akan dijalankan sebanyak panjang {\it array} tersebut.
 
 \section{\LaTeX}
 \label{sec:latex}
-\LaTeX\ adalah sebuah bahasa {\it markup} untuk sistem penulisan dokumen yang dikembangkan oleh Leslie B. Lamport dan dirilis pada tahun 1985~\cite{latex:03:latex}.  \LaTeX\ Memiliki filosofi WYMIWYG ({\it What you Mean Is What You Get}) yang berarti sesuatu yang ditulis akan berdasarkan arti dari hal tersebut. Oleh karena itu, untuk menambahkan suatu perintah pada dokumen yang sedang ditulis perlu menambahkan suatu {\it command}. {\it Command} adalah kata spesial yang menentukan suatu sifat pada \LaTeX. Hampir semua {\it command} pada \LaTeX\ selalu diawali dengan tanda '$\backslash$' dan beberapa {\it command} memiliki {\it parameter}. {\it Parameter} diawali dengan tanda kurung kurawal buka dan diakhiri dengan kurung kurawal tutup (\{...\}). File \LaTeX\ memiliki ekstensi .tex. Pada saat membuat sebuah {\it project} \LaTeX\ hanya perlu menuliskan {\it command} \texttt{\string\documentclass[option]\{class\}} 1 kali.
+\LaTeX\ adalah sebuah bahasa {\it markup} untuk sistem penulisan dokumen yang dikembangkan oleh Leslie B. Lamport dan dirilis pada tahun 1985~\cite{latex:03:latex}.  Bahasa {\it markup} adalah sebuah bahasa yang menganotasikan dokumen dengan cara menambahkan sintaks tertentu agar dapat dibedakan.  \LaTeX\ Memiliki filosofi WYMIWYG ({\it What you Mean Is What You Get}) yang berarti sesuatu yang ditulis akan berdasarkan arti dari hal tersebut. Oleh karena itu, untuk menambahkan suatu perintah pada dokumen yang sedang ditulis perlu menambahkan suatu {\it command}. {\it Command} adalah kata spesial yang menentukan suatu sifat pada \LaTeX. Hampir semua {\it command} pada \LaTeX\ selalu diawali dengan tanda '$\backslash$' dan beberapa {\it command} memiliki {\it parameter}. {\it Parameter} diawali dengan tanda kurung kurawal buka dan diakhiri dengan kurung kurawal tutup (\{...\}). File \LaTeX\ memiliki ekstensi .tex. Pada saat membuat sebuah {\it project} \LaTeX\ hanya perlu menuliskan {\it command} \texttt{\string\documentclass[option]\{class\}} 1 kali.
 
 Untuk menulis dokumen pada \LaTeX\ dibutuhkan beberapa {\it command} yang wajib ada dalam sebuah dokumen, yaitu:
 \begin{enumerate}
@@ -276,11 +306,64 @@ Untuk menulis dokumen pada \LaTeX\ dibutuhkan beberapa {\it command} yang wajib 
 	Digunakan untuk menampilkan subbab sebuah dokumen.
 	\item \texttt{\string\texttt\{text\}}\\
 	Digunakan untuk menampilkan tulisan {\it monospaced}.
+	\item \texttt{\string\textbf\{text\}}\\
+	Digunakan untuk menampilkan tulisan tebal.
 	\item \texttt{\string\begin\{enumerate\}}\dots\texttt{\string\end\{enumerate\}}\\
 	Digunakan untuk menampilkan {\it ordered list}. {\it List} ini akan menampilkan angka yang terurut. Di dalam {\it list} ini terdapat {\it command} \texttt{\string\item} untuk menambahkan isi dari {\it list} tersebut.
 	\item \texttt{\string\begin\{itemize\}}\dots\texttt{\string\end\{itemize\}}\\
-	Digunakan untuk menampilkan {\it unordered list}. {\it List} ini akan menampilkan simbol spesial. Di dalam {\it list} ini terdapat {\it command} \texttt{\string\item} untuk menambahkan isi dari {\it list} tersebut. 
+	Digunakan untuk menampilkan {\it unordered list}. {\it List} ini akan menampilkan {\it bullet}. Di dalam {\it list} ini terdapat {\it command} \texttt{\string\item} untuk menambahkan isi dari {\it list} tersebut.
 \end{enumerate}
+
+\section{\textit{Syntax Java}}
+\label{sec:syntax-java}
+
+Agar dokumentasi yang dihasilkan oleh {\it Javadoc} menghasilkan hasil yang baik dibutuhkan penulisan sintaks pada kode program java yang baik. Berikut beberapa aturan yang dapat digunakan.
+
+\begin{enumerate}
+  \item \textbf{Kelas}\\
+  Untuk penamaan kelas harus ditulis dengan menggunakan aturan {\it PascalCase}. {\it PascalCase} adalah aturan umum pada penulisan sebuah kode program dengan cara setiap kata diawali dengan huruf besar atau kapital. Jika ingin membuat sebuah nama kelas {\tt myapp} maka harus ditulis seperti {\tt MyApp}. Deklarasi kelas harus ditulis {\tt <access\_modifier> class <classname>}. Pada {\it Java}, {\it Access Modifier} terbagi menjadi 3 yaitu sebagai berikut.
+  \begin{enumerate}
+    \item {\it public} yang dapat diakses secara global diseluruh perangkat lunak
+    \item {\it private} yang tidak dapat diakses secara global diseluruh perangkat lunak
+    \item {\it protected} yang hanya bisa diakses jika terdapat kelas yang menjadi turunan dari kelas tersebut
+  \end{enumerate}
+  Pada bagian deklarasi kelas harus terdapat komentar yang berfungsi sebagai deksripsi kelas tersebut. Komentar diletakan didalam tanda {\tt /** \dots\ */}. Berikut cara penulisan kelas yang baik dan benar.
+	\begin{figure}[H]
+	  \centering  
+	  \includegraphics[scale=1]{kelas}
+	  \caption[Contoh deklarasi kelas pada {\it Java}]{Contoh deklarasi kelas pada {\it Java}}
+	  \label{fig:kelas} 
+    \end{figure}
+  \item \textbf{Atribut}\\
+  Untuk penamaan atribut harus ditulis dengan menggunakan aturan {\it CamelCase}. {\it CamelCase} adalah aturan umum pada penulisan sebuah kode program dengan cara setiap kata kedua diawali dengan huruf besar atau kapital. Jika ingin membuat sebuah nama atribut {\tt islogin} maka harus ditulis seperti {\tt isLogin}. Deklarasi atribut harus ditulis {\tt <access\_modifier> <tipe\_data> <nama\_atribut>}. Terdapat beberapa tipe data yang dapat digunakan yaitu sebagai berikut.
+    \begin{enumerate}
+      \item {\tt byte} - untuk bilangan bulat dengan panjang $2^7 -1$.
+      \item {\tt short} - untuk bilangan bulat dengan panjang $2^{15} -1$
+      \item {\tt int} - untuk bilangan bulat dengan panjang $2^{31} -1$. Umumnya tipe data ini lebih sering digunakan
+      \item {\tt long} - untuk bilangan bulat dengan panjang $2^{63} -1$.
+      \item {\tt float} - untuk bilangan desimal dengan panjang 32-bit.
+      \item {\tt double} - untuk bilangan desimal dengan panjang 64-bit.
+      \item {\tt String} - sebuah objek pada {\it java} untuk kalimat.
+    \end{enumerate}
+  Pada bagian deklarasi atribut harus terdapat komentar yang berfungsi sebagai deksripsi atribut tersebut. Komentar diletakan didalam tanda {\tt /** \dots\ */}. Berikut cara penulisan kelas yang baik dan benar.
+	\begin{figure}[H]
+	  \centering  
+	  \includegraphics[scale=1]{atribut}
+	  \caption[Contoh deklarasi atribut pada {\it Java}]{Contoh deklarasi atribut pada {\it Java}}
+	  \label{fig:atribut} 
+    \end{figure}
+  \item \textbf{Method}\\
+  Untuk penamaan {\it method} harus ditulis dengan menggunakan aturan {\it CamelCase}. {\it CamelCase} adalah aturan umum pada penulisan sebuah kode program dengan cara setiap kata kedua diawali dengan huruf besar atau kapital. Jika ingin membuat sebuah nama {method} {\tt getusercomments} maka harus ditulis seperti {\tt getUserComments}. Dekralasi {\it method} harus ditulis {\tt <access\_modifier> <tipe\_data\_kembalian> <atribut>(<tipe\_data\_parameter> <nama\_parameter>)}. Tipe data kembalian dan tipe data parameter sama dengan tipe data atribut.
+  
+  Pada bagian deklarasi kelas harus terdapat komentar yang berfungsi sebagai deksripsi kelas tersebut. Komentar diletakan didalam tanda {\tt /** \dots\ */}. Berikut cara penulisan kelas yang baik dan benar.
+	\begin{figure}[H]
+	  \centering  
+	  \includegraphics[scale=1]{method}
+	  \caption[Contoh deklarasi {\it method} pada {\it Java}]{Contoh deklarasi {\it method} pada {\it Java}}
+	  \label{fig:method} 
+    \end{figure}
+\end{enumerate}
+
 
 
 

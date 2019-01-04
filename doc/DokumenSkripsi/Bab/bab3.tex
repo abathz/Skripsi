@@ -61,7 +61,43 @@ Potongan kode yang terdapat pada Listing \ref{kode-latex} adalah bagian isi dari
 	{\it Override} akan menampilkan informasi apakah {\it method} dari sebuah {\it superclass} ditulis kembali di sebuah {\it subclass}. jika tidak ada informasi tersebut maka bagian penjelasan akan dihilangkan.
 \end{enumerate}
 
-Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it file Java} yang berada di dalam sebuah {\it package}. Struktur kode {\it Java} yang digunakan dapat dilihat pada Lampiran \ref{lamp:A}. Struktur kode akan dijelaskan sebagai berikut.
+%Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it file Java} yang berada di dalam sebuah {\it package}. Struktur kode {\it Java} yang digunakan dapat dilihat pada Lampiran \ref{lamp:A}. Struktur kode akan dijelaskan sebagai berikut.
+Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it file java} yang berada di dalam sebuah {\it package}. Struktur kode {\it java} yang digunakan memiliki format sebagai berikut.
+
+\begin{lstlisting}[language=Java, caption=Contoh kode {\it java} yang diuji, label={kode-java}]
+package javadoc;
+
+/**
+ * Kelas ini MyApp
+ */
+public class MyApp {
+
+    /**
+     * Atribut a
+     */
+    private int a;
+    /**
+     * Atribut b
+     */
+    private int b;
+
+    /**
+     * Method Pertambahan
+     *
+     * @param a Bilangan Pertama
+     * @param b Bilangan Kedua
+     * 
+     * @return hasil penjumlahan 2 buah bilangan
+     */
+    public int pertambahan(int a, int b) {
+        int hasil = 0;
+        hasil = a + b;
+        return hasil;
+    }
+}
+\end{lstlisting}
+
+Potongan kode yang terdapat pada listing \ref{kode-java} adalah struktur {\it file java} yang digunakan, akan dijelaskan sebagai berikut.
 
 \begin{enumerate}
 	\item Setiap {\it file Java} harus terletak di dalam sebuah {\it package} yang sama.
@@ -71,19 +107,19 @@ Perangkat lunak yang dibuat akan menerima sebuah masukan berupa sekumpulan {\it 
 \end{enumerate}
 
 %{\it Package} yang berisikan sekumpulan {\it file java} tersebut akan menjadi sebuah masukan perangkat lunak dan akan menghasilkan sebuah dokumen dalam format \LaTeX.
-Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat \LaTeX. Perangkat lunak akan membaca satu persatu {\it file Java} dan informasi yang terdapat pada setiap {\it file Java} tersebut dimasukan ke dalam {\it file} \LaTeX.
+Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat \LaTeX. Perangkat lunak akan membaca satu per satu {\it file Java} dan informasi yang terdapat pada setiap {\it file Java} tersebut dimasukan ke dalam {\it file} \LaTeX.
 
-\begin{lstlisting}[caption=Contoh hasil konversi {\it Javadoc} ke \LaTeX, label={hasil}]
+\begin{lstlisting}[caption=Contoh hasil konversi ke \LaTeX, label={hasil}]
 \begin{enumerate}
-	\item \texttt{Pertambahan}\\
+	\item \texttt{MyApp}\\
 	Kelas ini merupakan Kelas Pertambahan.
 	
 	Atribut yang dimiliki kelas ini adalah sebagai berikut.
 	\begin{itemize}
 		\item \texttt{int a} -
-		Atribut A.
+		Atribut a.
 		\item \texttt{int b} -
-		Atribut B.
+		Atribut b.
 	\end{itemize}
 	
 	\textit{Method} yang terdapat pada kelas Pertambahan adalah sebagai berikut.
@@ -101,7 +137,6 @@ Hasil dari sebuah perangkat lunak yang dibuat adalah sebuah {\it file} berformat
 		
 		\textbf{Return Value:} hasil penjumlahan 2 buah bilangan.\\
 		\textbf{Exception:} tidak memiliki \textit{exception}.
-		\textbf{Override:} \textt{pertambahan} dari kelas \textt{operasiMatematikaInterface}
 	\end{itemize}
 \end{enumerate}
 \end{lstlisting}
@@ -133,6 +168,8 @@ TeXDoclet memiliki beberapa {\it option} yang dapat digunakan, akan dijelaskan s
 	\item {\tt -author <author>}\\
 	Menentukan penulis dari dokumen.
 \end{enumerate}
+
+Parameter {\tt -output} yang terdapat pada TeXDoclet digunakan oleh perangkat lunak yang dibuat agar perangkat lunak dapat menghasilkan {\it output} dengan nama yang dapat disesuaikan.
 
 
 
